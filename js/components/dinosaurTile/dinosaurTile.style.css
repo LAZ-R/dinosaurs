@@ -1,0 +1,51 @@
+/* Put here any 'dinosaur tile' specific css */
+
+.dinosaur-tile {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    min-height: 175px;
+    max-height: 200px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 11px 2px #14141446;
+    overflow: hidden;
+}
+
+.dinosaur-tile--image {
+    box-sizing: border-box;
+    display: flex;
+    min-height: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
+.dinosaur-tile--infos {
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #000000c9;
+}
+
+.dinosaur-tile--dinosaur-name {
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 25px;
+}
+.dinosaur-tile--periods {
+    margin-top: 5px;
+}
