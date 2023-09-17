@@ -20,6 +20,10 @@ import {
     CENOMANIEN, TURONIEN, CONIACIEN, SANTONIEN, CAMPANIEN, MAASTRICHTIEN,
 } from "./periods.data.js";
 
+const CARNIVOROUS = 'Carnivore';
+const HERBIVOROUS = 'Herbivore';
+const OMNIVOROUS = 'Omnivore';
+
 export const DINOSAURS = [
     {
         id: 0,
@@ -27,6 +31,7 @@ export const DINOSAURS = [
         order: 'Saurischia',       // Ordre
         family: 'Tyrannosauridae', // Famille
         genus: 'Tyrannosaurus',    // Genre
+        food: CARNIVOROUS,
         average_mass: 7500,        // Masse moyenne en kilogrammes
         average_length: 1200,      // Longueur moyenne en centimètres
         average_height: 450,       // Hauteur moyenne en centimètres
@@ -45,6 +50,7 @@ export const DINOSAURS = [
         order: 'Ornithischia',
         family: 'Ceratopsidae',
         genus: 'Triceratops',
+        food: HERBIVOROUS,
         average_mass: 7500,
         average_length: 850,
         average_height: 400,
@@ -63,6 +69,7 @@ export const DINOSAURS = [
         order: 'Ornithischia',
         family: 'Stegosauridae',
         genus: 'Stegosaurus',
+        food: HERBIVOROUS,
         average_mass: 4000,
         average_length: 700,
         average_height: 350,
@@ -81,6 +88,7 @@ export const DINOSAURS = [
         order: 'Ornithischia',
         family: 'Pachycephalosauridae',
         genus: 'Pachycephalosaurus',
+        food: OMNIVOROUS,
         average_mass: 400,
         average_length: 500,
         average_height: 150,
@@ -99,6 +107,7 @@ export const DINOSAURS = [
         order: 'Saurischia',
         family: 'Troodontidae',
         genus: 'Latenivenatrix',
+        food: CARNIVOROUS,
         average_mass: 115,
         average_length: 325,
         average_height: 190,
@@ -117,6 +126,7 @@ export const DINOSAURS = [
         order: 'Saurischia',
         family: 'Diplodocidae',
         genus: 'Diplodocus',
+        food: HERBIVOROUS,
         average_mass: 13000,
         average_length: 2500,
         average_height: 400,
@@ -129,12 +139,53 @@ export const DINOSAURS = [
             ''
         ],
     },
+    {
+        id: 6,
+        name: 'Allosaurus fragilis',
+        order: 'Saurischia',
+        family: 'Allosauridae',
+        genus: 'Allosaurus',
+        food: CARNIVOROUS,
+        average_mass: 800,
+        average_length: 850,
+        average_height: 300,
+        periods: [KIMMERIDGIEN, TITHONIEN, BERRIASIEN, VALANGINIEN, HAUTERIVIEN, BARREMIEN, APTIEN, ALBIEN, CENOMANIEN, TURONIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Diplodocus',
+        images: [
+            'https://blenderartists.org/uploads/default/original/4X/2/5/b/25b5ce4b33d8540f50f31dd3165a1fb3147b6922.jpeg',
+            ''
+        ],
+    },
 ]
 
 export const getDinosaurById = (id) => {
+    let defaultDino = {
+        id: -1,
+        name: 'Lorem ipsum',
+        order: 'Lorem ipsum',
+        family: 'Lorem ipsum',
+        genus: 'Lorem ipsum',
+        food: OMNIVOROUS,
+        average_mass: 0,
+        average_length: 0,
+        average_height: 0,
+        periods: [MAASTRICHTIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org',
+        images: [
+            '',
+            ''
+        ],
+    };
+
     DINOSAURS.forEach(dinosaur => {
-        if (dinosaur.id == id) {
-            return dinosaur;
+        if (dinosaur.id.toString() == id.toString()) {
+            defaultDino = dinosaur;
         }
     });
+
+    return defaultDino
 }

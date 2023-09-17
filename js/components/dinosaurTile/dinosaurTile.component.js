@@ -1,10 +1,18 @@
 import * as LAZR from '../../lazR/lazR.js';
 
-const getDinosaurPeriodsString = (dinosaurPeriods) => {
+const getDinosaurPeriodsString = (periods) => {
     let string = '';
-    dinosaurPeriods.forEach((period, index) => {
-        string += `${index == 0 ? '' : ', '}${period.name}`
-    })
+    if (periods.length == 1) {
+        string = periods[0].name;
+    } else {
+        const firstPeriod = periods[0].name;
+        const lastPeriod = periods[periods.length - 1].name;
+        if (firstPeriod == lastPeriod) {
+            string = firstPeriod;
+        } else {
+            string = `du ${firstPeriod} au ${lastPeriod}`
+        }
+    }
     return string
 }
 
@@ -22,7 +30,7 @@ export const renderDinosaurTile = (dinosaur) => {
         `
     )
     tile.addEventListener('click', () => {
-        console.log(dinosaur.name);
+        window.location = `./?page=dinosaurDetails&id=${dinosaur.id}`;
     });
 
     return tile;

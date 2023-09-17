@@ -3,6 +3,7 @@ import * as HEADER from '../components/header/header.component.js'
 import * as FOOTER from '../components/footer/footer.component.js'
 
 import * as PAGE_INDEX from './pages/index/index.page.js'
+import * as PAGE_DINOSAUR from './pages/dinosaurDetails/dinosaurDetails.page.js'
 import * as PAGE_ABOUT from './pages/about/about.page.js'
 import * as PAGE_JSON_WIZARD from './pages/jsonWizard/jsonWizard.page.js'
 import * as PAGE_SETTINGS from './pages/settings/settings.page.js'
@@ -20,6 +21,9 @@ if (LAZR.BREAKPOINTS.isLaptopOrUp) {
 switch (page) {
     case 'about':
         MAIN.appendChild(PAGE_ABOUT.renderPage());
+        break;
+    case 'dinosaurDetails':
+        MAIN.appendChild(PAGE_DINOSAUR.renderPage());
         break;
     case 'jsonWizard':
         MAIN.appendChild(PAGE_JSON_WIZARD.renderPage());

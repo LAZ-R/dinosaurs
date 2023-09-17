@@ -13,11 +13,22 @@ export const renderPage = () => {
     const pageTitle = LAZR.APP_DATA.getAppName();
     LAZR.DOM.setHTMLTitle(pageTitle);
 
+    const headerIndexLink = document.getElementById('headerIndexLink');
+    headerIndexLink.innerHTML = '';
+    const headerLogo = LAZR.DOM.createImgElement('headerLogo', 'header-logo', './medias/images/logo-white.svg', 'lazr logo');
+    LAZR.CSS.applyColorFilterOnElement(headerLogo, LAZR.CSS.getCssRootVariableValue('--on-primary'));
+    headerIndexLink.appendChild(headerLogo);
+
     const page = LAZR.DOM.createElement(
         'div', 
         'indexPage', 
         'page', 
-        `<h1>${pageTitle}</h1>`
+        `
+            <div class="top-area">
+                <span></span>
+                <span>Filtres</span>
+            </div>
+        `
     );
     page.style.padding = '0px var(--horizontal-padding)';
 
@@ -25,8 +36,11 @@ export const renderPage = () => {
         page.appendChild(renderDinosaurTile(dinosaur)); 
     });
 
-    console.table(DINOSAURS)
+    //console.table(DINOSAURS)
     /* --------------------------------------------------------------------- */
     
     return page;
 }
+
+
+const carId = new URLSearchParams(window.location.search).get('id');

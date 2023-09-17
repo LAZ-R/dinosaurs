@@ -1,6 +1,7 @@
 /* Import here any css file within the 'pages' folder */
 
 @import url("./index/index.style.css");
+@import url("./dinosaurDetails/dinosaurDetails.style.css");
 @import url("./about/about.style.css");
 @import url("./jsonWizard/jsonWizard.style.css");
 @import url("./settings/settings.style.css");
