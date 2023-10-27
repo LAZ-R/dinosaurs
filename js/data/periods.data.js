@@ -199,3 +199,27 @@ export const MAASTRICHTIEN = {
     start_date: "± -72,1 Ma",
     end_date: "± -66,0 Ma",
 }
+
+export const PERIODS = [
+    // Trias ------------------------------------------------------------------
+    // Trias Inférieur ------------------------------------
+    INDUSIEN,OLENEKIEN,
+    // Trias Moyen ----------------------------------------
+    ANISIEN,LADINIEN,
+    // Trias Supérieur ------------------------------------
+    CARNIEN,NORIEN,RHAETIEN,
+    
+    // Jurassique -------------------------------------------------------------
+    // Jurassique Inférieur--------------------------------
+    HETTANGIEN,SINEMURIEN,PLIENSBACHIEN,TOARCIEN,
+    // Jurassique Moyen -----------------------------------
+    AALENIEN,BAJOCIEN,BATHONIEN,CALLOVIEN,
+    // Jurassique Supérieur -------------------------------
+    OXFORDIEN,KIMMERIDGIEN,TITHONIEN,
+    
+    // Crétacé ----------------------------------------------------------------
+    // Crétacé Inférieur ----------------------------------
+    BERRIASIEN,VALANGINIEN,HAUTERIVIEN,BARREMIEN,APTIEN,ALBIEN,
+    // Crétacé Supérieur ----------------------------------
+    CENOMANIEN,TURONIEN,CONIACIEN,SANTONIEN,CAMPANIEN,MAASTRICHTIEN
+];

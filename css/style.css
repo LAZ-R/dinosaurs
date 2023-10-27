@@ -9,15 +9,16 @@
 
 html,
 body {
- padding: 0;
- margin: 0;
- height: 100vh; /* fallback for Js load */
- height: var(--doc-height);
- background-color: var(--html-background-color);
- font-family: 'Roboto-Regular';
+    padding: 0;
+    margin: 0;
+    height: 100vh; /* fallback for Js load */
+    height: var(--doc-height);
+    background-color: var(--html-background-color);
+    font-family: 'Roboto-Regular';
 }
 
 main {
+    position: relative;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
