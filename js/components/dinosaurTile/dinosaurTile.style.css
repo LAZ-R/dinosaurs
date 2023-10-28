@@ -13,7 +13,7 @@ span {
     align-items: center;
     width: 100%;
     min-height: 175px;
-    max-height: 200px;
+    max-height: 175px;
     margin-bottom: 15px;
     border-radius: 5px;
     box-shadow: 0px 5px 11px 2px #14141446;
@@ -43,6 +43,7 @@ span {
     width: 100%;
     background-color: #0000009a;
     color: var(--gray-20);
+    padding: 0 var(--horizontal-padding);
 }
 
 .dinosaur-tile--dinosaur-name {

@@ -15,8 +15,8 @@ export const renderPage = () => {
                     element.style.maxHeight = '168px';
                     break;
                 case 'section2':
-                    element.style.minHeight = '132px';
-                    element.style.maxHeight = '132px';
+                    element.style.minHeight = '190px';
+                    element.style.maxHeight = '190px';
                     break;
                 case 'section3':
                     element.style.minHeight = '132px';
@@ -30,23 +30,26 @@ export const renderPage = () => {
                     break;
             }
         }
-        
     }
     window.collapse = collapse;
 
+    const formaterNombreAvecVirgule = (nombre) => {
+        return nombre.toString().replace('.', ',');
+    }
+
     const getFixedSizeString = (size) => {
         const fixed_size = (size / 100).toFixed(2);
-        return `${fixed_size} m`;
+        return `${formaterNombreAvecVirgule(fixed_size)} m`;
     }
     const getFixedMassString = (mass) => {
         let fixed_mass = 0;
         let string = '';
         if (mass >= 1000) {
             fixed_mass = (mass / 1000).toFixed(2);
-            string = `${fixed_mass} ${fixed_mass < 2 ? 'tonne' : 'tonnes'}`
+            string = `${formaterNombreAvecVirgule(fixed_mass)} ${fixed_mass < 2 ? 'tonne' : 'tonnes'}`
         } else {
             fixed_mass = mass.toFixed(2);
-            string = `${fixed_mass} kg`
+            string = `${formaterNombreAvecVirgule(fixed_mass)} kg`
         }
         return string;
     }
@@ -54,32 +57,17 @@ export const renderPage = () => {
     const getPeriodString = (period) => {
         let string = '';
         // TRIAS
-        if (period.id <= 1) {
-            string = 'Trias inférieur';
-        }
-        if (period.id > 1 && period.id <= 3) {
-            string = 'Trias moyen';
-        }
-        if (period.id > 3 && period.id <= 6) {
-            string = 'Trias supérieur';
-        }
+        if (period.id <= 1)                    { string = 'Trias inférieur'; }
+        if (period.id > 1 && period.id <= 3)   { string = 'Trias moyen'; }
+        if (period.id > 3 && period.id <= 6)   { string = 'Trias supérieur'; }
         // JURASSIQUE
-        if (period.id > 6 && period.id <= 10) {
-            string = 'Jurassique inférieur';
-        }
-        if (period.id > 10 && period.id <= 14) {
-            string = 'Jurassique moyen';
-        }
-        if (period.id > 14 && period.id <= 17) {
-            string = 'Jurassique supérieur';
-        }
+        if (period.id > 6 && period.id <= 10)  { string = 'Jurassique inférieur'; }
+        if (period.id > 10 && period.id <= 14) { string = 'Jurassique moyen'; }
+        if (period.id > 14 && period.id <= 17) { string = 'Jurassique supérieur'; }
         // CRÉTACÉ
-        if (period.id > 17 && period.id <= 23) {
-            string = 'Crétacé inférieur';
-        }
-        if (period.id > 23) {
-            string = 'Crétacé supérieur';
-        }
+        if (period.id > 17 && period.id <= 23) { string = 'Crétacé inférieur'; }
+        if (period.id > 23)                    { string = 'Crétacé supérieur'; }
+
         return string
     }
 
@@ -157,6 +145,14 @@ export const renderPage = () => {
                 <div class="details-sub-section">
                     <span class="section-sub-title">Ordre</span>
                     <span>${dinosaur.order}</span>
+                </div>
+                <div class="details-sub-section">
+                    <span class="section-sub-title">Sous-Ordre</span>
+                    <span>${dinosaur.sub_order}</span>
+                </div>
+                <div class="details-sub-section">
+                    <span class="section-sub-title">Infra-Ordre</span>
+                    <span>${dinosaur.infra_order}</span>
                 </div>
                 <div class="details-sub-section">
                     <span class="section-sub-title">Famille</span>

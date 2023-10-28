@@ -30,7 +30,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: #3f3f3f;
+    background-color: #2c2c2c;
     padding: 10px 20px;
 }
 .modal-content {
@@ -56,6 +56,53 @@
 .modal-inner-content > span {
     margin-bottom: 15px;
 }
+.collapsable-div {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    overflow-y: hidden;
+    /* height: 151px; regime alimentaire */
+    /* height: 1242px; periodes */
+    transition: height .2s linear;
+    margin-bottom: 10px;
+
+    & > span:first-child {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 10px;
+        background-color: #3f3f3f;
+        padding: 10px 0;
+
+        & .notif {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            width: 22px;
+            height: 22px;
+            background-color: #457878;
+            color: #ffffff;
+            /* top: 0; */
+            right: 10px;
+            border-radius: 500px;
+        }
+    }
+}
+.collapsed {
+    height: 44px !important;
+}
+.period-group-title {
+    margin-bottom: 10px;
+}
+.period-sub-group-title {
+    margin-bottom: 5px;
+}
 .checkboxes-container {
     box-sizing: border-box;
     display: flex;
@@ -75,4 +122,56 @@
     min-width: 100%;
     height: fit-content;
     margin-bottom: 5px;
+
+    & > label {
+        width: 100%;
+    }
 }
+
+.buttons-container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 100%;
+    max-width: 100%;
+    height: fit-content;
+    padding: 0 var(--horizontal-padding) 10px var(--horizontal-padding);
+    gap: 10px;
+    margin-top: 10px;
+
+    .apply-button,
+    .reset-button {
+        /* border-radius: 20px; */
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+    }
+
+    .reset-button {
+        background-color: #784545;
+    }
+    .apply-button {
+        background-color: #457878;
+    }
+}
+
+.order-label                { color: #d0a3f5; }
+.sub-order-label            { color: #f5a3b8; }
+.infra-order-label          { color: #f5f1a3; }
+.family-label               { color: #a3f5af; }
+.genus-label                { color: #a3d8f5; }
+
+.trias-label                { color: #B265B3; }
+.trias-inferieur-label      { color: #B979B0; }
+.trias-moyen-label          { color: #BD86BD; }
+.trias-superieur-label      { color: #C9A6D0; }
+
+.jurassique-label           { color: #14CCFF; }
+.jurassique-inferieur-label { color: #52D3FE; }
+.jurassique-moyen-label     { color: #84CFEE; }
+.jurassique-superieur-label { color: #BBE3FA; }
+
+.cretace-label              { color: #93C562; }
+.cretace-inferieur-label    { color: #9FCA70; }
+.cretace-superieur-label    { color: #B9D25D; }

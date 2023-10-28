@@ -17,6 +17,7 @@ const getDinosaurPeriodsString = (periods) => {
 }
 
 export const renderDinosaurTile = (dinosaur) => {
+    let tileString = dinosaur.name.replace(/ /g, '<br>');
     const tile = LAZR.DOM.createElement(
         'div',
         '',
@@ -24,8 +25,8 @@ export const renderDinosaurTile = (dinosaur) => {
         `
             <img class="dinosaur-tile--image" src="${dinosaur.images[0]}" alt="${dinosaur.name}"/>
             <div class="dinosaur-tile--infos">
-                <span class="dinosaur-tile--dinosaur-name">${dinosaur.name}</span>
-                <span class="dinosaur-tile--periods">${getDinosaurPeriodsString(dinosaur.periods)}</span>
+                <span class="dinosaur-tile--dinosaur-name">${tileString}</span>
+                <!-- <span class="dinosaur-tile--periods">${getDinosaurPeriodsString(dinosaur.periods)}</span> -->
             </div>
         `
     )
