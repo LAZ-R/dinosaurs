@@ -223,3 +223,51 @@ export const PERIODS = [
     // Crétacé Supérieur ----------------------------------
     CENOMANIEN,TURONIEN,CONIACIEN,SANTONIEN,CAMPANIEN,MAASTRICHTIEN
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const PERIODS_ORDER = {
+    "Indusien": 1,
+    "Olenekien": 2,
+    "Anisien": 3,
+    "Ladinien": 4,
+    "Carnien": 5,
+    "Norien": 6,
+    "Rhaétien": 7,
+    "Hettangien": 8,
+    "Sinémurien": 9,
+    "Pliensbachien": 10,
+    "Toarcien": 11,
+    "Aalénien": 12,
+    "Bajocien": 13,
+    "Bathonien": 14,
+    "Callovien": 15,
+    "Oxfordien": 16,
+    "Kimméridgien": 17,
+    "Tithonien": 18,
+    "Berriasien": 19,
+    "Valanginien": 20,
+    "Hauterivien": 21,
+    "Barrémien": 22,
+    "Aptien": 23,
+    "Albien": 24,
+    "Cénomanien": 25,
+    "Turonien": 26,
+    "Coniacien": 27,
+    "Santonien": 28,
+    "Campanien": 29,
+    "Maastrichtien": 30,
+}

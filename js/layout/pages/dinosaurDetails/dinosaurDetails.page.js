@@ -15,8 +15,8 @@ export const renderPage = () => {
                     element.style.maxHeight = '168px';
                     break;
                 case 'section2':
-                    element.style.minHeight = '190px';
-                    element.style.maxHeight = '190px';
+                    element.style.minHeight = '160px';
+                    element.style.maxHeight = '160px';
                     break;
                 case 'section3':
                     element.style.minHeight = '132px';
@@ -149,10 +149,6 @@ export const renderPage = () => {
                 <div class="details-sub-section">
                     <span class="section-sub-title">Sous-Ordre</span>
                     <span>${dinosaur.sub_order}</span>
-                </div>
-                <div class="details-sub-section">
-                    <span class="section-sub-title">Infra-Ordre</span>
-                    <span>${dinosaur.infra_order}</span>
                 </div>
                 <div class="details-sub-section">
                     <span class="section-sub-title">Famille</span>

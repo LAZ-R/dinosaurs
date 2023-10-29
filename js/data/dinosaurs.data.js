@@ -30,81 +30,82 @@ export const CLASSIFICATION = [
         sub_orders: [
             {
                 name: 'Theropoda',
-                infra_orders: [
+                families: [
                     {
-                        name: 'Carnosauria',
-                        families: [
+                        name: 'Allosauridae',
+                        genus: [
                             {
-                                name: 'Allosauridae',
-                                genus: [
-                                    {
-                                        name: 'Allosaurus'
-                                    },
-                                ]
-                            },
-                            {
-                                name: 'Carcharodontosauridae',
-                                genus: [
-                                    {
-                                        name: 'Giganotosaurus'
-                                    },
-                                ]
-                            },
-                            {
-                                name: 'Spinosauridae',
-                                genus: [
-                                    {
-                                        name: 'Baryonyx'
-                                    },
-                                    {
-                                        name: 'Spiniosaurus'
-                                    },
-                                ]
+                                name: 'Allosaurus'
                             },
                         ]
                     },
                     {
-                        name: 'Ceratosauria',
-                        families: [
+                        name: 'Dilophosauridae',
+                        genus: [
                             {
-                                name: 'Abelisauridae',
-                                genus: [
-                                    {
-                                        name: 'Carnotaurus'
-                                    },
-                                ]
+                                name: 'Dilophosaurus'
                             },
                         ]
                     },
                     {
-                        name: 'Coelurosauria',
-                        families: [
+                        name: 'Carcharodontosauridae',
+                        genus: [
                             {
-                                name: 'Dromaeosauridae',
-                                genus: [
-                                    {
-                                        name: 'Deinonychus'
-                                    },
-                                    {
-                                        name: 'Velociraptor'
-                                    },
-                                ]
+                                name: 'Giganotosaurus'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Spinosauridae',
+                        genus: [
+                            {
+                                name: 'Baryonyx'
                             },
                             {
-                                name: 'Troodontidae',
-                                genus: [
-                                    {
-                                        name: 'Latenivenatrix'
-                                    },
-                                ]
+                                name: 'Spiniosaurus'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Abelisauridae',
+                        genus: [
+                            {
+                                name: 'Carnotaurus'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Dromaeosauridae',
+                        genus: [
+                            {
+                                name: 'Deinonychus'
                             },
                             {
-                                name: 'Tyrannosauridae',
-                                genus: [
-                                    {
-                                        name: 'Tyrannosaurus'
-                                    },
-                                ]
+                                name: 'Velociraptor'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Oviraptoridae',
+                        genus: [
+                            {
+                                name: 'Citipati'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Troodontidae',
+                        genus: [
+                            {
+                                name: 'Latenivenatrix'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Tyrannosauridae',
+                        genus: [
+                            {
+                                name: 'Tyrannosaurus'
                             },
                         ]
                     },
@@ -112,33 +113,28 @@ export const CLASSIFICATION = [
             },
             {
                 name: 'Sauropodomorpha',
-                infra_orders: [
+                families: [
                     {
-                        name: 'Sauropoda',
-                        families: [
+                        name: 'Brachiosauridae',
+                        genus: [
                             {
-                                name: 'Brachiosauridae',
-                                genus: [
-                                    {
-                                        name: 'Brachiosaurus'
-                                    },
-                                ]
+                                name: 'Brachiosaurus'
                             },
+                        ]
+                    },
+                    {
+                        name: 'Diplodocidae',
+                        genus: [
                             {
-                                name: 'Diplodocidae',
-                                genus: [
-                                    {
-                                        name: 'Diplodocus'
-                                    },
-                                ]
+                                name: 'Diplodocus'
                             },
+                        ]
+                    },
+                    {
+                        name: 'Lithostrotia',
+                        genus: [
                             {
-                                name: 'Lithostrotia',
-                                genus: [
-                                    {
-                                        name: 'Argentinosaurus'
-                                    },
-                                ]
+                                name: 'Argentinosaurus'
                             },
                         ]
                     },
@@ -151,36 +147,26 @@ export const CLASSIFICATION = [
         sub_orders: [
             {
                 name: 'Marginocephalia',
-                infra_orders: [
+                families: [
                     {
-                        name: 'Ceratopsia',
-                        families: [
+                        name: 'Ceratopsidae',
+                        genus: [
                             {
-                                name: 'Ceratopsidae',
-                                genus: [
-                                    {
-                                        name: 'Pachyrhinosaurus'
-                                    },
-                                    {
-                                        name: 'Styracosaurus'
-                                    },
-                                    {
-                                        name: 'Triceratops'
-                                    },
-                                ]
+                                name: 'Pachyrhinosaurus'
+                            },
+                            {
+                                name: 'Styracosaurus'
+                            },
+                            {
+                                name: 'Triceratops'
                             },
                         ]
                     },
                     {
-                        name: 'Pachycephalosauria',
-                        families: [
+                        name: 'Pachycephalosauridae',
+                        genus: [
                             {
-                                name: 'Pachycephalosauridae',
-                                genus: [
-                                    {
-                                        name: 'Pachycephalosaurus'
-                                    },
-                                ]
+                                name: 'Pachycephalosaurus'
                             },
                         ]
                     },
@@ -188,17 +174,20 @@ export const CLASSIFICATION = [
             },
             {
                 name: 'Ornithopoda',
-                infra_orders: [
+                families: [
                     {
-                        name: 'Iguanodontia',
-                        families: [
+                        name: 'Iguanodontidae',
+                        genus: [
                             {
-                                name: 'Iguanodontidae',
-                                genus: [
-                                    {
-                                        name: 'Iguanodon'
-                                    },
-                                ]
+                                name: 'Iguanodon'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Hadrosauridae',
+                        genus: [
+                            {
+                                name: 'Parasaurolophus'
                             },
                         ]
                     },
@@ -206,30 +195,20 @@ export const CLASSIFICATION = [
             },
             {
                 name: 'Thyreophora',
-                infra_orders: [
+                families: [
                     {
-                        name: 'Ankylosauria',
-                        families: [
+                        name: 'Ankylosauridae',
+                        genus: [
                             {
-                                name: 'Ankylosauridae',
-                                genus: [
-                                    {
-                                        name: 'Ankylosaurus'
-                                    },
-                                ]
+                                name: 'Ankylosaurus'
                             },
                         ]
                     },
                     {
-                        name: 'Stegosauria',
-                        families: [
+                        name: 'Stegosauridae',
+                        genus: [
                             {
-                                name: 'Stegosauridae',
-                                genus: [
-                                    {
-                                        name: 'Stegosaurus'
-                                    },
-                                ]
+                                name: 'Stegosaurus'
                             },
                         ]
                     },
@@ -246,7 +225,6 @@ export const DINOSAURS = [
         name: 'Tyrannosaurus rex',    // Nom scientifique de l'espèce
         order: 'Saurischia',          // Ordre
         sub_order: 'Theropoda',       // Sous-ordre
-        infra_order: 'Coelurosauria', // Infra-ordre
         family: 'Tyrannosauridae',    // Famille
         genus: 'Tyrannosaurus',       // Genre
         food: CARNIVOROUS,            // Régime alimentaire
@@ -267,7 +245,6 @@ export const DINOSAURS = [
         name: 'Triceratops horridus',
         order: 'Ornithischia',
         sub_order: 'Marginocephalia',
-        infra_order: 'Ceratopsia',
         family: 'Ceratopsidae',
         genus: 'Triceratops',
         food: HERBIVOROUS,
@@ -285,11 +262,10 @@ export const DINOSAURS = [
         ],
     },
     {
-        id: 3,
+        id: 2,
         name: 'Velociraptor mongoliensis',
         order: 'Saurischia',
         sub_order: 'Theropoda',
-        infra_order: 'Coelurosauria',
         family: 'Dromaeosauridae',
         genus: 'Velociraptor',
         food: CARNIVOROUS,
@@ -305,11 +281,10 @@ export const DINOSAURS = [
         ],
     },
     {
-        id: 2,
+        id: 3,
         name: 'Diplodocus carnegii',
         order: 'Saurischia',
         sub_order: 'Sauropodomorpha',
-        infra_order: 'Sauropoda',
         family: 'Diplodocidae',
         genus: 'Diplodocus',
         food: HERBIVOROUS,
@@ -330,7 +305,6 @@ export const DINOSAURS = [
         name: 'Stegosaurus stenops',
         order: 'Ornithischia',
         sub_order: 'Thyreophora',
-        infra_order: 'Stegosauria',
         family: 'Stegosauridae',
         genus: 'Stegosaurus',
         food: HERBIVOROUS,
@@ -347,11 +321,10 @@ export const DINOSAURS = [
         ],
     },
     {
-        id: 18,
+        id: 5,
         name: 'Brachiosaurus altithorax',
         order: 'Ornithischia',
         sub_order: 'Sauropodomorpha',
-        infra_order: 'Sauropoda',
         family: 'Brachiosauridae',
         genus: 'Brachiosaurus',
         food: HERBIVOROUS,
@@ -371,7 +344,6 @@ export const DINOSAURS = [
         name: 'Spinosaurus aegyptiacus',
         order: 'Saurischia',
         sub_order: 'Theropoda',
-        infra_order: 'Carnosauria',
         family: 'Spinosauridae',
         genus: 'Spinosaurus',
         food: CARNIVOROUS,
@@ -388,11 +360,10 @@ export const DINOSAURS = [
         ],
     },
     {
-        id: 17,
+        id: 7,
         name: 'Ankylosaurus magniventris',
         order: 'Ornithischia',
         sub_order: 'Thyreophora',
-        infra_order: 'Ankylosauria',
         family: 'Ankylosauridae',
         genus: 'Ankylosaurus',
         food: HERBIVOROUS,
@@ -408,11 +379,10 @@ export const DINOSAURS = [
         ],
     },
     {
-        id: 16,
+        id: 8,
         name: 'Iguanodon bernissartensis',
         order: 'Ornithischia',
         sub_order: 'Ornithopoda',
-        infra_order: 'Iguanodontia',
         family: 'Iguanodontidae',
         genus: 'Iguanodon',
         food: HERBIVOROUS,
@@ -428,11 +398,10 @@ export const DINOSAURS = [
         ],
     },
     {
-        id: 5,
+        id: 9,
         name: 'Allosaurus fragilis',
         order: 'Saurischia',
         sub_order: 'Theropoda',
-        infra_order: 'Carnosauria',
         family: 'Allosauridae',
         genus: 'Allosaurus',
         food: CARNIVOROUS,
@@ -449,17 +418,16 @@ export const DINOSAURS = [
         ],
     },
     {
-        id: 7,
+        id: 10,
         name: 'Deinonychus antirrhopus',
         order: 'Saurischia',
         sub_order: 'Theropoda',
-        infra_order: 'Coelurosauria',
         family: 'Dromaeosauridae',
         genus: 'Deinonychus',
         food: CARNIVOROUS,
         average_mass: 75,
         average_length: 340,
-        average_height: 87,
+        average_height: 110,
         periods: [BERRIASIEN, VALANGINIEN, HAUTERIVIEN, BARREMIEN, APTIEN, ALBIEN, CENOMANIEN],
         description:
         ``,
@@ -471,11 +439,10 @@ export const DINOSAURS = [
         ],
     },
     {
-        id: 8,
+        id: 11,
         name: 'Giganotosaurus carolinii',
         order: 'Saurischia',
         sub_order: 'Theropoda',
-        infra_order: 'Carnosauria',
         family: 'Carcharodontosauridae',
         genus: 'Giganotosaurus',
         food: CARNIVOROUS,
@@ -491,11 +458,10 @@ export const DINOSAURS = [
         ],
     },
     {
-        id: 9,
+        id: 12,
         name: 'Argentinosaurus huinculensis',
         order: 'Saurischia',
         sub_order: 'Sauropodomorpha',
-        infra_order: 'Sauropoda',
         family: 'Lithostrotia',
         genus: 'Argentinosaurus',
         food: HERBIVOROUS,
@@ -511,11 +477,10 @@ export const DINOSAURS = [
         ],
     },
     {
-        id: 10,
+        id: 13,
         name: 'Baryonyx walkeri',
         order: 'Saurischia',
         sub_order: 'Theropoda',
-        infra_order: 'Carnosauria',
         family: 'Spinosauridae',
         genus: 'Baryonyx',
         food: CARNIVOROUS,
@@ -532,32 +497,31 @@ export const DINOSAURS = [
         ],
     },
     {
-        id: 11,
+        id: 14,
         name: 'Pachycephalosaurus wyomingensis',
         order: 'Ornithischia',
         sub_order: 'Marginocephalia',
-        infra_order: 'Pachycephalosauria',
         family: 'Pachycephalosauridae',
         genus: 'Pachycephalosaurus',
         food: OMNIVOROUS,
         average_mass: 400,
-        average_length: 500,
+        average_length: 450,
         average_height: 150,
         periods: [MAASTRICHTIEN],
         description:
             ``,
         wiki_link: 'https://fr.wikipedia.org/wiki/Pachycephalosaurus',
         images: [
+            'https://elyseesnumismatique.com/wp-content/uploads/2022/05/EUR01.Unc_.2022.25624-3-E-Austria-2022-Pachycephalosaurus-wyomingensis-blog-illustration-zoom.jpg',
             'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c6030c83-d20a-444a-bc0b-f41e06f5def1/d473zcr-19d99c1c-6f58-42f9-898f-75383e3aa8e1.jpg/v1/fit/w_800,h_577,q_70,strp/pachycephalosaurus_by_swordlord3d_d473zcr-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc3IiwicGF0aCI6IlwvZlwvYzYwMzBjODMtZDIwYS00NDRhLWJjMGItZjQxZTA2ZjVkZWYxXC9kNDczemNyLTE5ZDk5YzFjLTZmNTgtNDJmOS04OThmLTc1MzgzZTNhYThlMS5qcGciLCJ3aWR0aCI6Ijw9ODAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.FZZ7Oh98ZlFBMERjyPqEQFrqB0Ln8XRq7ogf8mzl8Uc',
-            ''
+            'https://morethanadodo.files.wordpress.com/2015/08/pachycephalosaurus-wyomingensis_small.jpg',
         ],
     },
     {
-        id: 12,
+        id: 15,
         name: 'Carnotaurus sastrei',
         order: 'Saurischia',
         sub_order: 'Theropoda',
-        infra_order: 'Ceratosauria',
         family: 'Abelisauridae',
         genus: 'Carnotaurus',
         food: CARNIVOROUS,
@@ -574,11 +538,10 @@ export const DINOSAURS = [
         ],
     },
     {
-        id: 13,
+        id: 16,
         name: 'Styracosaurus albertensis',
         order: 'Ornithischia',
         sub_order: 'Marginocephalia',
-        infra_order: 'Ceratopsia',
         family: 'Ceratopsidae',
         genus: 'Styracosaurus',
         food: HERBIVOROUS,
@@ -594,11 +557,10 @@ export const DINOSAURS = [
         ],
     },
     {
-        id: 14,
+        id: 17,
         name: 'Pachyrhinosaurus canadensis',
         order: 'Ornithischia',
         sub_order: 'Marginocephalia',
-        infra_order: 'Ceratopsia',
         family: 'Ceratopsidae',
         genus: 'Pachyrhinosaurus',
         food: HERBIVOROUS,
@@ -614,17 +576,16 @@ export const DINOSAURS = [
         ],
     },
     {
-        id: 15,
+        id: 18,
         name: 'Latenivenatrix mcmasterae',
         order: 'Saurischia',
         sub_order: 'Theropoda',
-        infra_order: 'Coelurosauria',
         family: 'Troodontidae',
         genus: 'Latenivenatrix',
         food: CARNIVOROUS,
-        average_mass: 115,
+        average_mass: 60,
         average_length: 325,
-        average_height: 190,
+        average_height: 135,
         periods: [CAMPANIEN],
         description:
             ``,
@@ -633,6 +594,63 @@ export const DINOSAURS = [
             'https://preview.redd.it/y6awloi5imr91.jpg?width=2262&format=pjpg&auto=webp&s=f31de6c9b746d448b8a394bfc58279078cb955eb',
             'https://upload.wikimedia.org/wikipedia/commons/5/5b/Latenivenatrix.png',
             'https://upload.wikimedia.org/wikipedia/commons/c/c0/Latenivenatrix_%28white_background%29.png',
+        ],
+    },
+    {
+        id: 19,
+        name: 'Parasaurolophus walkeri',
+        order: 'Ornithischia',
+        sub_order: 'Ornithopoda',
+        family: 'Hadrosauridae',
+        genus: 'Parasaurolophus',
+        food: HERBIVOROUS,
+        average_mass: 2500,
+        average_length: 950,
+        average_height: 360,
+        periods: [CAMPANIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Parasaurolophus',
+        images: [
+            'https://cdn.domestika.org/c_limit,dpr_1.0,f_auto,q_80,w_820/v1562600036/content-items/003/106/418/Parasaurolophus-Angel-Trancon-Studio-original.jpg?1562600036',
+        ],
+    },
+    {
+        id: 20,
+        name: 'Citipati osmolskae',
+        order: 'Saurischia',
+        sub_order: 'Theropoda',
+        family: 'Oviraptoridae',
+        genus: 'Citipati',
+        food: HERBIVOROUS,
+        average_mass: 75,
+        average_length: 250,
+        average_height: 170,
+        periods: [CAMPANIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Citipati',
+        images: [
+            'https://i.kym-cdn.com/photos/images/original/002/278/723/869.jpeg',
+        ],
+    },
+    {
+        id: 21,
+        name: 'Dilophosaurus wetherilli',
+        order: 'Saurischia',
+        sub_order: 'Theropoda',
+        family: 'Dilophosauridae',
+        genus: 'Dilophosaurus',
+        food: CARNIVOROUS,
+        average_mass: 400,
+        average_length: 600,
+        average_height: 190,
+        periods: [SINEMURIEN, PLIENSBACHIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Dilophosaurus',
+        images: [
+            'https://static.scientificamerican.com/sciam/cache/file/772FAB35-5C60-47BD-AF64576CF62E910E_source.jpg?w=2000&h=1123&761A6DFA-B87F-45D1-99983B70E46AC8DF',
         ],
     },
 ]

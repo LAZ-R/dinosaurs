@@ -111,7 +111,7 @@
     align-items: flex-start;
     min-width: 100%;
     height: fit-content;
-    padding: 0 var(--horizontal-padding);
+    padding: 0 /* var(--horizontal-padding) */;
     margin-bottom: 20px;
 }
 .filter-container {
@@ -156,11 +156,10 @@
     }
 }
 
-.order-label                { color: #d0a3f5; }
-.sub-order-label            { color: #f5a3b8; }
-.infra-order-label          { color: #f5f1a3; }
-.family-label               { color: #a3f5af; }
-.genus-label                { color: #a3d8f5; }
+.order-label                { color: #DDA8F0; }
+.sub-order-label            { color: #F0B9A8; }
+.family-label               { color: #BBF0A8; }
+.genus-label                { color: #A8DFF0; }
 
 .trias-label                { color: #B265B3; }
 .trias-inferieur-label      { color: #B979B0; }
@@ -175,3 +174,19 @@
 .cretace-label              { color: #93C562; }
 .cretace-inferieur-label    { color: #9FCA70; }
 .cretace-superieur-label    { color: #B9D25D; }
+
+.period-span-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.period-span-area {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 12px;
+    gap: 10px;
+    color: var(--font-color-default);;
+}

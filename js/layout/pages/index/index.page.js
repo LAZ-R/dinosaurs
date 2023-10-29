@@ -1,61 +1,84 @@
 import { renderDinosaurTile } from '../../../components/dinosaurTile/dinosaurTile.component.js';
 import { CLASSIFICATION, DINOSAURS } from '../../../data/dinosaurs.data.js';
-import { PERIODS } from '../../../data/periods.data.js';
+import { PERIODS, PERIODS_ORDER } from '../../../data/periods.data.js';
 import * as LAZR from '../../../lazR/lazR.js';
 
 export const renderPage = () => {
 
     // Variables globales ------------------------------------------------------------------------------------
     // Filtres
-    let hasFilters = false;
     let filteredDinosaurs = [];
     // Modale
     let modalExist = false;
     let isModalOpened = false;
+    // Modale 2
+    let modal2Exist = false;
+    let isModal2Opened = false;
+
+    
 
     // METHODES ----------------------------------------------------------------------------------------------
 
     // USER INTERACTIONS -------------------------------------------------------
 
+    // Filter ----------------------------------------------
     const onFiltersClick = () => {
-        let filters = { food: null, periods: [] };
-        
-        let foodFilter = LAZR.URL.getURLParameter('food');
-        let periodsTextFilter = LAZR.URL.getURLParameter('periods');
-        let classification = LAZR.URL.getURLParameter('classification');
-
-        if (foodFilter != null || periodsTextFilter != null || classification != null) {
-            hasFilters = true;
-            let periods = periodsText.split('-').filter(Boolean).map(Number);
-            filters = {
-                food: food,
-                periods: periods,
-                classification: classification
-            }
-        }
-
+        const filters = getUrlFilters();
         if (!isModalOpened) {
             openModal(filters);
         }
     }
     window.onFiltersClick = onFiltersClick;
 
-    const applyFilters = () => {
-        const filters = getFilters();
+    const applyModalFilters = () => {
+        const filters = getModalFilters();
+        const sort = getUrlSorting();
         getFilteredDinosaurs(filters);
         let periodsId = '';
         filters.periods.forEach(period => {
             periodsId += '-' + period;
         });
-        window.location = './?food=' + filters.food.toString() + '&periods=' + periodsId + '&classification=' + filters.classification.toString();
+        window.location = './?food=' + filters.food.toString() + '&periods=' + periodsId + '&classification=' + filters.classification.toString() + '&sort=' + sort;
     }
-    window.applyFilters = applyFilters;
-
+    window.applyModalFilters = applyModalFilters;
+    
     const resetFilters = () => {
-        window.location = './';
+        const sort = getUrlSorting();
+        window.location = './?sort=' + sort;
     }
     window.resetFilters = resetFilters;
 
+    // Sorting ---------------------------------------------
+    const onSortClick = () => {
+        if (!isModal2Opened) {
+            openModal2(filters);
+        }
+    }
+    window.onSortClick = onSortClick;
+
+    const applyModalSorting = () => {
+        const sort = getModalSorting();
+        getSortedDinosaurs(sort);
+        console.log(window.location);
+        if (window.location.search != '') {
+            let foodFilter = LAZR.URL.getURLParameter('food');
+            let periodsTextFilter = LAZR.URL.getURLParameter('periods');
+            let classificationFilter = LAZR.URL.getURLParameter('classification');
+
+            let food = foodFilter != null ? foodFilter : '';
+            let periods = periodsTextFilter != null ? periodsTextFilter : '';
+            let classification = classificationFilter != null ? classificationFilter : '';
+
+            window.location = './?food=' + food + '&periods=' + periods + '&classification=' + classification + '&sort=' + sort;
+        } else {
+            window.location = './?sort=' + sort;
+        }
+        //window.location = window.location += '&sort=' + sort;
+    }
+    window.applyModalSorting = applyModalSorting;
+
+
+    // Collapse --------------------------------------------
     const collapse = (id) => {
         const div = document.getElementById('collapsable' + id);
         if (div.classList.contains('collapsed')) {
@@ -81,7 +104,27 @@ export const renderPage = () => {
 
     // FILTERING ------------------------------------------------------------------
 
-    const getFilters = () => {
+    const getUrlFilters = () => {
+        let filters = { food: null, periods: [], classification: null};
+        
+        let foodFilter = LAZR.URL.getURLParameter('food');
+        let periodsTextFilter = LAZR.URL.getURLParameter('periods');
+        let classificationFilter = LAZR.URL.getURLParameter('classification');
+
+        if (foodFilter != null || periodsTextFilter != null || classificationFilter != null) {
+            let food = foodFilter != null ? foodFilter : '';
+            let periods = periodsTextFilter.split('-').filter(Boolean).map(Number);
+            let classification = classificationFilter != null ? classificationFilter : '';
+            filters = {
+                food: food,
+                periods: periods,
+                classification: classification
+            }
+        }
+        return filters;
+    }
+
+    const getModalFilters = () => {
         let food = [];
 
         // Récupération du Régime alimentaire
@@ -109,20 +152,16 @@ export const renderPage = () => {
                 if (document.getElementById(order.name).checked) {classification.push(order.name)}
                 order.sub_orders.forEach(subOrder => {
                     if (document.getElementById(subOrder.name).checked) {classification.push(subOrder.name)}
-                    subOrder.infra_orders.forEach(infraOrder => {
-                        if (document.getElementById( infraOrder.name).checked) {classification.push(infraOrder.name)}
-                        infraOrder.families.forEach(family => {
-                            if (document.getElementById(family.name).checked) {classification.push(family.name)}
-                            family.genus.forEach(genus => {
-                                if (document.getElementById(genus.name).checked) {classification.push(genus.name); }
-                            });
+                    subOrder.families.forEach(family => {
+                        if (document.getElementById(family.name).checked) {classification.push(family.name)}
+                        family.genus.forEach(genus => {
+                            if (document.getElementById(genus.name).checked) {classification.push(genus.name); }
                         });
                     });
                 });
             });
         }
         
-
         return {
             food: food,
             periods: periods,
@@ -142,38 +181,190 @@ export const renderPage = () => {
         // Utilise la méthode filter() pour filtrer les dinosaures en fonction des critères
         const filteredDinosaurs = DINOSAURS.filter((dino) => {
             // Vérifie le régime alimentaire
-            if (food.length > 0 && !food.includes(dino.food)) {
-                return false;
+            if (food != null && food != '') {
+                if (!food.includes(dino.food)) {
+                    return false;
+                }
             }
         
             // Vérifie les périodes
-            if (periods.length > 0) {
+            /* if (periods.length > 0) {
                 for (const period of periods) {
                     if (!dino.periods.some((dinoPeriod) => dinoPeriod.id === period)) {
                         return false;
                     }
                 }
-            }
-
-            // Vérifie la classification
-            if (classification.length > 0 && classification != 'Tous') {
-                // Vérifie si le dinosaure correspond à l'au moins une des classifications sélectionnées
-                const matchesClassification = 
-                    dino.order === classification ||
-                    dino.sub_order === classification ||
-                    dino.infra_order === classification ||
-                    dino.family === classification ||
-                    dino.genus === classification;
-                
-                // Si le dinosaure ne correspond à aucune des classifications, le filtrer
-                if (!matchesClassification) {
+            } */
+            if (periods.length > 0) {
+                let isHere = false;
+                for (const period of periods) {
+                    dino.periods.forEach(dinoPeriod => {
+                        if (dinoPeriod.id == period) {
+                            isHere = true;
+                        }
+                    });
+                }
+                if (!isHere) {
                     return false;
                 }
             }
+
+            // Vérifie la classification
+            if (classification != null && classification != '') {
+                if (classification != 'Tous') {
+                    // Vérifie si le dinosaure correspond à l'au moins une des classifications sélectionnées
+                    const matchesClassification = 
+                        dino.order === classification ||
+                        dino.sub_order === classification ||
+                        dino.family === classification ||
+                        dino.genus === classification;
+                    
+                    // Si le dinosaure ne correspond à aucune des classifications, le filtrer
+                    if (!matchesClassification) {
+                        return false;
+                    }
+                }
+            }
+
             return true;
         });
         return filteredDinosaurs;
     };
+
+    // SORTING -----------------------------------------------------------------
+    const getUrlSorting = () => {
+        let sort = LAZR.URL.getURLParameter('sort');
+        return sort != null ? sort : '';
+    }
+
+    const getModalSorting = () => {
+        let sort = '';
+
+        // Récupération du Tri
+        if (document.getElementById('latestAddedFirst').checked) { sort = 'latestAddedFirst'};
+        if (document.getElementById('firstlyAddedFirst').checked) { sort = 'firstlyAddedFirst'};
+        if (document.getElementById('oldestFirst').checked) { sort = 'oldestFirst'};
+        if (document.getElementById('newestFirst').checked) { sort = 'newestFirst'};
+        if (document.getElementById('heaviestFirst').checked) { sort = 'heaviestFirst'};
+        if (document.getElementById('lightestFirst').checked) { sort = 'lightestFirst'};
+        if (document.getElementById('longestFirst').checked) { sort = 'longestFirst'};
+        if (document.getElementById('smallestFirst').checked) { sort = 'smallestFirst'};
+
+        return sort;
+    }
+
+    // Sorting functions -----------------------------------
+
+    const sortDinosaursLatestAddedFirst = (dinosaurs) => {
+        dinosaurs.sort((a, b) => {
+            return b.id - a.id;
+        });
+    
+        return dinosaurs;
+    }
+
+    const sortDinosaursFirstlyAddedFirst = (dinosaurs) => {
+        dinosaurs.sort((a, b) => {
+            return a.id - b.id;
+        });
+    
+        return dinosaurs;
+    }
+
+    const sortDinosaursOldestFirst = (dinosaurs) => {
+        dinosaurs.sort((a, b) => {
+            const firstPeriodA = a.periods[0].name;
+            const firstPeriodB = b.periods[0].name;
+    
+            // Comparaison en se basant sur l'ordre personnalisé des périodes
+            const orderA = PERIODS_ORDER[firstPeriodA];
+            const orderB = PERIODS_ORDER[firstPeriodB];
+    
+            return orderA - orderB;
+        });
+    
+        return dinosaurs;
+    }
+
+    const sortDinosaursNewestFirst = (dinosaurs) => {
+        dinosaurs.sort((a, b) => {
+            const firstPeriodA = a.periods[0].name;
+            const firstPeriodB = b.periods[0].name;
+    
+            // Comparaison en se basant sur l'ordre personnalisé des périodes
+            const orderA = PERIODS_ORDER[firstPeriodA];
+            const orderB = PERIODS_ORDER[firstPeriodB];
+    
+            return orderB - orderA;
+        });
+    
+        return dinosaurs;
+    }
+
+    const sortDinosaursHeaviestFirst = (dinosaurs) => {
+        dinosaurs.sort((a, b) => {
+            return b.average_mass - a.average_mass;
+        });
+    
+        return dinosaurs;
+    }
+
+    const sortDinosaursLightestFirst = (dinosaurs) => {
+        dinosaurs.sort((a, b) => {
+            return a.average_mass - b.average_mass;
+        });
+    
+        return dinosaurs;
+    }
+
+    const sortDinosaursLongestFirst = (dinosaurs) => {
+        dinosaurs.sort((a, b) => {
+            return b.average_length - a.average_length;
+        });
+    
+        return dinosaurs;
+    }
+
+    const sortDinosaursSmallestFirst = (dinosaurs) => {
+        dinosaurs.sort((a, b) => {
+            return a.average_length - b.average_length;
+        });
+    
+        return dinosaurs;
+    }
+
+    // -----------------------------------------------------
+
+    const getSortedDinosaurs = (sort) => {
+        switch (sort) {
+            case 'latestAddedFirst':
+                filteredDinosaurs = sortDinosaursLatestAddedFirst(filteredDinosaurs);
+                break;
+            case 'firstlyAddedFirst':
+                filteredDinosaurs = sortDinosaursFirstlyAddedFirst(filteredDinosaurs);
+                break;
+            case 'oldestFirst':
+                filteredDinosaurs = sortDinosaursOldestFirst(filteredDinosaurs);
+                break;
+            case 'newestFirst':
+                filteredDinosaurs = sortDinosaursNewestFirst(filteredDinosaurs);
+                break;
+            case 'heaviestFirst':
+                filteredDinosaurs = sortDinosaursHeaviestFirst(filteredDinosaurs);
+                break;
+            case 'lightestFirst':
+                filteredDinosaurs = sortDinosaursLightestFirst(filteredDinosaurs);
+                break;
+            case 'longestFirst':
+                filteredDinosaurs = sortDinosaursLongestFirst(filteredDinosaurs);
+                break;
+            case 'smallestFirst':
+                filteredDinosaurs = sortDinosaursSmallestFirst(filteredDinosaurs);
+                break;
+            default:
+                break;
+        }
+    }
 
     // DOM ---------------------------------------------------------------------
 
@@ -210,23 +401,6 @@ export const renderPage = () => {
             </div>
         `;
     }
-    const getInfraOrderCheckbox = (infraOrder, filters) => {
-        let isChecked = false;
-        if (filters.classification == infraOrder.name) {
-                isChecked = true;
-            };
-        return `
-            <div class="filter-container">
-                <input 
-                    type="radio"
-                    id="${infraOrder.name}" 
-                    name="classification" 
-                    ${isChecked ? 'checked' : ''} 
-                    style="margin-left: 40px;" />
-                <label for="${infraOrder.name}" class="infra-order-label">${infraOrder.name}</label>
-            </div>
-        `;
-    }
     const getFamilyCheckbox = (family, filters) => {
         let isChecked = false;
         if (filters.classification == family.name) {
@@ -239,7 +413,7 @@ export const renderPage = () => {
                     id="${family.name}" 
                     name="classification" 
                     ${isChecked ? 'checked' : ''} 
-                    style="margin-left: 60px;" />
+                    style="margin-left: 40px;" />
                 <label for="${family.name}" class="family-label">${family.name}</label>
             </div>
         `;
@@ -256,7 +430,7 @@ export const renderPage = () => {
                     id="${genus.name}" 
                     name="classification" 
                     ${isChecked ? 'checked' : ''} 
-                    style="margin-left: 80px;" />
+                    style="margin-left: 60px;" />
                 <label for="${genus.name}" class="genus-label">${genus.name}</label>
             </div>
         `;
@@ -279,13 +453,10 @@ export const renderPage = () => {
             string += getOrderCheckbox(order, filters);
             order.sub_orders.forEach(subOrder => {
                 string += getSubOrderCheckbox(subOrder, filters);
-                subOrder.infra_orders.forEach(infraOrder => {
-                    string += getInfraOrderCheckbox(infraOrder, filters);
-                    infraOrder.families.forEach(family => {
-                        string += getFamilyCheckbox(family, filters);
-                        family.genus.forEach(genus => {
-                            string += getGenusCheckbox(genus, filters);
-                        });
+                subOrder.families.forEach(family => {
+                    string += getFamilyCheckbox(family, filters);
+                    family.genus.forEach(genus => {
+                        string += getGenusCheckbox(genus, filters);
                     });
                 });
             });
@@ -304,7 +475,14 @@ export const renderPage = () => {
         }
         return `
             <div class="filter-container">
-                <input type="checkbox" id="${period.name}" name="${period.name}" ${isChecked ? 'checked' : ''} /><label for="${period.name}">${period.name}</label>
+                <input type="checkbox" id="${period.name}" name="${period.name}" ${isChecked ? 'checked' : ''} />
+                <label for="${period.name}" class="period-span-label">
+                    <div class="period-span-name">${period.name}</div> 
+                    <div class="period-span-area">
+                        <span class="period-span"> ${period.start_date}</span>
+                        <span class="period-span">${period.end_date}</span>
+                    </div>
+                </label>
             </div>
         `;
     }
@@ -436,7 +614,7 @@ export const renderPage = () => {
                         
                         <div class="buttons-container">
                             <button class="reset-button" onclick="resetFilters()">Réinitialiser</button>
-                            <button class="apply-button" onclick="applyFilters()">Appliquer</button>
+                            <button class="apply-button" onclick="applyModalFilters()">Appliquer</button>
                         </div>
                     </div>
                 </div>
@@ -452,6 +630,122 @@ export const renderPage = () => {
         isModalOpened = false;
     }
     window.closeModal = closeModal;
+
+    const openModal2 = () => {
+        const sort = getUrlSorting();
+        if (modal2Exist) {
+            document.getElementById('modal2Background').style.display = 'flex';
+            document.getElementById('modal2Div').style.display = 'flex';
+        } else {
+            const bg = LAZR.DOM.createElement('div', 'modal2Background', 'modal-background', ``);
+            bg.addEventListener('click', closeModal2);
+            document.getElementById('main').appendChild(bg);
+            document.getElementById('main').appendChild(LAZR.DOM.createElement('div', 'modal2Div', 'modal-div', `
+                <div class="modal-content">
+                    <div class="modal-inner-content">
+                        <span style="font-size: 25px;">Tri</span>
+
+                        <span class="period-group-title">Par date d'ajout</span>
+                        <div class="checkboxes-container">
+                            <div class="filter-container">
+                                <input 
+                                    type="radio" 
+                                    id="latestAddedFirst"
+                                    name="sort"
+                                    ${sort == 'latestAddedFirst' ? 'checked' : ''} />
+                                <label for="latestAddedFirst">Du dernier ajout au premier ajout</label>
+                            </div>
+                            <div class="filter-container">
+                                <input 
+                                    type="radio" 
+                                    id="firstlyAddedFirst"
+                                    name="sort"
+                                    ${sort == 'firstlyAddedFirst' ? 'checked' : ''} />
+                                <label for="firstlyAddedFirst">Du premier ajout au dernier ajout</label>
+                            </div>
+                        </div>
+
+                        <span class="period-group-title">Par période d'apparition</span>
+                        <div class="checkboxes-container">
+                            <div class="filter-container">
+                                <input 
+                                    type="radio" 
+                                    id="oldestFirst"
+                                    name="sort"
+                                    ${sort == 'oldestFirst' ? 'checked' : ''} />
+                                <label for="oldestFirst">Du plus ancien au plus récent</label>
+                            </div>
+
+                            <div class="filter-container">
+                                <input 
+                                    type="radio" 
+                                    id="newestFirst"
+                                    name="sort"
+                                    ${sort == 'newestFirst' ? 'checked' : ''} />
+                                <label for="newestFirst">Du plus récent au plus ancien</label>
+                            </div>
+                        </div>
+
+                        <span class="period-group-title">Par poids</span>
+                        <div class="checkboxes-container">
+                            <div class="filter-container">
+                                <input 
+                                    type="radio" 
+                                    id="heaviestFirst"
+                                    name="sort"
+                                    ${sort == 'heaviestFirst' ? 'checked' : ''} />
+                                <label for="heaviestFirst">Du plus lourd au plus léger</label>
+                            </div>
+
+                            <div class="filter-container">
+                                <input 
+                                    type="radio" 
+                                    id="lightestFirst"
+                                    name="sort"
+                                    ${sort == 'lightestFirst' ? 'checked' : ''} />
+                                <label for="lightestFirst">Du plus léger au plus lourd</label>
+                            </div>
+                        </div>
+
+                        <span class="period-group-title">Par longueur</span>
+                        <div class="checkboxes-container">
+                            <div class="filter-container">
+                                <input 
+                                    type="radio" 
+                                    id="longestFirst"
+                                    name="sort"
+                                    ${sort == 'longestFirst' ? 'checked' : ''} />
+                                <label for="longestFirst">Du plus long au plus court</label>
+                            </div>
+
+                            <div class="filter-container">
+                                <input 
+                                    type="radio" 
+                                    id="smallestFirst"
+                                    name="sort"
+                                    ${sort == 'smallestFirst' ? 'checked' : ''} />
+                                <label for="smallestFirst">Du plus court au plus long</label>
+                            </div>
+                        </div>
+
+                        
+                        <div class="buttons-container">
+                            <button class="apply-button" onclick="applyModalSorting()">Appliquer</button>
+                        </div>
+                    </div>
+                </div>
+            `));
+            modal2Exist = true;
+        }
+        isModal2Opened = true;
+    }
+
+    const closeModal2 = () => {
+        document.getElementById('modal2Background').style.display = 'none';
+        document.getElementById('modal2Div').style.display = 'none';
+        isModal2Opened = false;
+    }
+    window.closeModal2 = closeModal2;
 
     // EXECUTION ---------------------------------------------------------------------------------------------
 
@@ -473,7 +767,7 @@ export const renderPage = () => {
         'page', 
         `
             <div class="top-area">
-                <span></span>
+                <span onclick="onSortClick()">Tri</span>
                 <span onclick="onFiltersClick()">Filtres</span>
             </div>
         `
@@ -481,38 +775,26 @@ export const renderPage = () => {
     page.style.padding = '0px var(--horizontal-padding)';
 
     // Gestion filtres
-    let food = LAZR.URL.getURLParameter('food');
-    let periodsText = LAZR.URL.getURLParameter('periods');
-    let classification = LAZR.URL.getURLParameter('classification');
-    hasFilters = (food != null || periodsText != null || classification != null);
     
-    if (hasFilters) {
-        let periods = periodsText.split('-').filter(Boolean).map(Number);
-        //console.log('has filters');
-        //console.log(food);
-        //console.table(periods);
-        const filters = {
-            food: food,
-            periods: periods,
-            classification: classification
+    const filters = getUrlFilters();
+    getFilteredDinosaurs(filters);
+
+    if (filteredDinosaurs.length > 0) {
+        const sort = getUrlSorting();
+        if (sort != '') {
+            getSortedDinosaurs(sort);
         }
-        getFilteredDinosaurs(filters);
-        if (filteredDinosaurs.length > 0) {
-            filteredDinosaurs.forEach(dinosaur => {
-                page.appendChild(renderDinosaurTile(dinosaur)); 
-            });
-        } else {
-            page.innerHTML += `
-                <span style="text-align: center; max-width: 70%;">
-                    Aucun dinosaure dans cette base de données ne correspond aux critères de filtre sélectionnés
-                </span>
-            `;
-        }
-    } else {
-        DINOSAURS.forEach(dinosaur => {
+        filteredDinosaurs.forEach(dinosaur => {
             page.appendChild(renderDinosaurTile(dinosaur)); 
         });
+    } else {
+        page.innerHTML += `
+            <span style="text-align: center; max-width: 70%;">
+                Aucun dinosaure dans cette base de données ne correspond aux critères de filtre sélectionnés
+            </span>
+        `;
     }
+    
 
     /* --------------------------------------------------------------------- */
     
