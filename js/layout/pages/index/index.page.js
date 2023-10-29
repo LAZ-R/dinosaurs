@@ -660,7 +660,7 @@ export const renderPage = () => {
                                     type="radio" 
                                     id="firstlyAddedFirst"
                                     name="sort"
-                                    ${sort == 'firstlyAddedFirst' ? 'checked' : ''} />
+                                    ${(sort == 'firstlyAddedFirst' || sort == '') ? 'checked' : ''} />
                                 <label for="firstlyAddedFirst">Du premier ajout au dernier ajout</label>
                             </div>
                         </div>
