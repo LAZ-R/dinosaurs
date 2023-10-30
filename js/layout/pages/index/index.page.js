@@ -262,7 +262,7 @@ export const renderPage = () => {
         if (filters.classification != null && filters.classification != '' && filters.classification != 'Tous') {
             filtersNumber.classification = 1;
         }
-        console.table(filtersNumber);
+        //console.table(filtersNumber);
     }
 
     const setModalFiltersNumber = () => {
@@ -643,7 +643,6 @@ export const renderPage = () => {
         if (modalExist) {
             document.getElementById('modalBackground').style.display = 'flex';
             document.getElementById('modalDiv').style.display = 'flex';
-            getModalFiltersNumber();
         } else {
             const bg = LAZR.DOM.createElement('div', 'modalBackground', 'modal-background', ``);
             bg.addEventListener('click', closeModal);
