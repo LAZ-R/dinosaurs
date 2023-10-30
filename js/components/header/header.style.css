@@ -3,7 +3,7 @@
 header {
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: var(--header-height);
     min-width: 100%;
@@ -19,6 +19,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 100%;
 }
 
 .header-logo {

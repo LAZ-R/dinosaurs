@@ -26,91 +26,90 @@ const OMNIVOROUS = 'Omnivore';
 
 export const CLASSIFICATION = [
     {
-        name: 'Saurischia',
+        name: 'Ornithischia',
         sub_orders: [
             {
-                name: 'Theropoda',
+                name: 'Marginocephalia',
                 families: [
                     {
-                        name: 'Allosauridae',
+                        name: 'Ceratopsidae',
                         genus: [
                             {
-                                name: 'Allosaurus'
+                                name: 'Pachyrhinosaurus'
+                            },
+                            {
+                                name: 'Styracosaurus'
+                            },
+                            {
+                                name: 'Triceratops'
                             },
                         ]
                     },
                     {
-                        name: 'Dilophosauridae',
+                        name: 'Pachycephalosauridae',
                         genus: [
                             {
-                                name: 'Dilophosaurus'
+                                name: 'Pachycephalosaurus'
                             },
                         ]
                     },
                     {
-                        name: 'Carcharodontosauridae',
+                        name: 'Psittacosauridae',
                         genus: [
                             {
-                                name: 'Giganotosaurus'
-                            },
-                        ]
-                    },
-                    {
-                        name: 'Spinosauridae',
-                        genus: [
-                            {
-                                name: 'Baryonyx'
-                            },
-                            {
-                                name: 'Spiniosaurus'
-                            },
-                        ]
-                    },
-                    {
-                        name: 'Abelisauridae',
-                        genus: [
-                            {
-                                name: 'Carnotaurus'
-                            },
-                        ]
-                    },
-                    {
-                        name: 'Dromaeosauridae',
-                        genus: [
-                            {
-                                name: 'Deinonychus'
-                            },
-                            {
-                                name: 'Velociraptor'
-                            },
-                        ]
-                    },
-                    {
-                        name: 'Oviraptoridae',
-                        genus: [
-                            {
-                                name: 'Citipati'
-                            },
-                        ]
-                    },
-                    {
-                        name: 'Troodontidae',
-                        genus: [
-                            {
-                                name: 'Latenivenatrix'
-                            },
-                        ]
-                    },
-                    {
-                        name: 'Tyrannosauridae',
-                        genus: [
-                            {
-                                name: 'Tyrannosaurus'
+                                name: 'Psittacosaurus'
                             },
                         ]
                     },
                 ]
             },
+            {
+                name: 'Ornithopoda',
+                families: [
+                    {
+                        name: 'Hadrosauridae',
+                        genus: [
+                            {
+                                name: 'Parasaurolophus'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Iguanodontidae',
+                        genus: [
+                            {
+                                name: 'Iguanodon'
+                            },
+                        ]
+                    },
+                ]
+            },
+            {
+                name: 'Thyreophora',
+                families: [
+                    {
+                        name: 'Ankylosauridae',
+                        genus: [
+                            {
+                                name: 'Ankylosaurus'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Stegosauridae',
+                        genus: [
+                            {
+                                name: 'Stegosaurus'
+                            },
+                        ]
+                    },
+                ]
+            },
+        ]
+    },
+    {
+        name: 'Saurischia',
+        sub_orders: [
             {
                 name: 'Sauropodomorpha',
                 families: [
@@ -140,82 +139,92 @@ export const CLASSIFICATION = [
                     },
                 ]
             },
+            {
+                name: 'Theropoda',
+                families: [
+                    {
+                        name: 'Abelisauridae',
+                        genus: [
+                            {
+                                name: 'Carnotaurus'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Allosauridae',
+                        genus: [
+                            {
+                                name: 'Allosaurus'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Carcharodontosauridae',
+                        genus: [
+                            {
+                                name: 'Giganotosaurus'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Dilophosauridae',
+                        genus: [
+                            {
+                                name: 'Dilophosaurus'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Dromaeosauridae',
+                        genus: [
+                            {
+                                name: 'Deinonychus'
+                            },
+                            {
+                                name: 'Velociraptor'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Oviraptoridae',
+                        genus: [
+                            {
+                                name: 'Citipati'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Spinosauridae',
+                        genus: [
+                            {
+                                name: 'Baryonyx'
+                            },
+                            {
+                                name: 'Spiniosaurus'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Troodontidae',
+                        genus: [
+                            {
+                                name: 'Latenivenatrix'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Tyrannosauridae',
+                        genus: [
+                            {
+                                name: 'Tyrannosaurus'
+                            },
+                        ]
+                    },
+                ]
+            },
         ]
     },
-    {
-        name: 'Ornithischia',
-        sub_orders: [
-            {
-                name: 'Marginocephalia',
-                families: [
-                    {
-                        name: 'Ceratopsidae',
-                        genus: [
-                            {
-                                name: 'Pachyrhinosaurus'
-                            },
-                            {
-                                name: 'Styracosaurus'
-                            },
-                            {
-                                name: 'Triceratops'
-                            },
-                        ]
-                    },
-                    {
-                        name: 'Pachycephalosauridae',
-                        genus: [
-                            {
-                                name: 'Pachycephalosaurus'
-                            },
-                        ]
-                    },
-                ]
-            },
-            {
-                name: 'Ornithopoda',
-                families: [
-                    {
-                        name: 'Iguanodontidae',
-                        genus: [
-                            {
-                                name: 'Iguanodon'
-                            },
-                        ]
-                    },
-                    {
-                        name: 'Hadrosauridae',
-                        genus: [
-                            {
-                                name: 'Parasaurolophus'
-                            },
-                        ]
-                    },
-                ]
-            },
-            {
-                name: 'Thyreophora',
-                families: [
-                    {
-                        name: 'Ankylosauridae',
-                        genus: [
-                            {
-                                name: 'Ankylosaurus'
-                            },
-                        ]
-                    },
-                    {
-                        name: 'Stegosauridae',
-                        genus: [
-                            {
-                                name: 'Stegosaurus'
-                            },
-                        ]
-                    },
-                ]
-            },
-        ]
-    }
+    
 ];
   
 
@@ -233,7 +242,7 @@ export const DINOSAURS = [
         average_height: 450,          // Hauteur moyenne en centimètres
         periods: [MAASTRICHTIEN],     // Tableau des périodes auxquelles cette espèce a vécu (dans l'ordre chronologique)
         description:                  // Description rapide de l'espèce
-            `Tyrannosaurus rex est l'une des plus célèbres espèces de dinosaures. Ce fut l'un des derniers dinosaures non-aviens à avoir vécu jusqu'à l'extinction survenue à la limite Crétacé-Paléogène, il y a 66 millions d'années.`,
+            `<b><i>Tyrannosaurus rex</i></b> est l'une des plus célèbres espèces de dinosaures. Ce fut l'un des derniers dinosaures non-aviens à avoir vécu jusqu'à l'extinction survenue à la limite Crétacé-Paléogène, il y a 66 millions d'années.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Tyrannosaurus',
         images: [
             'https://static.nationalgeographic.fr/files/styles/image_3200/public/RJ%20Palmer_0.webp',
@@ -253,7 +262,7 @@ export const DINOSAURS = [
         average_height: 400,
         periods: [MAASTRICHTIEN],
         description:
-            ``,
+            `<b><i>Triceratops horridus</i></b>, cératopsien reconnaissable à ses trois cornes et sa collerette osseuse protectrice, était une proie majeure des <a href="./?page=dinosaurDetails&id=0"><b><i>Tyrannosaurus Rex</i></b></a>.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Triceratops_horridus',
         images: [
             'https://i.redd.it/8o23pauomfob1.png',
@@ -274,7 +283,7 @@ export const DINOSAURS = [
         average_height: 50,
         periods: [CAMPANIEN],
         description:
-        ``,
+        `<b><i>Velociraptor mongoliensis</i></b> était un dromaeosauridé bipède, doté de griffes acérées. Prédateur agile, il chassait probablement en meute, s'attaquant à de petites proies et des dinosaures herbivores plus grands.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Velociraptor',
         images: [
             'https://o.quizlet.com/rxkRaOesGgYXkmhWFQVl1A.png',
@@ -293,7 +302,7 @@ export const DINOSAURS = [
         average_height: 400,
         periods: [KIMMERIDGIEN],
         description:
-            ``,
+            `<b><i>Diplodocus carnegii</i></b> possédait un long cou commun aux autres sauropodes, et une queue en fouet caractéristique. Paisible mangeur de végétaux, il devait faire face à des prédateurs comme <a href="./?page=dinosaurDetails&id=9"><b><i>Allosaurus fragilis</i></b></a>`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Diplodocus',
         images: [
             'https://cdna.artstation.com/p/assets/images/images/029/379/044/large/marcos-villarroel-diplodocus-carnegii-by-highdarktemplar-ddin7ng-fullview.jpg?1597343177',
@@ -355,8 +364,9 @@ export const DINOSAURS = [
         ``,
         wiki_link: 'https://fr.wikipedia.org/wiki/Spinosaurus',
         images: [
-            'https://cdnb.artstation.com/p/assets/images/images/029/215/421/large/caio-negri-spinosaurus-aegyptiacus-final-2.jpg?1596810820',
+            'https://images.squarespace-cdn.com/content/v1/5950b5941b10e30c09a82dd9/1591832259138-AWDZS5AVWF3S84HS6U8J/rjpalmer_spinosaurus_SITE_001.jpg?format=2500w',
             'https://static.dw.com/image/62079144_605.webp',
+            'https://cdnb.artstation.com/p/assets/images/images/029/215/421/large/caio-negri-spinosaurus-aegyptiacus-final-2.jpg?1596810820',
         ],
     },
     {
@@ -651,6 +661,44 @@ export const DINOSAURS = [
         wiki_link: 'https://fr.wikipedia.org/wiki/Dilophosaurus',
         images: [
             'https://static.scientificamerican.com/sciam/cache/file/772FAB35-5C60-47BD-AF64576CF62E910E_source.jpg?w=2000&h=1123&761A6DFA-B87F-45D1-99983B70E46AC8DF',
+        ],
+    },
+    {
+        id: 22,
+        name: 'Psittacosaurus mongoliensis',
+        order: 'Ornithischia',
+        sub_order: 'Marginocephalia',
+        family: 'Psittacosauridae',
+        genus: 'Psittacosaurus',
+        food: HERBIVOROUS,
+        average_mass: 25,
+        average_length: 175,
+        average_height: 50,
+        periods: [BARREMIEN, APTIEN, ALBIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Psittacosaurus',
+        images: [
+            'https://mir-s3-cdn-cf.behance.net/project_modules/fs/1c97b7108291319.5fbac49596d78.jpg',
+        ],
+    },
+    {
+        id: 23,
+        name: 'Gallimimus bullatus',
+        order: 'Saurischia',
+        sub_order: 'Theropoda',
+        family: 'Ornithomimidae',
+        genus: 'Gallimimus',
+        food: HERBIVOROUS,
+        average_mass: 445,
+        average_length: 500,
+        average_height: 250,
+        periods: [MAASTRICHTIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Gallimimus',
+        images: [
+            'https://everydayoriginal.com/wp-content/uploads/2022/02/Gallimimus_final-scaled.jpg',
         ],
     },
 ]

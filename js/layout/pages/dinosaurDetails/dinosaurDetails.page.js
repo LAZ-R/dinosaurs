@@ -115,6 +115,11 @@ export const renderPage = () => {
         return string;
     }
 
+    const gotoWiki = (link) => {
+        window.location.href = link;
+    }
+    window.gotoWiki = gotoWiki;
+
     /* --------------------------------------------------------------------- */
     const dinosaurId = new URLSearchParams(window.location.search).get('id');
     const dinosaur = getDinosaurById(dinosaurId);
@@ -123,7 +128,7 @@ export const renderPage = () => {
 
     const headerIndexLink = document.getElementById('headerIndexLink');
     headerIndexLink.innerHTML = '';
-    headerIndexLink.innerHTML = `<span class="dinosaur-page--header-name">${dinosaur.name}</span>`;
+    headerIndexLink.innerHTML = `<span class="dinosaur-page--header-name" onclick="gotoWiki('${dinosaur.wiki_link}')">${dinosaur.name}</span>`;
 
     const page = LAZR.DOM.createElement(
         'div', 

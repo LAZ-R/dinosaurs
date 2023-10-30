@@ -8,9 +8,11 @@ export const renderPage = () => {
     // Variables globales ------------------------------------------------------------------------------------
     // Filtres
     let filteredDinosaurs = [];
+    let filtersNumber = {food: 0, periods: 0, classification: 0};
     // Modale
     let modalExist = false;
     let isModalOpened = false;
+    // Tri
     // Modale 2
     let modal2Exist = false;
     let isModal2Opened = false;
@@ -22,6 +24,7 @@ export const renderPage = () => {
     // USER INTERACTIONS -------------------------------------------------------
 
     // Filter ----------------------------------------------
+    
     const onFiltersClick = () => {
         const filters = getUrlFilters();
         if (!isModalOpened) {
@@ -88,9 +91,9 @@ export const renderPage = () => {
                 case 1:
                     height = '151px'
                     break;
-                case 2:
+                /* case 2:
                     height = '1242px'
-                    break;
+                    break; */
                 default:
                     height = 'fit-content'
                     break;
@@ -105,7 +108,8 @@ export const renderPage = () => {
     // FILTERING ------------------------------------------------------------------
 
     const getUrlFilters = () => {
-        let filters = { food: null, periods: [], classification: null};
+        let blankPeriods = [];
+        let filters = { food: null, periods: blankPeriods, classification: null};
         
         let foodFilter = LAZR.URL.getURLParameter('food');
         let periodsTextFilter = LAZR.URL.getURLParameter('periods');
@@ -125,13 +129,13 @@ export const renderPage = () => {
     }
 
     const getModalFilters = () => {
-        let food = [];
+        let food = '';
 
         // Récupération du Régime alimentaire
-        if (document.getElementById('carnivore').checked) { food.push('Carnivore')};
-        if (document.getElementById('herbivore').checked) { food.push('Herbivore')};
-        if (document.getElementById('omnivore').checked) { food.push('Omnivore')};
-        if (document.getElementById('tous').checked) { food.push('Carnivore', 'Herbivore', 'Omnivore')};
+        if (document.getElementById('carnivore').checked) { food = 'Carnivore'};
+        if (document.getElementById('herbivore').checked) { food = 'Herbivore'};
+        if (document.getElementById('omnivore').checked) { food = 'Omnivore'};
+        if (document.getElementById('tous').checked) { food = 'Carnivore,Herbivore,Omnivore'};
         //console.table(food);
 
         // Récupération des périodes cochées
@@ -144,18 +148,18 @@ export const renderPage = () => {
         //console.table(periods);
 
         // Récupération de la classification
-        let classification = [];
+        let classification = '';
         if (document.getElementById('tousClassification').checked) {
-            classification.push('Tous');
+            classification = 'Tous';
         } else {
             CLASSIFICATION.forEach(order => {
-                if (document.getElementById(order.name).checked) {classification.push(order.name)}
+                if (document.getElementById(order.name).checked) {classification = order.name}
                 order.sub_orders.forEach(subOrder => {
-                    if (document.getElementById(subOrder.name).checked) {classification.push(subOrder.name)}
+                    if (document.getElementById(subOrder.name).checked) {classification = subOrder.name}
                     subOrder.families.forEach(family => {
-                        if (document.getElementById(family.name).checked) {classification.push(family.name)}
+                        if (document.getElementById(family.name).checked) {classification = family.name}
                         family.genus.forEach(genus => {
-                            if (document.getElementById(genus.name).checked) {classification.push(genus.name); }
+                            if (document.getElementById(genus.name).checked) {classification = genus.name}
                         });
                     });
                 });
@@ -230,6 +234,80 @@ export const renderPage = () => {
         });
         return filteredDinosaurs;
     };
+
+    const getUrlFiltersNumber = () => {
+        filtersNumber = {food: 0, periods: 0, classification: 0};
+        const filters = getUrlFilters();
+        if (filters.food != null && filters.food != '' && filters.food != 'Carnivore,Herbivore,Omnivore') {
+            filtersNumber.food = 1;
+        }
+        if (filters.periods.length > 0) {
+            filtersNumber.periods = filters.periods.length;
+        }
+        if (filters.classification != null && filters.classification != '' && filters.classification != 'Tous') {
+            filtersNumber.classification = 1;
+        }
+
+    }
+
+    const updateFiltersNumber = () => {
+        filtersNumber = {food: 0, periods: 0, classification: 0};
+        const filters = getModalFilters();
+        if (filters.food != null && filters.food != '' && filters.food != 'Carnivore,Herbivore,Omnivore') {
+            filtersNumber.food = 1;
+        }
+        if (filters.periods.length > 0) {
+            filtersNumber.periods = filters.periods.length;
+        }
+        if (filters.classification != null && filters.classification != '' && filters.classification != 'Tous') {
+            filtersNumber.classification = 1;
+        }
+        console.table(filtersNumber);
+    }
+
+    const setModalFiltersNumber = () => {
+        const foodSpan = document.getElementById('foodNotif');
+        const periodsSpan = document.getElementById('periodsNotif');
+        const classificationSpan = document.getElementById('classificationNotif');
+        if (filtersNumber.food > 0) {
+            foodSpan.style.display = 'flex';
+            foodSpan.innerHTML = filtersNumber.food;
+        } else {
+            foodSpan.style.display = 'none';
+        }
+
+        if (filtersNumber.periods > 0) {
+            periodsSpan.style.display = 'flex';
+            periodsSpan.innerHTML = filtersNumber.periods;
+        } else {
+            periodsSpan.style.display = 'none';
+        }
+
+        if (filtersNumber.classification > 0) {
+            classificationSpan.style.display = 'flex';
+            classificationSpan.innerHTML = filtersNumber.classification;
+        } else {
+            classificationSpan.style.display = 'none';
+        }
+    }
+
+    const setGeneralFiltersNumber = () => {
+        const allSpan = document.getElementById('allNotifs');
+        const notifs = filtersNumber.food + filtersNumber.periods + filtersNumber.classification;
+        if (notifs > 0) {
+            allSpan.style.display = 'flex';
+            allSpan.innerHTML = notifs;
+        } else {
+            allSpan.style.display = 'none';
+        }
+    }
+
+    const onCheckboxClick = () => {
+        updateFiltersNumber();
+        setModalFiltersNumber();
+        //setGeneralFiltersNumber();
+    }
+    window.onCheckboxClick = onCheckboxClick;
 
     // SORTING -----------------------------------------------------------------
     const getUrlSorting = () => {
@@ -379,6 +457,7 @@ export const renderPage = () => {
                     type="radio" 
                     id="${order.name}" 
                     name="classification" 
+                    onclick="onCheckboxClick()"
                     ${isChecked ? 'checked' : ''} />
                 <label for="${order.name}" class="order-label">${order.name}</label>
             </div>
@@ -395,6 +474,7 @@ export const renderPage = () => {
                     type="radio" 
                     id="${subOrder.name}" 
                     name="classification" 
+                    onclick="onCheckboxClick()"
                     ${isChecked ? 'checked' : ''} 
                     style="margin-left: 20px;" />
                 <label for="${subOrder.name}" class="sub-order-label">${subOrder.name}</label>
@@ -412,6 +492,7 @@ export const renderPage = () => {
                     type="radio" 
                     id="${family.name}" 
                     name="classification" 
+                    onclick="onCheckboxClick()"
                     ${isChecked ? 'checked' : ''} 
                     style="margin-left: 40px;" />
                 <label for="${family.name}" class="family-label">${family.name}</label>
@@ -429,6 +510,7 @@ export const renderPage = () => {
                     type="radio" 
                     id="${genus.name}" 
                     name="classification" 
+                    onclick="onCheckboxClick()"
                     ${isChecked ? 'checked' : ''} 
                     style="margin-left: 60px;" />
                 <label for="${genus.name}" class="genus-label">${genus.name}</label>
@@ -444,6 +526,7 @@ export const renderPage = () => {
                     type="radio" 
                     id="tousClassification" 
                     name="classification" 
+                    onclick="onCheckboxClick()"
                     ${filters.classification == 'Tous' ? 'checked' : ''}
                     style="margin-bottom: 5px;" />
                 <label for="tousClassification">Tous</label>
@@ -475,7 +558,12 @@ export const renderPage = () => {
         }
         return `
             <div class="filter-container">
-                <input type="checkbox" id="${period.name}" name="${period.name}" ${isChecked ? 'checked' : ''} />
+                <input 
+                    type="checkbox" 
+                    id="${period.name}" 
+                    name="${period.name}" 
+                    onclick="onCheckboxClick()"
+                    ${isChecked ? 'checked' : ''} />
                 <label for="${period.name}" class="period-span-label">
                     <div class="period-span-name">${period.name}</div> 
                     <div class="period-span-area">
@@ -564,14 +652,15 @@ export const renderPage = () => {
                     <div class="modal-inner-content">
                         <span style="font-size: 25px;">Filtres</span>
                         <div id="collapsable1" class="collapsable-div collapsed">
-                            <span style="font-size: 20px;" onclick="collapse(1)">Régime alimentaire${filters.food != '' && filters.food != null ? `<span class="notif">1</span>` : ''}</span>
+                            <span style="font-size: 20px;" onclick="collapse(1)">Régime alimentaire<span id="foodNotif" class="notif">0</span></span>
                             <div class="checkboxes-container">
                                 <div class="filter-container">
                                     <input 
                                         type="radio" 
                                         id="tous" 
                                         name="regime" 
-                                        ${filters.food == 'Carnivore, Herbivore, Omnivore' ? 'checked' : ''}
+                                        onclick="onCheckboxClick()"
+                                        ${filters.food == 'Carnivore,Herbivore,Omnivore' ? 'checked' : ''}
                                         style="margin-bottom: 5px;" />
                                     <label for="tous">Tous</label>
                                 </div>
@@ -580,6 +669,7 @@ export const renderPage = () => {
                                         type="radio" 
                                         id="carnivore" 
                                         name="regime" 
+                                        onclick="onCheckboxClick()"
                                         ${filters.food == 'Carnivore' ? 'checked' : ''} />
                                     <label for="carnivore">Carnivore</label>
                                 </div>
@@ -588,6 +678,7 @@ export const renderPage = () => {
                                         type="radio" 
                                         id="herbivore" 
                                         name="regime" 
+                                        onclick="onCheckboxClick()"
                                         ${filters.food == 'Herbivore' ? 'checked' : ''}  />
                                     <label for="herbivore">Herbivore</label>
                                 </div>
@@ -596,6 +687,7 @@ export const renderPage = () => {
                                         type="radio" 
                                         id="omnivore" 
                                         name="regime" 
+                                        onclick="onCheckboxClick()"
                                         ${filters.food == 'Omnivore' ? 'checked' : ''} />
                                     <label for="omnivore">Omnivore</label>
                                 </div>
@@ -603,14 +695,16 @@ export const renderPage = () => {
                         </div>
     
                         <div id="collapsable2" class="collapsable-div collapsed">
-                            <span style="font-size: 20px;" onclick="collapse(2)">Période${filters.periods.length > 0 ? `<span class="notif">${filters.periods.length}</span>` : ''}</span>
+                            <span style="font-size: 20px;" onclick="collapse(2)">Période<span id="periodsNotif" class="notif">0</span></span>
                             ${getPeriodsCheckboxes(filters)}
                         </div>
 
                         <div id="collapsable3" class="collapsable-div collapsed">
-                            <span style="font-size: 20px;" onclick="collapse(3)">Classification${filters.classification != '' && filters.classification != null ? `<span class="notif">1</span>` : ''}</span>
+                            <span style="font-size: 20px;" onclick="collapse(3)">Classification<span id="classificationNotif" class="notif">0</span></span>
                             ${getClassificationCheckboxes(filters)}
                         </div> 
+
+                        <div class="buttons-proxy"></div>
                         
                         <div class="buttons-container">
                             <button class="reset-button" onclick="resetFilters()">Réinitialiser</button>
@@ -622,6 +716,8 @@ export const renderPage = () => {
             modalExist = true;
         }
         isModalOpened = true;
+        getUrlFiltersNumber();
+        setModalFiltersNumber();
     }
 
     const closeModal = () => {
@@ -728,6 +824,7 @@ export const renderPage = () => {
                             </div>
                         </div>
 
+                        <div class="buttons-proxy"></div>
                         
                         <div class="buttons-container">
                             <button class="apply-button" onclick="applyModalSorting()">Appliquer</button>
@@ -748,17 +845,26 @@ export const renderPage = () => {
     window.closeModal2 = closeModal2;
 
     // EXECUTION ---------------------------------------------------------------------------------------------
+    getUrlFiltersNumber();
 
     // Page title
     const pageTitle = LAZR.APP_DATA.getAppName();
     LAZR.DOM.setHTMLTitle(pageTitle);
 
     // Header
+    const sortButton = LAZR.DOM.createElement('div', 'headerSortButton', 'header-sort-button', `<span onclick="onSortClick()">Tri</span>`);
     const headerIndexLink = document.getElementById('headerIndexLink');
+    document.getElementById('header').insertBefore(sortButton, headerIndexLink);
+    
     headerIndexLink.innerHTML = '';
     const headerLogo = LAZR.DOM.createImgElement('headerLogo', 'header-logo', './medias/images/logo-white.svg', 'lazr logo');
     LAZR.CSS.applyColorFilterOnElement(headerLogo, LAZR.CSS.getCssRootVariableValue('--on-primary'));
     headerIndexLink.appendChild(headerLogo);
+
+    const filterButton = LAZR.DOM.createElement('div', 'headerFilterButton', 'header-filter-button', `<span class="notif" id="allNotifs">0</span><span onclick="onFiltersClick()">Filtres</span>`);
+    document.getElementById('header').appendChild(filterButton);
+
+    setGeneralFiltersNumber();
 
     // Page
     const page = LAZR.DOM.createElement(
@@ -766,10 +872,7 @@ export const renderPage = () => {
         'indexPage', 
         'page', 
         `
-            <div class="top-area">
-                <span onclick="onSortClick()">Tri</span>
-                <span onclick="onFiltersClick()">Filtres</span>
-            </div>
+            <div class="top-area"></div>
         `
     );
     page.style.padding = '0px var(--horizontal-padding)';
