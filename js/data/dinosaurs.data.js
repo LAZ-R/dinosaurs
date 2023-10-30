@@ -70,6 +70,9 @@ export const CLASSIFICATION = [
                         name: 'Hadrosauridae',
                         genus: [
                             {
+                                name: 'Lambeosaurus'
+                            },
+                            {
                                 name: 'Parasaurolophus'
                             },
                         ]
@@ -117,7 +120,10 @@ export const CLASSIFICATION = [
                         name: 'Brachiosauridae',
                         genus: [
                             {
-                                name: 'Brachiosaurus'
+                                name: 'Brachiosaurus',
+                            },
+                            {
+                                name: 'Sauroposeidon',
                             },
                         ]
                     },
@@ -134,6 +140,14 @@ export const CLASSIFICATION = [
                         genus: [
                             {
                                 name: 'Argentinosaurus'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Mamenchisauridae',
+                        genus: [
+                            {
+                                name: 'Mamenchisaurus'
                             },
                         ]
                     },
@@ -155,6 +169,14 @@ export const CLASSIFICATION = [
                         genus: [
                             {
                                 name: 'Allosaurus'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Archaeopterygidae',
+                        genus: [
+                            {
+                                name: 'Archaeopteryx'
                             },
                         ]
                     },
@@ -216,6 +238,9 @@ export const CLASSIFICATION = [
                         name: 'Tyrannosauridae',
                         genus: [
                             {
+                                name: 'Daspletosaurus'
+                            },
+                            {
                                 name: 'Tyrannosaurus'
                             },
                         ]
@@ -237,9 +262,9 @@ export const DINOSAURS = [
         family: 'Tyrannosauridae',    // Famille
         genus: 'Tyrannosaurus',       // Genre
         food: CARNIVOROUS,            // Régime alimentaire
-        average_mass: 7500,           // Masse moyenne en kilogrammes
-        average_length: 1200,         // Longueur moyenne en centimètres
-        average_height: 450,          // Hauteur moyenne en centimètres
+        average_mass: 8000,           // Masse moyenne en kilogrammes
+        average_length: 1240,         // Longueur moyenne en centimètres
+        average_height: 400,          // Hauteur moyenne en centimètres
         periods: [MAASTRICHTIEN],     // Tableau des périodes auxquelles cette espèce a vécu (dans l'ordre chronologique)
         description:                  // Description rapide de l'espèce
             `<b><i>Tyrannosaurus rex</i></b> est l'une des plus célèbres espèces de dinosaures. Ce fut l'un des derniers dinosaures non-aviens à avoir vécu jusqu'à l'extinction survenue à la limite Crétacé-Paléogène, il y a 66 millions d'années.`,
@@ -262,7 +287,7 @@ export const DINOSAURS = [
         average_height: 400,
         periods: [MAASTRICHTIEN],
         description:
-            `<b><i>Triceratops horridus</i></b>, cératopsien reconnaissable à ses trois cornes et sa collerette osseuse protectrice, était une proie majeure des <a href="./?page=dinosaurDetails&id=0"><b><i>Tyrannosaurus Rex</i></b></a>.`,
+            `<b><i>Triceratops horridus</i></b>, cératopsien reconnaissable à ses trois cornes et sa collerette osseuse protectrice, était une proie majeure de <a href="./?page=dinosaurDetails&id=0"><b><i>Tyrannosaurus rex</i></b></a>.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Triceratops_horridus',
         images: [
             'https://i.redd.it/8o23pauomfob1.png',
@@ -302,7 +327,7 @@ export const DINOSAURS = [
         average_height: 400,
         periods: [KIMMERIDGIEN],
         description:
-            `<b><i>Diplodocus carnegii</i></b> possédait un long cou commun aux autres sauropodes, et une queue en fouet caractéristique. Paisible mangeur de végétaux, il devait faire face à des prédateurs comme <a href="./?page=dinosaurDetails&id=9"><b><i>Allosaurus fragilis</i></b></a>`,
+            `<b><i>Diplodocus carnegii</i></b> possédait un long cou typique des sauropodes, et une queue en fouet caractéristique. Paisible mangeur de végétaux, les jeunes devaient faire face à des prédateurs comme <a href="./?page=dinosaurDetails&id=9"><b><i>Allosaurus fragilis</i></b></a>`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Diplodocus',
         images: [
             'https://cdna.artstation.com/p/assets/images/images/029/379/044/large/marcos-villarroel-diplodocus-carnegii-by-highdarktemplar-ddin7ng-fullview.jpg?1597343177',
@@ -322,7 +347,7 @@ export const DINOSAURS = [
         average_height: 350,
         periods: [KIMMERIDGIEN, TITHONIEN],
         description:
-        ``,
+            `<b><i>Stegosaurus stenops</i></b> se distinguait par ses plaques osseuses et sa queue à pointes. Herbivore, il pouvait être la proie d'<a href="./?page=dinosaurDetails&id=9"><b><i>Allosaurus fragilis</i></b></a> ou de Ceratosaurus.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Stegosaurus',
         images: [
             'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f3893338-5b4a-4520-8a01-52fca1771b85/d72acy2-19b6ce94-6690-42b8-b009-b5f36c8fbb87.jpg/v1/fill/w_1024,h_749,q_75,strp/stegosaurus_stenops_by_cheungchungtat_d72acy2-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzQ5IiwicGF0aCI6IlwvZlwvZjM4OTMzMzgtNWI0YS00NTIwLThhMDEtNTJmY2ExNzcxYjg1XC9kNzJhY3kyLTE5YjZjZTk0LTY2OTAtNDJiOC1iMDA5LWI1ZjM2YzhmYmI4Ny5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.GellsxYfXWUFD6Luqi0L_8QgWRnZQ8nDEvrdjsZ5xF8',
@@ -337,12 +362,12 @@ export const DINOSAURS = [
         family: 'Brachiosauridae',
         genus: 'Brachiosaurus',
         food: HERBIVOROUS,
-        average_mass: 40000,
+        average_mass: 42000,
         average_length: 2500,
         average_height: 1200,
         periods: [KIMMERIDGIEN, TITHONIEN],
         description:
-            ``,
+            `<b><i>Brachiosaurus altithorax</i></b> se caractérisait par son long cou et ses pattes avant plus longues que ses pattes arrières. Herbivore géant, les jeunes pouvaient cepandant être attaqués par <a href="./?page=dinosaurDetails&id=9"><b><i>Allosaurus fragilis</i></b></a>.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Brachiosaurus',
         images: [
             'https://img.huffingtonpost.com/asset/5baebf9d24000031009683be.jpeg?ops=scalefit_960_noupscale&format=webp',
@@ -357,11 +382,11 @@ export const DINOSAURS = [
         genus: 'Spinosaurus',
         food: CARNIVOROUS,
         average_mass: 7400,
-        average_length: 1500,
+        average_length: 1400,
         average_height: 450,
         periods: [ALBIEN, CENOMANIEN],
         description:
-        ``,
+        `<b><i>Spinosaurus aegyptiacus</i></b>, carnivore semi-aquatique se nourrissant au moins partiellement de poissons, possédait une voile dorsale caractéristique.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Spinosaurus',
         images: [
             'https://images.squarespace-cdn.com/content/v1/5950b5941b10e30c09a82dd9/1591832259138-AWDZS5AVWF3S84HS6U8J/rjpalmer_spinosaurus_SITE_001.jpg?format=2500w',
@@ -382,7 +407,7 @@ export const DINOSAURS = [
         average_height: 170,
         periods: [MAASTRICHTIEN],
         description:
-        ``,
+        `<b><i>Ankylosaurus magniventris</i></b> se défendait des prédateurs tels que <a href="./?page=dinosaurDetails&id=0"><b><i>Tyrannosaurus rex</i></b></a> grâce à son armure corporelle et sa queue munie d'une massue redoutable.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Ankylosaurus',
         images: [
             'https://as2.ftcdn.net/v2/jpg/02/56/88/51/1000_F_256885103_UuFC4aUnjnArbkEHoxu3HKPwQOYcaumu.jpg',
@@ -456,7 +481,7 @@ export const DINOSAURS = [
         family: 'Carcharodontosauridae',
         genus: 'Giganotosaurus',
         food: CARNIVOROUS,
-        average_mass: 6750,
+        average_mass: 7000,
         average_length: 1250,
         average_height: 400,
         periods: [CENOMANIEN],
@@ -475,15 +500,15 @@ export const DINOSAURS = [
         family: 'Lithostrotia',
         genus: 'Argentinosaurus',
         food: HERBIVOROUS,
-        average_mass: 70000,
-        average_length: 3500,
-        average_height: 800,
+        average_mass: 75000,
+        average_length: 3400,
+        average_height: 1000,
         periods: [CENOMANIEN, TURONIEN],
         description:
         ``,
         wiki_link: 'https://fr.wikipedia.org/wiki/Argentinosaurus',
         images: [
-            'https://dailygeekshow.com/wp-content/uploads/2023/03/une-animaux-geants-696x392.jpg',
+            'https://www.thoughtco.com/thmb/ajEM1LXPOGv35ldFahLTG-OghH8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1087324712-57e7d9a94d0c499387ebc24792fa4f9d.jpg',
         ],
     },
     {
@@ -699,6 +724,121 @@ export const DINOSAURS = [
         wiki_link: 'https://fr.wikipedia.org/wiki/Gallimimus',
         images: [
             'https://everydayoriginal.com/wp-content/uploads/2022/02/Gallimimus_final-scaled.jpg',
+        ],
+    },
+    {
+        id: 24,
+        name: 'Sauroposeidon proteles',
+        order: 'Saurischia',
+        sub_order: 'Sauropodomorpha',
+        family: 'Brachiosauridae',
+        genus: 'Sauroposeidon',
+        food: HERBIVOROUS,
+        average_mass: 50000,
+        average_length: 3100,
+        average_height: 1800,
+        periods: [APTIEN, ALBIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Sauroposéidon',
+        images: [
+            'https://images.dinosaurpictures.org/Sauroposeidon4_d2cf.jpg',
+        ],
+    },
+    {
+        id: 25,
+        name: 'Daspletosaurus wilsoni',
+        order: 'Saurischia',
+        sub_order: 'Theropoda',
+        family: 'Tyrannosauridae',
+        genus: 'Daspletosaurus',
+        food: CARNIVOROUS,
+        average_mass: 2500,
+        average_length: 850,
+        average_height: 250,
+        periods: [CAMPANIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Daspletosaurus',
+        images: [
+            'https://cdna.artstation.com/p/assets/images/images/056/512/714/large/rudolf-hima-d-wilsoni-illus-dfowler-hires.jpg?1669422447',
+            ''
+        ],
+    },
+    {
+        id: 26,
+        name: 'Lambeosaurus lambei',
+        order: 'Ornithischia',
+        sub_order: 'Ornithopoda',
+        family: 'Hadrosauridae',
+        genus: 'Lambeosaurus',
+        food: HERBIVOROUS,
+        average_mass: 2500,
+        average_length: 600,
+        average_height: 220,
+        periods: [CAMPANIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Lambeosaurus',
+        images: [
+            'https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/lambeosaurus-daniel-eskridge.jpg',
+        ],
+    },
+    /* {
+        id: 27,
+        name: 'Bruhathkayosaurus matleyi',
+        order: 'Saurischia',
+        sub_order: 'Sauropodomorpha',
+        family: 'Lithostrotia',
+        genus: 'Bruhathkayosaurus',
+        food: HERBIVOROUS,
+        average_mass: 110000,
+        average_length: 3500,
+        average_height: 1300,
+        periods: [MAASTRICHTIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Bruhathkayosaurus',
+        images: [
+            'https://images.fineartamerica.com/images-medium-large-5/futalognkosaurus-dukei-dinosaur-julius-t-csotonyiscience-photo-library.jpg',
+        ],
+    }, */
+    {
+        id: 27,
+        name: 'Mamenchisaurus sinocanadorum',
+        order: 'Saurischia',
+        sub_order: 'Sauropodomorpha',
+        family: 'Mamenchisauridae',
+        genus: 'Mamenchisaurus',
+        food: HERBIVOROUS,
+        average_mass: 70000,
+        average_length: 2600,
+        average_height: 1400,
+        periods: [OXFORDIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Mamenchisaurus',
+        images: [
+            'https://cdna.artstation.com/p/assets/images/images/060/773/568/large/julia-d-oliveira-mamenchisaurus.jpg?1679309545',
+        ],
+    },
+    {
+        id: 28,
+        name: 'Archaeopteryx siemensii',
+        order: 'Saurischia',
+        sub_order: 'Theropoda',
+        family: 'Archaeopterygidae',
+        genus: 'Archaeopteryx',
+        food: CARNIVOROUS,
+        average_mass: .5,
+        average_length: 40,
+        average_height: 20,
+        periods: [TITHONIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Archaeopteryx',
+        images: [
+            'https://cdn.unitycms.io/images/BfC1_XS0qmTABqW0YvVQjt.jpg?op=ocroped&val=1600,1600,1000,1000,0,0&sum=RpoxDhTQ5U8',
         ],
     },
 ]

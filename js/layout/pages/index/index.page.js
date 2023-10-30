@@ -80,6 +80,12 @@ export const renderPage = () => {
     }
     window.applyModalSorting = applyModalSorting;
 
+    const onCheckboxClick = () => {
+        updateFiltersNumber();
+        setModalFiltersNumber();
+    }
+    window.onCheckboxClick = onCheckboxClick;
+
 
     // Collapse --------------------------------------------
     const collapse = (id) => {
@@ -302,13 +308,6 @@ export const renderPage = () => {
         }
     }
 
-    const onCheckboxClick = () => {
-        updateFiltersNumber();
-        setModalFiltersNumber();
-        //setGeneralFiltersNumber();
-    }
-    window.onCheckboxClick = onCheckboxClick;
-
     // SORTING -----------------------------------------------------------------
     const getUrlSorting = () => {
         let sort = LAZR.URL.getURLParameter('sort');
@@ -327,8 +326,64 @@ export const renderPage = () => {
         if (document.getElementById('lightestFirst').checked) { sort = 'lightestFirst'};
         if (document.getElementById('longestFirst').checked) { sort = 'longestFirst'};
         if (document.getElementById('smallestFirst').checked) { sort = 'smallestFirst'};
+        if (document.getElementById('tallestFirst').checked) { sort = 'tallestFirst'};
+        if (document.getElementById('shortestFirst').checked) { sort = 'shortestFirst'};
 
         return sort;
+    }
+
+    const setSortIcon = () => {
+        console.log('test');
+        const sortIcon = document.getElementById('sortIcon');
+        const sortIconOrder = document.getElementById('sortIconOrder');
+        const sort = getUrlSorting();
+
+        if (sort == 'latestAddedFirst') {
+            sortIcon.innerHTML = `<img src="./medias/images/font-awsome/clock-solid.svg" />`;
+            sortIconOrder.innerHTML = `<img src="./medias/images/font-awsome/arrow-down-long-solid.svg" />`;
+        }
+        if (sort == null || sort == '' || sort == 'firstlyAddedFirst') {
+            sortIcon.innerHTML = `<img src="./medias/images/font-awsome/clock-solid.svg" />`;
+            sortIconOrder.innerHTML = `<img src="./medias/images/font-awsome/arrow-up-long-solid.svg" />`;
+        }
+
+        if (sort == 'oldestFirst') {
+            sortIcon.innerHTML = `<img src="./medias/images/font-awsome/calendar-days-solid.svg" />`;
+            sortIconOrder.innerHTML = `<img src="./medias/images/font-awsome/arrow-down-long-solid.svg" />`;
+        }
+        if (sort == 'newestFirst') {
+            sortIcon.innerHTML = `<img src="./medias/images/font-awsome/calendar-days-solid.svg" />`;
+            sortIconOrder.innerHTML = `<img src="./medias/images/font-awsome/arrow-up-long-solid.svg" />`;
+        }
+
+        if (sort == 'heaviestFirst') {
+            sortIcon.innerHTML = `<img src="./medias/images/font-awsome/weight-hanging-solid.svg" />`;
+            sortIconOrder.innerHTML = `<img src="./medias/images/font-awsome/arrow-down-long-solid.svg" />`;
+        }
+        if (sort == 'lightestFirst') {
+            sortIcon.innerHTML = `<img src="./medias/images/font-awsome/weight-hanging-solid.svg" />`;
+            sortIconOrder.innerHTML = `<img src="./medias/images/font-awsome/arrow-up-long-solid.svg" />`;
+        }
+
+        if (sort == 'longestFirst') {
+            sortIcon.innerHTML = `<img src="./medias/images/font-awsome/ruler-horizontal-solid.svg" />`;
+            sortIconOrder.innerHTML = `<img src="./medias/images/font-awsome/arrow-down-long-solid.svg" />`;
+        }
+        if (sort == 'smallestFirst') {
+            sortIcon.innerHTML = `<img src="./medias/images/font-awsome/ruler-horizontal-solid.svg" />`;
+            sortIconOrder.innerHTML = `<img src="./medias/images/font-awsome/arrow-up-long-solid.svg" />`;
+        }
+
+        if (sort == 'tallestFirst') {
+            sortIcon.innerHTML = `<img src="./medias/images/font-awsome/ruler-vertical-solid.svg" />`;
+            sortIconOrder.innerHTML = `<img src="./medias/images/font-awsome/arrow-down-long-solid.svg" />`;
+        }
+        if (sort == 'shortestFirst') {
+            sortIcon.innerHTML = `<img src="./medias/images/font-awsome/ruler-vertical-solid.svg" />`;
+            sortIconOrder.innerHTML = `<img src="./medias/images/font-awsome/arrow-up-long-solid.svg" />`;
+        }
+        
+        
     }
 
     // Sorting functions -----------------------------------
@@ -411,6 +466,22 @@ export const renderPage = () => {
         return dinosaurs;
     }
 
+    const sortDinosaursTallestFirst = (dinosaurs) => {
+        dinosaurs.sort((a, b) => {
+            return b.average_height - a.average_height;
+        });
+    
+        return dinosaurs;
+    }
+
+    const sortDinosaursShortestFirst = (dinosaurs) => {
+        dinosaurs.sort((a, b) => {
+            return a.average_height - b.average_height;
+        });
+    
+        return dinosaurs;
+    }
+
     // -----------------------------------------------------
 
     const getSortedDinosaurs = (sort) => {
@@ -439,6 +510,12 @@ export const renderPage = () => {
             case 'smallestFirst':
                 filteredDinosaurs = sortDinosaursSmallestFirst(filteredDinosaurs);
                 break;
+            case 'tallestFirst':
+                filteredDinosaurs = sortDinosaursTallestFirst(filteredDinosaurs);
+                break;
+            case 'shortestFirst':
+                filteredDinosaurs = sortDinosaursShortestFirst(filteredDinosaurs);
+                break;
             default:
                 break;
         }
@@ -446,6 +523,7 @@ export const renderPage = () => {
 
     // DOM ---------------------------------------------------------------------
 
+    // Classification 
     const getOrderCheckbox = (order, filters) => {
         let isChecked = false;
         if (filters.classification == order.name) {
@@ -547,6 +625,7 @@ export const renderPage = () => {
         return string;
     }
     
+    // Périodes
     const getPeriodCheckbox = (period, filters) => {
         let isChecked = false;
         if (filters.periods.length > 0) {
@@ -639,6 +718,7 @@ export const renderPage = () => {
         `;
     }
 
+    // Modales
     const openModal = (filters) => {
         if (modalExist) {
             document.getElementById('modalBackground').style.display = 'flex';
@@ -741,7 +821,7 @@ export const renderPage = () => {
                     <div class="modal-inner-content">
                         <span style="font-size: 25px;">Tri</span>
 
-                        <span class="period-group-title">Par date d'ajout</span>
+                        <span class="period-group-title"><img class="sort-modal-icon" src="./medias/images/font-awsome/clock-solid.svg" />Par date d'ajout</span>
                         <div class="checkboxes-container">
                             <div class="filter-container">
                                 <input 
@@ -761,7 +841,7 @@ export const renderPage = () => {
                             </div>
                         </div>
 
-                        <span class="period-group-title">Par période d'apparition</span>
+                        <span class="period-group-title"><img class="sort-modal-icon" src="./medias/images/font-awsome/calendar-days-solid.svg" />Par période d'apparition</span>
                         <div class="checkboxes-container">
                             <div class="filter-container">
                                 <input 
@@ -782,7 +862,7 @@ export const renderPage = () => {
                             </div>
                         </div>
 
-                        <span class="period-group-title">Par poids</span>
+                        <span class="period-group-title"><img class="sort-modal-icon" src="./medias/images/font-awsome/weight-hanging-solid.svg" />Par poids</span>
                         <div class="checkboxes-container">
                             <div class="filter-container">
                                 <input 
@@ -803,7 +883,7 @@ export const renderPage = () => {
                             </div>
                         </div>
 
-                        <span class="period-group-title">Par longueur</span>
+                        <span class="period-group-title"><img class="sort-modal-icon" src="./medias/images/font-awsome/ruler-horizontal-solid.svg" />Par longueur</span>
                         <div class="checkboxes-container">
                             <div class="filter-container">
                                 <input 
@@ -821,6 +901,27 @@ export const renderPage = () => {
                                     name="sort"
                                     ${sort == 'smallestFirst' ? 'checked' : ''} />
                                 <label for="smallestFirst">Du plus court au plus long</label>
+                            </div>
+                        </div>
+
+                        <span class="period-group-title"><img class="sort-modal-icon" src="./medias/images/font-awsome/ruler-vertical-solid.svg" />Par hauteur</span>
+                        <div class="checkboxes-container">
+                            <div class="filter-container">
+                                <input 
+                                    type="radio" 
+                                    id="tallestFirst"
+                                    name="sort"
+                                    ${sort == 'tallestFirst' ? 'checked' : ''} />
+                                <label for="tallestFirst">Du plus grand au plus petit</label>
+                            </div>
+
+                            <div class="filter-container">
+                                <input 
+                                    type="radio" 
+                                    id="shortestFirst"
+                                    name="sort"
+                                    ${sort == 'shortestFirst' ? 'checked' : ''} />
+                                <label for="shortestFirst">Du plus petit au plus grand</label>
                             </div>
                         </div>
 
@@ -852,9 +953,15 @@ export const renderPage = () => {
     LAZR.DOM.setHTMLTitle(pageTitle);
 
     // Header
-    const sortButton = LAZR.DOM.createElement('div', 'headerSortButton', 'header-sort-button', `<span onclick="onSortClick()">Tri</span>`);
+    const sortButton = LAZR.DOM.createElement('div', 'headerSortButton', 'header-sort-button', `
+        <div onclick="onSortClick()" class="header-sort-button-inner">
+            <span>Tri</span>
+            <div id="sortIcon" class="sort-icon"></div>
+            <div id="sortIconOrder" class="sort-icon"></div>
+        </div>`);
     const headerIndexLink = document.getElementById('headerIndexLink');
     document.getElementById('header').insertBefore(sortButton, headerIndexLink);
+    setSortIcon();
     
     headerIndexLink.innerHTML = '';
     const headerLogo = LAZR.DOM.createImgElement('headerLogo', 'header-logo', './medias/images/logo-white.svg', 'lazr logo');
