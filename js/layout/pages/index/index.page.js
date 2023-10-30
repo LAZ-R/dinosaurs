@@ -643,6 +643,7 @@ export const renderPage = () => {
         if (modalExist) {
             document.getElementById('modalBackground').style.display = 'flex';
             document.getElementById('modalDiv').style.display = 'flex';
+            getModalFiltersNumber();
         } else {
             const bg = LAZR.DOM.createElement('div', 'modalBackground', 'modal-background', ``);
             bg.addEventListener('click', closeModal);
@@ -714,9 +715,9 @@ export const renderPage = () => {
                 </div>
             `));
             modalExist = true;
+            getUrlFiltersNumber();
         }
         isModalOpened = true;
-        getUrlFiltersNumber();
         setModalFiltersNumber();
     }
 
