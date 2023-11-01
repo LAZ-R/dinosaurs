@@ -133,7 +133,7 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--gray-20);
+    background-color: var(--gray-80);
     -webkit-transition: .3s;
     transition: .3s ease-out;
   }
@@ -151,7 +151,7 @@ button {
   }
   
   input:checked + .slider {
-    background-color: var(--primary);
+    background-color: #3E7469;
   }
   
   input:checked + .slider:before {

@@ -10,6 +10,22 @@ const handleCheck = (id) => {
             if (setting.id == id) {
                 setting.isActive = document.getElementById(id).checked;
                 if (setting.id == 'jsonWizard') shoudlRefresh = true;
+                if (setting.id == 'latestAddedFirst') {
+                    document.getElementById('firstlyAddedFirst').checked = !document.getElementById(id).checked;
+                    settingsGroups.settings.forEach(userSetting => {
+                        if (userSetting.id == 'firstlyAddedFirst') {
+                            userSetting.isActive = !document.getElementById(id).checked;
+                        };
+                    });
+                }
+                if (setting.id == 'firstlyAddedFirst') {
+                    document.getElementById('latestAddedFirst').checked = !document.getElementById(id).checked;
+                    settingsGroups.settings.forEach(userSetting => {
+                        if (userSetting.id == 'latestAddedFirst') {
+                            userSetting.isActive = !document.getElementById(id).checked;
+                        };
+                    });
+                }
             }
         });
     });
@@ -49,10 +65,14 @@ const renderSettingsGroup = (settingsGroup) => {
 
 export const renderPage = () => {
 
-    LAZR.DOM.setHTMLTitle('Settings');
+    LAZR.DOM.setHTMLTitle('Paramètres');
+
+    document.getElementById('headerIndexLink').addEventListener('click', () => {
+        history.back();
+    });
 
     const page = LAZR.DOM.createElement('div', 'settingsPage', 'page', `
-        <h1 style="padding-left: var(--horizontal-padding)">Settings</h1>`);
+        <h1 style="padding-left: var(--horizontal-padding)">Paramètres</h1>`);
     settings.forEach(settingsGroup => {
         if ((settingsGroup.name == 'Advanced' && LAZR.STORAGE.isUserDev()) || settingsGroup.name != 'Advanced') {
             page.appendChild(LAZR.DOM.getElementFromHTMLString(renderSettingsGroup(settingsGroup)));

@@ -60,13 +60,13 @@
 }
 
 .period-section {
-    background-color: #1c2220;
+    background-color: #252525;
     min-height: 168px;
     max-height: 168px;
 }
 .period-title {
-    background-color: #262e2b;
-    border-bottom: 4px solid #2f5045;
+    background-color: var(--primary);
+    border-bottom: 4px solid #3E7469;
 }
 
 .periods-sub-section {
@@ -103,31 +103,21 @@
 }
 
 .classification-section {
-    background-color: #232421;
+    background-color: #252525;
     min-height: 160px;
     max-height: 160px;
 }
 .classification-title {
-    background-color: #34352c;
-    border-bottom: 4px solid #4d502f;
-}
-
-.aspect-section {
-    background-color: #272323;
-    min-height: 132px;
-    max-height: 132px;
-}
-.aspect-title {
-    background-color: #312828;
-    border-bottom: 4px solid #502f2f;
+    background-color: var(--primary);
+    border-bottom: 4px solid #743E49;
 }
 
 .description-section {
-    background-color: #1e2124;
-    min-height: 185px;
-    max-height: 185px;
+    background-color: #252525;
+    min-height: 450px;
+    max-height: 450px;
 }
 .description-title {
-    background-color: #282e33;
-    border-bottom: 4px solid #2f4150;
+    background-color: var(--primary);
+    border-bottom: 4px solid #64743E;
 }

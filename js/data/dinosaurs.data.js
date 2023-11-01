@@ -78,6 +78,14 @@ export const CLASSIFICATION = [
                         ]
                     },
                     {
+                        name: 'Heterodontosauridae',
+                        genus: [
+                            {
+                                name: 'Heterodontosaurus'
+                            },
+                        ]
+                    },
+                    {
                         name: 'Iguanodontidae',
                         genus: [
                             {
@@ -136,6 +144,14 @@ export const CLASSIFICATION = [
                         ]
                     },
                     {
+                        name: 'Plateosauridae',
+                        genus: [
+                            {
+                                name: 'Plateosaurus'
+                            },
+                        ]
+                    },
+                    {
                         name: 'Lithostrotia',
                         genus: [
                             {
@@ -189,6 +205,22 @@ export const CLASSIFICATION = [
                         ]
                     },
                     {
+                        name: 'Compsognathidae',
+                        genus: [
+                            {
+                                name: 'Compsognathus'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Deinocheiridae',
+                        genus: [
+                            {
+                                name: 'Deinocheirus'
+                            },
+                        ]
+                    },
+                    {
                         name: 'Dilophosauridae',
                         genus: [
                             {
@@ -204,6 +236,14 @@ export const CLASSIFICATION = [
                             },
                             {
                                 name: 'Velociraptor'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Herrerasauridae',
+                        genus: [
+                            {
+                                name: 'Herrerasaurus'
                             },
                         ]
                     },
@@ -443,7 +483,7 @@ export const DINOSAURS = [
         average_mass: 800,
         average_length: 850,
         average_height: 300,
-        periods: [KIMMERIDGIEN, TITHONIEN, BERRIASIEN, VALANGINIEN, HAUTERIVIEN, BARREMIEN, APTIEN, ALBIEN, CENOMANIEN, TURONIEN],
+        periods: [KIMMERIDGIEN, TITHONIEN],
         description:
         ``,
         wiki_link: 'https://fr.wikipedia.org/wiki/Allosaurus',
@@ -657,7 +697,7 @@ export const DINOSAURS = [
         sub_order: 'Theropoda',
         family: 'Oviraptoridae',
         genus: 'Citipati',
-        food: HERBIVOROUS,
+        food: OMNIVOROUS,
         average_mass: 75,
         average_length: 250,
         average_height: 170,
@@ -714,7 +754,7 @@ export const DINOSAURS = [
         sub_order: 'Theropoda',
         family: 'Ornithomimidae',
         genus: 'Gallimimus',
-        food: HERBIVOROUS,
+        food: OMNIVOROUS,
         average_mass: 445,
         average_length: 500,
         average_height: 250,
@@ -839,6 +879,101 @@ export const DINOSAURS = [
         wiki_link: 'https://fr.wikipedia.org/wiki/Archaeopteryx',
         images: [
             'https://cdn.unitycms.io/images/BfC1_XS0qmTABqW0YvVQjt.jpg?op=ocroped&val=1600,1600,1000,1000,0,0&sum=RpoxDhTQ5U8',
+        ],
+    },
+    {
+        id: 29,
+        name: 'Deinocheirus mirificus',
+        order: 'Saurischia',
+        sub_order: 'Theropoda',
+        family: 'Deinocheiridae',
+        genus: 'Deinocheirus',
+        food: OMNIVOROUS,
+        average_mass: 6000,
+        average_length: 1000,
+        average_height: 450,
+        periods: [MAASTRICHTIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Deinocheiru',
+        images: [
+            'https://damirgmartin.com/images/fulls/26.jpg',
+        ],
+    },
+    {
+        id: 30,
+        name: 'Heterodontosaurus tucki',
+        order: 'Ornithischia',
+        sub_order: 'Ornithopoda',
+        family: 'Heterodontosauridae',
+        genus: 'Heterodontosaurus',
+        food: HERBIVOROUS,
+        average_mass: 4,
+        average_length: 130,
+        average_height: 40,
+        periods: [HETTANGIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Heterodontosauru',
+        images: [
+            'https://cdnb.artstation.com/p/assets/images/images/021/988/217/large/damir-g-martin-finalisms-insta-artst-2scaled2.jpg?1573683481',
+        ],
+    },
+    {
+        id: 31,
+        name: 'Compsognathus longipes',
+        order: 'Saurischia',
+        sub_order: 'Theropoda',
+        family: 'Compsognathidae',
+        genus: 'Compsognathus',
+        food: CARNIVOROUS,
+        average_mass: 1.5,
+        average_length: 80,
+        average_height: 25,
+        periods: [TITHONIEN],
+        description:
+            ``,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Compsognathus',
+        images: [
+            'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2dd6424a-a91b-4f14-9bf6-b2c7682917e0/dey0ksx-4173c8c0-e758-46ef-8f80-ab669bde2954.png/v1/fit/w_828,h_466,q_70,strp/compsognathus_by_bluefluffydinosaur_dey0ksx-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvMmRkNjQyNGEtYTkxYi00ZjE0LTliZjYtYjJjNzY4MjkxN2UwXC9kZXkwa3N4LTQxNzNjOGMwLWU3NTgtNDZlZi04ZjgwLWFiNjY5YmRlMjk1NC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.HtrgxUhP4gEH82vjtH8In9-FdFMRmnL7eqjMNrcPfg0',
+        ],
+    },
+    {
+        id: 32,
+        name: 'Herrerasaurus ischigualastensis',
+        order: 'Saurischia',
+        sub_order: 'Theropoda',
+        family: 'Herrerasauridae',
+        genus: 'Herrerasaurus',
+        food: CARNIVOROUS,
+        average_mass: 270,
+        average_length: 400,
+        average_height: 160,
+        periods: [CARNIEN],
+        description:
+            `<b><i>Herrerasaurus ischigualastensis</i></b>, représentant très primitif des Theropodes, précède de 75 MA l'apparition d'<a href="./?page=dinosaurDetails&id=9"><b><i>Allosaurus fragilis</i></b></a> et de 160 MA celle de <a href="./?page=dinosaurDetails&id=0"><b><i>Tyrannosaurus rex</i></b></a>, faisant de lui l'un des plus anciens dinosaure connus.`,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Herrerasaurus',
+        images: [
+            'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fdb38613517523.56274d0ae488b.jpg',
+        ],
+    },
+    {
+        id: 33,
+        name: 'Plateosaurus engelhardti',
+        order: 'Saurischia',
+        sub_order: 'Sauropodomorpha',
+        family: 'Plateosauridae',
+        genus: 'Plateosaurus',
+        food: HERBIVOROUS,
+        average_mass: 4000,
+        average_length: 800,
+        average_height: 220,
+        periods: [NORIEN],
+        description:
+            `<b><i>Plateosaurus engelhardti</i></b> est un représentant très primitif des Sauropodomorphes.`,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Plateosaurus',
+        images: [
+            'https://4.bp.blogspot.com/-pyMOS_I4AgQ/WBhOVzt6wEI/AAAAAAAACbk/Pm8ATrWWJtwDxeWF039mqmRo7pQYePZZwCK4B/s1600/Plateosaurus%2BWitton%2Blow%2Bres%2B2016.jpg',
         ],
     },
 ]

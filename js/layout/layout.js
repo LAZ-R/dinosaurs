@@ -11,6 +11,7 @@ import * as PAGE_SETTINGS from './pages/settings/settings.page.js'
 const page = LAZR.URL.getURLParameter('page');
 const MAIN = document.getElementById('main');
 
+
 if (LAZR.STORAGE.getUserSetting('keepScreenAwake').isActive) {
     await LAZR.WAKE_LOCK.requestWakeLock();
 }

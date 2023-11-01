@@ -1,13 +1,13 @@
 export const DEFAULT_SETTINGS = [
     {
         id: 1,
-        name: 'Screen',
+        name: 'Écran',
         settings: [
             {
                 id: 'keepScreenAwake',
-                name: 'Keep screen awake',
+                name: 'Garder l\'écran allumé',
                 isActive: true
-            }
+            },
         ]
     },
     {
@@ -18,7 +18,23 @@ export const DEFAULT_SETTINGS = [
                 id: 'jsonWizard',
                 name: 'Enable JSON Wizard',
                 isActive: false
-            }
+            },
         ]
-    }
+    },
+    {
+        id: 3,
+        name: 'Tri par défaut',
+        settings: [
+            {
+                id: 'latestAddedFirst',
+                name: 'Du dernier ajout au premier ajout',
+                isActive: false
+            },
+            {
+                id: 'firstlyAddedFirst',
+                name: 'Du premier ajout au dernier ajout',
+                isActive: true
+            },
+        ]
+    },
 ];

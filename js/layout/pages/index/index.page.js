@@ -6,6 +6,7 @@ import * as LAZR from '../../../lazR/lazR.js';
 export const renderPage = () => {
 
     // Variables globales ------------------------------------------------------------------------------------
+    // scroll
     // Filtres
     let filteredDinosaurs = [];
     let filtersNumber = {food: 0, periods: 0, classification: 0};
@@ -311,7 +312,11 @@ export const renderPage = () => {
     // SORTING -----------------------------------------------------------------
     const getUrlSorting = () => {
         let sort = LAZR.URL.getURLParameter('sort');
-        return sort != null ? sort : '';
+        sort = sort != null ? sort : '';
+        if (sort == null || sort == '') {
+            sort = getUserDefaultSort();
+        }
+        return sort
     }
 
     const getModalSorting = () => {
@@ -332,8 +337,15 @@ export const renderPage = () => {
         return sort;
     }
 
+    const getUserDefaultSort = () => {
+        let latestAddedFirst = LAZR.STORAGE.getUserSetting('latestAddedFirst');
+        if (latestAddedFirst.isActive) {
+            return 'latestAddedFirst';
+        }
+        return 'firstlyAddedFirst';
+    }
+
     const setSortIcon = () => {
-        console.log('test');
         const sortIcon = document.getElementById('sortIcon');
         const sortIconOrder = document.getElementById('sortIconOrder');
         const sort = getUrlSorting();
@@ -342,7 +354,7 @@ export const renderPage = () => {
             sortIcon.innerHTML = `<img src="./medias/images/font-awsome/clock-solid.svg" />`;
             sortIconOrder.innerHTML = `<img src="./medias/images/font-awsome/arrow-down-long-solid.svg" />`;
         }
-        if (sort == null || sort == '' || sort == 'firstlyAddedFirst') {
+        if (sort == 'firstlyAddedFirst') {
             sortIcon.innerHTML = `<img src="./medias/images/font-awsome/clock-solid.svg" />`;
             sortIconOrder.innerHTML = `<img src="./medias/images/font-awsome/arrow-up-long-solid.svg" />`;
         }
@@ -945,6 +957,16 @@ export const renderPage = () => {
     }
     window.closeModal2 = closeModal2;
 
+    const scrollToTop = () => {
+        const page = document.getElementById('indexPage');
+        page.scroll({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+          })
+    }
+    window.scrollToTop = scrollToTop;
+
     // EXECUTION ---------------------------------------------------------------------------------------------
     getUrlFiltersNumber();
 
@@ -967,6 +989,9 @@ export const renderPage = () => {
     const headerLogo = LAZR.DOM.createImgElement('headerLogo', 'header-logo', './medias/images/logo-white.svg', 'lazr logo');
     LAZR.CSS.applyColorFilterOnElement(headerLogo, LAZR.CSS.getCssRootVariableValue('--on-primary'));
     headerIndexLink.appendChild(headerLogo);
+    headerIndexLink.addEventListener('click', () => {
+        window.location = `./?page=settings`;
+    });
 
     const filterButton = LAZR.DOM.createElement('div', 'headerFilterButton', 'header-filter-button', `<span class="notif" id="allNotifs">0</span><span onclick="onFiltersClick()">Filtres</span>`);
     document.getElementById('header').appendChild(filterButton);
@@ -979,10 +1004,23 @@ export const renderPage = () => {
         'indexPage', 
         'page', 
         `
-            <div class="top-area"></div>
-        `
+            <button 
+                id="scrollButton" 
+                class="scroll-button"
+                onclick="scrollToTop()">
+                <img 
+                    class="scroll-icon" 
+                    src="./medias/images/font-awsome/arrow-up-long-solid.svg" />
+                </button>`
     );
     page.style.padding = '0px var(--horizontal-padding)';
+    page.addEventListener('scroll', (event) => {
+        if (page.scrollTop > 100) {
+            document.getElementById('scrollButton').style.display = 'flex';
+        } else {
+            document.getElementById('scrollButton').style.display = 'none';
+        }
+    })
 
     // Gestion filtres
     
@@ -991,14 +1029,19 @@ export const renderPage = () => {
 
     if (filteredDinosaurs.length > 0) {
         const sort = getUrlSorting();
-        if (sort != '') {
-            getSortedDinosaurs(sort);
-        }
+        getSortedDinosaurs(sort);
+        page.innerHTML += `
+        <div class="top-area">
+            <span class="results">Résultats: ${filteredDinosaurs.length}</span>
+        </div>
+        
+    `;
         filteredDinosaurs.forEach(dinosaur => {
             page.appendChild(renderDinosaurTile(dinosaur)); 
         });
     } else {
         page.innerHTML += `
+            <div class="top-area"></div>
             <span style="text-align: center; max-width: 70%;">
                 Aucun dinosaure dans cette base de données ne correspond aux critères de filtre sélectionnés
             </span>

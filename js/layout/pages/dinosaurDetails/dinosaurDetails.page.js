@@ -19,12 +19,8 @@ export const renderPage = () => {
                     element.style.maxHeight = '160px';
                     break;
                 case 'section3':
-                    element.style.minHeight = '132px';
-                    element.style.maxHeight = '132px';
-                    break;
-                case 'section4':
-                    element.style.minHeight = '185px';
-                    element.style.maxHeight = '185px';
+                    element.style.minHeight = '450px';
+                    element.style.maxHeight = '450px';
                     break;
                 default:
                     break;
@@ -164,8 +160,13 @@ export const renderPage = () => {
                     <span>${dinosaur.genus}</span>
                 </div>
             </div>
-            <div id="section3" class="details-section aspect-section">
-                <span class="section-title aspect-title" onclick="collapse('section3')">Aspect</span>
+            <div id="section3" class="details-section description-section">
+                <span class="section-title description-title" onclick="collapse('section3')">Description</span>
+                <div class="details-sub-section">
+                    <span class="section-sub-title">Régime alimentaire</span>
+                    <span>${dinosaur.food}</span>
+                </div>
+                <span style="min-height: 10px;"></span>
                 <div class="details-sub-section">
                     <span class="section-sub-title">Longueur moyenne</span>
                     <span>${getFixedSizeString(dinosaur.average_length)}</span>
@@ -178,13 +179,7 @@ export const renderPage = () => {
                     <span class="section-sub-title">Poids moyen</span>
                     <span>${getFixedMassString(dinosaur.average_mass)}</span>
                 </div>
-            </div>
-            <div id="section4" class="details-section description-section">
-                <span class="section-title description-title" onclick="collapse('section4')">Description</span>
-                <div class="details-sub-section">
-                    <span class="section-sub-title">Régime alimentaire</span>
-                    <span>${dinosaur.food}</span>
-                </div>
+                <span style="min-height: 10px;"></span>
                 <div class="details-sub-section">
                     <span>${dinosaur.description}</span>
                 </div>
