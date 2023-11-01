@@ -2,21 +2,22 @@ import { DEFAULT_SETTINGS } from "../../../../app-default-settings.js";
 import { APP_SHORT_NAME } from "../../../data/app.data.js";
 
 const STORAGE = localStorage;
+const storageName = `${APP_SHORT_NAME}009`
 
-if (STORAGE.getItem(`${APP_SHORT_NAME}FirstTime`) === null) {
-    STORAGE.setItem(`${APP_SHORT_NAME}FirstTime`, '0');
+if (STORAGE.getItem(`${storageName}FirstTime`) === null) {
+    STORAGE.setItem(`${storageName}FirstTime`, '0');
     let userTMP = {
         isDev: false,
         settings: DEFAULT_SETTINGS
     };
-    STORAGE.setItem(`${APP_SHORT_NAME}User`, JSON.stringify(userTMP));
+    STORAGE.setItem(`${storageName}User`, JSON.stringify(userTMP));
 }
 /* ------------------------------------------------------------------------- */
 export const getUser = () => {
-    return JSON.parse(STORAGE.getItem(`${APP_SHORT_NAME}User`));
+    return JSON.parse(STORAGE.getItem(`${storageName}User`));
 }
 export const setUser = (user) => {
-    STORAGE.setItem(`${APP_SHORT_NAME}User`, JSON.stringify(user));
+    STORAGE.setItem(`${storageName}User`, JSON.stringify(user));
 }
 export const isUserDev = () => {
     const user = getUser();
