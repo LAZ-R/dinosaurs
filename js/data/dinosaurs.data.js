@@ -508,6 +508,7 @@ export const DINOSAURS = [
         ``,
         wiki_link: 'https://fr.wikipedia.org/wiki/Deinonychu',
         images: [
+            'https://cdna.artstation.com/p/assets/images/images/006/891/444/medium/raph-lomotan-antirrhopus.jpg?1502045515',
             'https://cdnb.artstation.com/p/assets/images/images/009/202/085/large/carlo-arellano-asset.jpg?1517669067',
             'https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL2RlaW5vbnljaHVzLXVwZGF0ZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgyOH0sInRvRm9ybWF0IjoiYXZpZiJ9fQ==',
             'https://emilywilloughby.com/gallery-data/images/the-smell-of-rain.jpg',
@@ -974,6 +975,26 @@ export const DINOSAURS = [
         wiki_link: 'https://fr.wikipedia.org/wiki/Plateosaurus',
         images: [
             'https://4.bp.blogspot.com/-pyMOS_I4AgQ/WBhOVzt6wEI/AAAAAAAACbk/Pm8ATrWWJtwDxeWF039mqmRo7pQYePZZwCK4B/s1600/Plateosaurus%2BWitton%2Blow%2Bres%2B2016.jpg',
+        ],
+    },
+    {
+        id: 34,
+        name: 'Utahraptor ostrommaysi',
+        order: 'Saurischia',
+        sub_order: 'Theropoda',
+        family: 'Dromaeosauridae',
+        genus: 'Utahraptor',
+        food: CARNIVOROUS,
+        average_mass: 500,
+        average_length: 625,
+        average_height: 190,
+        periods: [VALANGINIEN, HAUTERIVIEN],
+        description:
+            `<b><i>Utahraptor ostrommaysi</i></b> ...`,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Utahraptor',
+        images: [
+            'https://i.pinimg.com/originals/93/66/8f/93668f33a15a67c5fe8a50faab68a74c.jpg',
+            'https://static.wixstatic.com/media/77e4e0_db45d3b07fc847f3ad1e265ec322392c~mv2.jpg/v1/fit/w_895,h_578,q_90/77e4e0_db45d3b07fc847f3ad1e265ec322392c~mv2.webp',
         ],
     },
 ]
