@@ -235,6 +235,9 @@ export const CLASSIFICATION = [
                                 name: 'Deinonychus'
                             },
                             {
+                                name: 'Utahraptor'
+                            },
+                            {
                                 name: 'Velociraptor'
                             },
                         ]
@@ -603,7 +606,7 @@ export const DINOSAURS = [
         food: CARNIVOROUS,
         average_mass: 1300,
         average_length: 800,
-        average_height: 350,
+        average_height: 270,
         periods: [MAASTRICHTIEN],
         description:
         ``,
