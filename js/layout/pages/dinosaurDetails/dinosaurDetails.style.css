@@ -5,6 +5,27 @@
     font-style: italic;
     font-weight: 600;
     font-size: 16px;
+    white-space: nowrap;
+}
+
+.back-button, .infos-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    height: 100%;
+    width: fit-content;
+    padding: 0;
+    background-color: transparent;
+
+    &:hover, &:focus, &:active {
+        background-color: transparent;
+    }
+}
+    
+.back-icon, .infos-icon {
+    height: 40%;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(1969%) hue-rotate(315deg) brightness(120%) contrast(100%);
 }
 
 .dinosaur-page--image {
@@ -61,17 +82,207 @@
 
 .period-section {
     background-color: #252525;
-    min-height: 168px;
-    max-height: 168px;
+    min-height: 222px;
+    max-height: 222px;
 }
 .period-title {
     background-color: var(--primary);
     border-bottom: 4px solid #3E7469;
 }
 
+.timeline-area {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 25px;
+    background-color: transparent;
+    position: relative;
+    margin: 10px 0 15px;
+}
+
+.timeline-period-tile {
+    box-sizing: border-box;
+    display: flex;
+    min-height: 100%;
+    min-width: 3.33%;
+    /* background-color: red; */
+    border-right: 1px solid #00000081;
+}
+
+.indusien {
+  min-width: 0.37654653039269337%;
+  background-color: #B266A6;
+}
+  
+.olenekien {
+    min-width: 2.151694459386767%;
+    background-color: #BB71AC;
+}
+
+.anisien {
+    min-width: 2.797202797202791%;
+    background-color: #C793C3;
+}
+
+.ladinien {
+    min-width: 3.7654653039268426%;
+    background-color: #D0A0C8;
+}
+
+.carnien {
+    min-width: 3.7654653039268426%;
+    background-color: #D1B3D5;
+}
+
+.norien {
+    min-width: 10.48951048951049%;
+    background-color: #DBC1DE;
+}
+
+.rhaetien {
+    min-width: 3.8730500268961743%;
+    background-color: #E5CBE4;
+}
+
+.hettangien {
+    min-width: 1.0758472296933834%;
+    background-color: #22B5E9;
+}
+
+.sinemurien {
+    min-width: 4.57235072619688%;
+    background-color: #5EBEEE;
+}
+
+.pliensbachien {
+    min-width: 4.3571812802582155%;
+    background-color: #86C9F3;
+}
+
+.toarcien {
+    min-width: 4.626143087681546%;
+    background-color: #A2D1F3;
+}
+
+.aalenien {
+    min-width: 2.0441097364174197%;
+    background-color: #A2D8F0;
+}
+
+.bajocien {
+    min-width: 1.0758472296933834%;
+    background-color: #B0DFF1;
+}
+
+.bathonien {
+    min-width: 1.183431952662731%;
+    background-color: #BCE3F2;
+}
+
+.callovien {
+    min-width: 1.3986013986013954%;
+    background-color: #CAE6F2;
+}
+
+.oxfordien {
+    min-width: 3.335126412049483%;
+    background-color: #CCE8FD;
+}
+
+.kimmeridgien {
+    min-width: 2.7972027972028064%;
+    background-color: #D4EEFD;
+}
+
+.tithonien {
+    min-width: 3.819257665411508%;
+    background-color: #E0F2FC;
+}
+
+.berriasien {
+    min-width: 2.797202797202791%;
+    background-color: #9EC978;
+}
+
+.valanginien {
+    min-width: 3.7116729424421764%;
+    background-color: #ABD083;
+}
+
+.hauterivien {
+    min-width: 1.8827326519634213%;
+    background-color: #B7D690;
+}
+
+.barremien {
+    min-width: 2.366863905325447%;
+    background-color: #C2DB9B;
+}
+
+.aptien {
+    min-width: 6.4550833781603005%;
+    background-color: #CFE1A7;
+}
+
+.albien {
+    min-width: 6.7240451855836465%;
+    background-color: #D9E8B1;
+}
+
+.cenomanien {
+    min-width: 3.5502958579881625%;
+    background-color: #C6D86C;
+}
+
+.turonien {
+    min-width: 2.2054868208714407%;
+    background-color: #D2DD76;
+}
+
+.coniacien {
+    min-width: 1.8827326519634213%;
+    background-color: #DCE383;
+}
+
+.santonien {
+    min-width: 1.4523937600860692%;
+    background-color: #E4E88F;
+}
+
+.campanien {
+    min-width: 6.186121570736955%;
+    background-color: #EFEC9B;
+}
+
+.maastrichtien {
+    min-width: 3.2813340505648165%;
+    background-color: #F5F1A6;
+    border-right: none;
+}
+
 .periods-sub-section {
     flex-direction: column;
     justify-content: flex-start;
+}
+
+.dinosaur-timeline {
+    position: absolute;
+    bottom: -10px;
+    left: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: fit-content;
+    width: 50%;
+}
+.dinosaur-line {
+    box-sizing: border-box;
+    display: flex;
+    min-height: 5px;
+    background-color: #ff9f9f;
+    width: 100%;
 }
 
 .period-tiles-area {
