@@ -187,7 +187,7 @@ export const renderPage = () => {
         const firstDate = getFirstDate(periods[0].id);
         const lastDate = getLastDate(periods[periods.length - 1].id);
         const duration = pourcentagePeriode(firstDate, lastDate);
-        
+
         return `
             <!-- Trias -->
             <!-- Trias Inférieur -->
@@ -230,7 +230,7 @@ export const renderPage = () => {
             <div class="timeline-period-tile santonien"></div>
             <div class="timeline-period-tile campanien"></div>
             <div class="timeline-period-tile maastrichtien"></div>
-            <div class="dinosaur-timeline" style="left: ${duration.pourcentageDebut}%; width: ${lastDate != -66.0 ? `calc(${duration.pourcentageLongueur}% - 1px)`: duration.pourcentageLongueur};">
+            <div class="dinosaur-timeline" style="left: ${duration.pourcentageDebut}%; width: ${lastDate != -66.0 ? `calc(${duration.pourcentageLongueur}% - 1px)`: `${duration.pourcentageLongueur}%`};">
                 <div class="dinosaur-line"></div>
             </div>
         `;
