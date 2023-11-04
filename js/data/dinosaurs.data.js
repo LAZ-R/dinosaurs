@@ -203,7 +203,13 @@ export const CLASSIFICATION = [
                                 name: 'Acrocanthosaurus'
                             },
                             {
+                                name: 'Carcharodontosaurus'
+                            },
+                            {
                                 name: 'Giganotosaurus'
+                            },
+                            {
+                                name: 'Mapusaurus'
                             },
                         ]
                     },
@@ -472,7 +478,7 @@ export const DINOSAURS = [
         average_height: 350,
         periods: [BARREMIEN, APTIEN],
         description:
-            ``,
+            `<b><i>Iguanodon bernissartensis</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Iguanodon',
         images: [
             'https://www.markgarlick.com/img/stills/Paleo/Iguanodon%20Bernissartensis.jpg',
@@ -491,7 +497,7 @@ export const DINOSAURS = [
         average_height: 300,
         periods: [KIMMERIDGIEN, TITHONIEN],
         description:
-        ``,
+            `<b><i>Allosaurus fragilis</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Allosaurus',
         images: [
             'https://blenderartists.org/uploads/default/original/4X/2/5/b/25b5ce4b33d8540f50f31dd3165a1fb3147b6922.jpeg',
@@ -511,7 +517,7 @@ export const DINOSAURS = [
         average_height: 110,
         periods: [BERRIASIEN, VALANGINIEN, HAUTERIVIEN, BARREMIEN, APTIEN, ALBIEN, CENOMANIEN],
         description:
-        ``,
+            `<b><i>Deinonychus antirrhopus</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Deinonychu',
         images: [
             'https://cdna.artstation.com/p/assets/images/images/006/891/444/medium/raph-lomotan-antirrhopus.jpg?1502045515',
@@ -533,9 +539,11 @@ export const DINOSAURS = [
         average_height: 400,
         periods: [CENOMANIEN],
         description:
-        ``,
+            `<b><i>Giganotosaurus carolinii</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Giganotosaurus',
         images: [
+            './medias/images/dinos/giga.jpg',
+            'https://as2.ftcdn.net/v2/jpg/04/90/93/87/1000_F_490938758_hdxvIrWHjsveIssTkAgW5pShiGxUo50b.jpg',
             'https://scontent-cdg4-1.xx.fbcdn.net/v/t1.6435-9/100847174_2886794674749115_6946729584592066366_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=7jgonkBu0NgAX8wQz8Z&_nc_ht=scontent-cdg4-1.xx&oh=00_AfBWhnk78PURX5uAOuRDGIKVDtBE4YnjyHOZZ6Y-52zJxw&oe=65649635',
         ],
     },
@@ -549,10 +557,10 @@ export const DINOSAURS = [
         food: HERBIVOROUS,
         average_mass: 75000,
         average_length: 3400,
-        average_height: 1000,
+        average_height: 1150,
         periods: [CENOMANIEN, TURONIEN],
         description:
-        ``,
+            `<b><i>Argentinosaurus huinculensis</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Argentinosaurus',
         images: [
             'https://www.thoughtco.com/thmb/ajEM1LXPOGv35ldFahLTG-OghH8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1087324712-57e7d9a94d0c499387ebc24792fa4f9d.jpg',
@@ -571,7 +579,7 @@ export const DINOSAURS = [
         average_height: 270,
         periods: [BARREMIEN],
         description:
-        ``,
+            `<b><i>Baryonyx walkeri</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Baryonyx',
         images: [
             'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d2ab31115637533.605232e8063ce.jpg',
@@ -591,7 +599,7 @@ export const DINOSAURS = [
         average_height: 150,
         periods: [MAASTRICHTIEN],
         description:
-            ``,
+            `<b><i>Pachycephalosaurus wyomingensis</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Pachycephalosaurus',
         images: [
             'https://elyseesnumismatique.com/wp-content/uploads/2022/05/EUR01.Unc_.2022.25624-3-E-Austria-2022-Pachycephalosaurus-wyomingensis-blog-illustration-zoom.jpg',
@@ -612,7 +620,7 @@ export const DINOSAURS = [
         average_height: 270,
         periods: [MAASTRICHTIEN],
         description:
-        ``,
+            `<b><i>Carnotaurus sastrei</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Carnotaurus',
         images: [
             'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/cfd1ff88072965.5e1cd9b6aeb8d.jpg',
@@ -632,7 +640,7 @@ export const DINOSAURS = [
         average_height: 230,
         periods: [CAMPANIEN],
         description:
-        ``,
+            `<b><i>Styracosaurus albertensis</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Styracosaurus',
         images: [
             'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0b93de108291319.5fc56c029211d.jpg',
@@ -651,7 +659,7 @@ export const DINOSAURS = [
         average_height: 250,
         periods: [MAASTRICHTIEN],
         description:
-        ``,
+            `<b><i>Pachyrhinosaurus canadensis</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Styracosaurus',
         images: [
             'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/028c2f108291319.5fbac49597d44.jpg',
@@ -670,7 +678,7 @@ export const DINOSAURS = [
         average_height: 135,
         periods: [CAMPANIEN],
         description:
-            ``,
+            `<b><i>Latenivenatrix mcmasterae</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Latenivenatrix',
         images: [
             'https://preview.redd.it/y6awloi5imr91.jpg?width=2262&format=pjpg&auto=webp&s=f31de6c9b746d448b8a394bfc58279078cb955eb',
@@ -691,7 +699,7 @@ export const DINOSAURS = [
         average_height: 360,
         periods: [CAMPANIEN],
         description:
-            ``,
+            `<b><i>Parasaurolophus walkeri</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Parasaurolophus',
         images: [
             'https://cdn.domestika.org/c_limit,dpr_1.0,f_auto,q_80,w_820/v1562600036/content-items/003/106/418/Parasaurolophus-Angel-Trancon-Studio-original.jpg?1562600036',
@@ -710,7 +718,7 @@ export const DINOSAURS = [
         average_height: 170,
         periods: [CAMPANIEN],
         description:
-            ``,
+            `<b><i>Citipati osmolskae</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Citipati',
         images: [
             'https://i.kym-cdn.com/photos/images/original/002/278/723/869.jpeg',
@@ -729,7 +737,7 @@ export const DINOSAURS = [
         average_height: 190,
         periods: [SINEMURIEN, PLIENSBACHIEN],
         description:
-            ``,
+            `<b><i>Dilophosaurus wetherilli</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Dilophosaurus',
         images: [
             'https://static.scientificamerican.com/sciam/cache/file/772FAB35-5C60-47BD-AF64576CF62E910E_source.jpg?w=2000&h=1123&761A6DFA-B87F-45D1-99983B70E46AC8DF',
@@ -748,7 +756,7 @@ export const DINOSAURS = [
         average_height: 50,
         periods: [BARREMIEN, APTIEN, ALBIEN],
         description:
-            ``,
+            `<b><i>Psittacosaurus mongoliensis</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Psittacosaurus',
         images: [
             'https://mir-s3-cdn-cf.behance.net/project_modules/fs/1c97b7108291319.5fbac49596d78.jpg',
@@ -767,7 +775,7 @@ export const DINOSAURS = [
         average_height: 250,
         periods: [MAASTRICHTIEN],
         description:
-            ``,
+            `<b><i>Gallimimus bullatus</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Gallimimus',
         images: [
             'https://everydayoriginal.com/wp-content/uploads/2022/02/Gallimimus_final-scaled.jpg',
@@ -786,7 +794,7 @@ export const DINOSAURS = [
         average_height: 1800,
         periods: [APTIEN, ALBIEN],
         description:
-            ``,
+            `<b><i>Sauroposeidon proteles</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Sauroposéidon',
         images: [
             'https://images.dinosaurpictures.org/Sauroposeidon4_d2cf.jpg',
@@ -805,7 +813,7 @@ export const DINOSAURS = [
         average_height: 250,
         periods: [CAMPANIEN],
         description:
-            ``,
+            `<b><i>Daspletosaurus wilsoni</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Daspletosaurus',
         images: [
             'https://cdna.artstation.com/p/assets/images/images/056/512/714/large/rudolf-hima-d-wilsoni-illus-dfowler-hires.jpg?1669422447',
@@ -825,7 +833,7 @@ export const DINOSAURS = [
         average_height: 220,
         periods: [CAMPANIEN],
         description:
-            ``,
+            `<b><i>Lambeosaurus lambei</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Lambeosaurus',
         images: [
             'https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/lambeosaurus-daniel-eskridge.jpg',
@@ -844,7 +852,7 @@ export const DINOSAURS = [
         average_height: 1300,
         periods: [MAASTRICHTIEN],
         description:
-            ``,
+            `<b><i>Bruhathkayosaurus matleyi</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Bruhathkayosaurus',
         images: [
             'https://images.fineartamerica.com/images-medium-large-5/futalognkosaurus-dukei-dinosaur-julius-t-csotonyiscience-photo-library.jpg',
@@ -863,7 +871,7 @@ export const DINOSAURS = [
         average_height: 1400,
         periods: [OXFORDIEN],
         description:
-            ``,
+            `<b><i>Mamenchisaurus sinocanadorum</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Mamenchisaurus',
         images: [
             'https://cdna.artstation.com/p/assets/images/images/060/773/568/large/julia-d-oliveira-mamenchisaurus.jpg?1679309545',
@@ -882,7 +890,7 @@ export const DINOSAURS = [
         average_height: 20,
         periods: [TITHONIEN],
         description:
-            ``,
+            `<b><i>Archaeopteryx siemensii</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Archaeopteryx',
         images: [
             'https://cdn.unitycms.io/images/BfC1_XS0qmTABqW0YvVQjt.jpg?op=ocroped&val=1600,1600,1000,1000,0,0&sum=RpoxDhTQ5U8',
@@ -901,7 +909,7 @@ export const DINOSAURS = [
         average_height: 450,
         periods: [MAASTRICHTIEN],
         description:
-            ``,
+            `<b><i>Deinocheirus mirificus</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Deinocheiru',
         images: [
             'https://damirgmartin.com/images/fulls/26.jpg',
@@ -920,7 +928,7 @@ export const DINOSAURS = [
         average_height: 40,
         periods: [HETTANGIEN],
         description:
-            ``,
+            `<b><i>Heterodontosaurus tucki</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Heterodontosauru',
         images: [
             'https://cdnb.artstation.com/p/assets/images/images/021/988/217/large/damir-g-martin-finalisms-insta-artst-2scaled2.jpg?1573683481',
@@ -939,7 +947,7 @@ export const DINOSAURS = [
         average_height: 25,
         periods: [TITHONIEN],
         description:
-            ``,
+            `<b><i>Compsognathus longipes</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Compsognathus',
         images: [
             'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2dd6424a-a91b-4f14-9bf6-b2c7682917e0/dey0ksx-4173c8c0-e758-46ef-8f80-ab669bde2954.png/v1/fit/w_828,h_466,q_70,strp/compsognathus_by_bluefluffydinosaur_dey0ksx-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvMmRkNjQyNGEtYTkxYi00ZjE0LTliZjYtYjJjNzY4MjkxN2UwXC9kZXkwa3N4LTQxNzNjOGMwLWU3NTgtNDZlZi04ZjgwLWFiNjY5YmRlMjk1NC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.HtrgxUhP4gEH82vjtH8In9-FdFMRmnL7eqjMNrcPfg0',
@@ -1020,6 +1028,44 @@ export const DINOSAURS = [
         wiki_link: 'https://fr.wikipedia.org/wiki/Acrocanthosaurus',
         images: [
             'https://i.pinimg.com/originals/bc/06/b8/bc06b8e5e305813c678566c959f57432.jpg',
+        ],
+    },
+    {
+        id: 36,
+        name: 'Mapusaurus roseae',
+        order: 'Saurischia',
+        sub_order: 'Theropoda',
+        family: 'Carcharodontosauridae',
+        genus: 'Mapusaurus',
+        food: CARNIVOROUS,
+        average_mass: 5000,
+        average_length: 1150,
+        average_height: 330,
+        periods: [TURONIEN],
+        description:
+            `<b><i>Mapusaurus roseae</i></b> ...`,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Mapusaurus',
+        images: [
+            'https://qph.cf2.quoracdn.net/main-qimg-0c6f09f87c5cdbd24201552c12a23c2a',
+        ],
+    },
+    {
+        id: 37,
+        name: 'Carcharodontosaurus saharicus',
+        order: 'Saurischia',
+        sub_order: 'Theropoda',
+        family: 'Carcharodontosauridae',
+        genus: 'Carcharodontosaurus',
+        food: CARNIVOROUS,
+        average_mass: 6000,
+        average_length: 1200,
+        average_height: 340,
+        periods: [ALBIEN, CENOMANIEN],
+        description:
+            `<b><i>Carcharodontosaurus saharicus</i></b> ...`,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Carcharodontosaurus',
+        images: [
+            'https://cdnb.artstation.com/p/assets/covers/images/028/664/031/large/huang-hao-huang-hao-jurassic-world-carcharodontosaurus.jpg',
         ],
     },
 ]
