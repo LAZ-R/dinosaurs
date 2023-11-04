@@ -1013,7 +1013,7 @@ export const DINOSAURS = [
         food: CARNIVOROUS,
         average_mass: 6500,
         average_length: 1100,
-        average_height: 350,
+        average_height: 320,
         periods: [APTIEN, ALBIEN],
         description:
             `<b><i>Acrocanthosaurus atokensis</i></b> ...`,
