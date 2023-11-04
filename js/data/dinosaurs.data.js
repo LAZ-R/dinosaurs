@@ -200,6 +200,9 @@ export const CLASSIFICATION = [
                         name: 'Carcharodontosauridae',
                         genus: [
                             {
+                                name: 'Acrocanthosaurus'
+                            },
+                            {
                                 name: 'Giganotosaurus'
                             },
                         ]
@@ -472,7 +475,7 @@ export const DINOSAURS = [
             ``,
         wiki_link: 'https://fr.wikipedia.org/wiki/Iguanodon',
         images: [
-            'https://media01.stockfood.com/largepreviews/NDE1MDM3MTc2/13388296-Artwork-of-Iguanodon-bernissartensis.jpg',
+            'https://www.markgarlick.com/img/stills/Paleo/Iguanodon%20Bernissartensis.jpg',
         ],
     },
     {
@@ -998,6 +1001,25 @@ export const DINOSAURS = [
         images: [
             'https://i.pinimg.com/originals/93/66/8f/93668f33a15a67c5fe8a50faab68a74c.jpg',
             'https://static.wixstatic.com/media/77e4e0_db45d3b07fc847f3ad1e265ec322392c~mv2.jpg/v1/fit/w_895,h_578,q_90/77e4e0_db45d3b07fc847f3ad1e265ec322392c~mv2.webp',
+        ],
+    },
+    {
+        id: 35,
+        name: 'Acrocanthosaurus atokensis',
+        order: 'Saurischia',
+        sub_order: 'Theropoda',
+        family: 'Carcharodontosauridae',
+        genus: 'Acrocanthosaurus',
+        food: CARNIVOROUS,
+        average_mass: 6500,
+        average_length: 1100,
+        average_height: 350,
+        periods: [APTIEN, ALBIEN],
+        description:
+            `<b><i>Acrocanthosaurus atokensis</i></b> ...`,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Acrocanthosaurus',
+        images: [
+            'https://i.pinimg.com/originals/bc/06/b8/bc06b8e5e305813c678566c959f57432.jpg',
         ],
     },
 ]
