@@ -107,6 +107,14 @@ export const CLASSIFICATION = [
                         ]
                     },
                     {
+                        name: 'Nodosauridae',
+                        genus: [
+                            {
+                                name: 'Hylaeosaurus'
+                            },
+                        ]
+                    },
+                    {
                         name: 'Stegosauridae',
                         genus: [
                             {
@@ -1096,6 +1104,25 @@ export const DINOSAURS = [
             'https://cdnb.artstation.com/p/assets/images/images/004/058/391/large/roberto-akeiron-coelophysis-bauri-anteprima-1.jpg?1479909575',
             'https://cdna.artstation.com/p/assets/images/images/056/897/782/large/joanna-kobierska-ceolo-reducted.jpg?1670352308',
             'https://cdnb.artstation.com/p/assets/images/images/042/763/653/large/julia-d-oliveira-coelophysis.jpg?1635366112'
+        ],
+    },
+    {
+        id: 39,
+        name: 'Hylaeosaurus armatus',
+        order: 'Ornithischia',
+        sub_order: 'Thyreophora',
+        family: 'Nodosauridae',
+        genus: 'Hylaeosaurus',
+        food: HERBIVOROUS,
+        average_mass: 1250,
+        average_length: 550,
+        average_height: 170,
+        periods: [VALANGINIEN],
+        description:
+            `<b><i>Hylaeosaurus armatus</i></b> est le premier ankylosaurien qu'on ait découvert, en 1833.`,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Hylaeosaurus',
+        images: [
+            'https://static.wixstatic.com/media/77e4e0_73778563e959425992831910f74cc44d~mv2.jpg/v1/fit/w_895,h_578,q_90/77e4e0_73778563e959425992831910f74cc44d~mv2.webp',
         ],
     },
 ]
