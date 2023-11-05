@@ -214,6 +214,14 @@ export const CLASSIFICATION = [
                         ]
                     },
                     {
+                        name: 'Coelophysidae',
+                        genus: [
+                            {
+                                name: 'Coelophysis'
+                            },
+                        ]
+                    },
+                    {
                         name: 'Compsognathidae',
                         genus: [
                             {
@@ -778,6 +786,7 @@ export const DINOSAURS = [
             `<b><i>Gallimimus bullatus</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Gallimimus',
         images: [
+            'https://as2.ftcdn.net/v2/jpg/05/02/29/19/1000_F_502291964_auU6tdOoMfjJ9yqE2nDoJWESANzlP6RH.jpg',
             'https://everydayoriginal.com/wp-content/uploads/2022/02/Gallimimus_final-scaled.jpg',
         ],
     },
@@ -974,18 +983,18 @@ export const DINOSAURS = [
     },
     {
         id: 33,
-        name: 'Plateosaurus engelhardti',
+        name: 'Plateosaurus trossingensis',
         order: 'Saurischia',
         sub_order: 'Sauropodomorpha',
         family: 'Plateosauridae',
         genus: 'Plateosaurus',
         food: HERBIVOROUS,
-        average_mass: 4000,
-        average_length: 800,
+        average_mass: 3000,
+        average_length: 700,
         average_height: 220,
         periods: [NORIEN],
         description:
-            `<b><i>Plateosaurus engelhardti</i></b> est un représentant très primitif des Sauropodomorphes.`,
+            `<b><i>Plateosaurus trossingensis</i></b> est un représentant très primitif des Sauropodomorphes.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Plateosaurus',
         images: [
             'https://4.bp.blogspot.com/-pyMOS_I4AgQ/WBhOVzt6wEI/AAAAAAAACbk/Pm8ATrWWJtwDxeWF039mqmRo7pQYePZZwCK4B/s1600/Plateosaurus%2BWitton%2Blow%2Bres%2B2016.jpg',
@@ -1066,6 +1075,27 @@ export const DINOSAURS = [
         wiki_link: 'https://fr.wikipedia.org/wiki/Carcharodontosaurus',
         images: [
             'https://cdnb.artstation.com/p/assets/covers/images/028/664/031/large/huang-hao-huang-hao-jurassic-world-carcharodontosaurus.jpg',
+        ],
+    },
+    {
+        id: 38,
+        name: 'Coelophysis bauri',
+        order: 'Saurischia',
+        sub_order: 'Theropoda',
+        family: 'Coelophysidae',
+        genus: 'Coelophysis',
+        food: CARNIVOROUS,
+        average_mass: 17.5,
+        average_length: 275,
+        average_height: 100,
+        periods: [CARNIEN, NORIEN, RHAETIEN],
+        description:
+            `<b><i>Coelophysis bauri</i></b> ...`,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Coelophysis',
+        images: [
+            'https://cdnb.artstation.com/p/assets/images/images/004/058/391/large/roberto-akeiron-coelophysis-bauri-anteprima-1.jpg?1479909575',
+            'https://cdna.artstation.com/p/assets/images/images/056/897/782/large/joanna-kobierska-ceolo-reducted.jpg?1670352308',
+            'https://cdnb.artstation.com/p/assets/images/images/042/763/653/large/julia-d-oliveira-coelophysis.jpg?1635366112'
         ],
     },
 ]
