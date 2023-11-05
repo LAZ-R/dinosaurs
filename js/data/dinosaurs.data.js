@@ -70,6 +70,9 @@ export const CLASSIFICATION = [
                         name: 'Hadrosauridae',
                         genus: [
                             {
+                                name: 'Corythosaurus'
+                            },
+                            {
                                 name: 'Lambeosaurus'
                             },
                             {
@@ -222,6 +225,14 @@ export const CLASSIFICATION = [
                         ]
                     },
                     {
+                        name: 'Ceratosauridae',
+                        genus: [
+                            {
+                                name: 'Ceratosaurus'
+                            },
+                        ]
+                    },
+                    {
                         name: 'Coelophysidae',
                         genus: [
                             {
@@ -335,7 +346,9 @@ export const DINOSAURS = [
         average_height: 400,          // Hauteur moyenne en centimètres
         periods: [MAASTRICHTIEN],     // Tableau des périodes auxquelles cette espèce a vécu (dans l'ordre chronologique)
         description:                  // Description rapide de l'espèce
-            `<b><i>Tyrannosaurus rex</i></b> est l'une des plus célèbres espèces de dinosaures. Ce fut l'un des derniers dinosaures non-aviens à avoir vécu jusqu'à l'extinction survenue à la limite Crétacé-Paléogène, il y a 66 millions d'années.`,
+            `<b><i>Tyrannosaurus rex</i></b> est l'une des plus célèbres espèces de dinosaures.<br>
+            Ce fut l'un des derniers dinosaures non-aviens à avoir vécu jusqu'à l'extinction survenue à la limite Crétacé-Paléogène, il y a 66 millions d'années.<br>
+            Ses restes ont été découverts dans ce qui est aujourd'hui l'Amérique du Nord.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Tyrannosaurus',
         images: [
             'https://static.nationalgeographic.fr/files/styles/image_3200/public/RJ%20Palmer_0.webp',
@@ -355,7 +368,8 @@ export const DINOSAURS = [
         average_height: 400,
         periods: [MAASTRICHTIEN],
         description:
-            `<b><i>Triceratops horridus</i></b>, cératopsien reconnaissable à ses trois cornes et sa collerette osseuse protectrice, était une proie majeure de <a href="./?page=dinosaurDetails&id=0"><b><i>Tyrannosaurus rex</i></b></a>.`,
+            `<b><i>Triceratops horridus</i></b>, cératopsien reconnaissable à ses trois cornes et sa collerette osseuse protectrice, 
+            était une proie majeure de <a href="./?page=dinosaurDetails&id=0"><b><i>Tyrannosaurus rex</i></b></a>, ayant vécu à la même période et au même endroit.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Triceratops_horridus',
         images: [
             'https://i.redd.it/8o23pauomfob1.png',
@@ -376,9 +390,11 @@ export const DINOSAURS = [
         average_height: 50,
         periods: [CAMPANIEN],
         description:
-        `<b><i>Velociraptor mongoliensis</i></b> était un dromaeosauridé bipède, doté de griffes acérées. Prédateur agile, il chassait probablement en meute, s'attaquant à de petites proies et des dinosaures herbivores plus grands.`,
+        `<b><i>Velociraptor mongoliensis</i></b> était un dromaeosauridé bipède, doté de griffes acérées.<br>
+        Prédateur agile, il chassait potentiellement en meute, s'attaquant à de petites proies et des dinosaures herbivores plus grands.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Velociraptor',
         images: [
+            'https://static.wixstatic.com/media/77e4e0_a58476c07df54cb1bd4e7d17a273d713~mv2.jpg/v1/fit/w_895,h_578,q_90/77e4e0_a58476c07df54cb1bd4e7d17a273d713~mv2.webp',
             'https://o.quizlet.com/rxkRaOesGgYXkmhWFQVl1A.png',
         ],
     },
@@ -395,7 +411,8 @@ export const DINOSAURS = [
         average_height: 400,
         periods: [KIMMERIDGIEN],
         description:
-            `<b><i>Diplodocus carnegii</i></b> possédait un long cou typique des sauropodes, et une queue en fouet caractéristique. Paisible mangeur de végétaux, les jeunes devaient faire face à des prédateurs comme <a href="./?page=dinosaurDetails&id=9"><b><i>Allosaurus fragilis</i></b></a>`,
+            `<b><i>Diplodocus carnegii</i></b> possédait un long cou typique des sauropodes, et une queue en fouet caractéristique.<br>
+            Paisible mangeur de végétaux vivant dans l'actuel ouest américain, les jeunes devaient faire face à des prédateurs comme <a href="./?page=dinosaurDetails&id=9"><b><i>Allosaurus fragilis</i></b></a>.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Diplodocus',
         images: [
             'https://cdna.artstation.com/p/assets/images/images/029/379/044/large/marcos-villarroel-diplodocus-carnegii-by-highdarktemplar-ddin7ng-fullview.jpg?1597343177',
@@ -415,7 +432,8 @@ export const DINOSAURS = [
         average_height: 350,
         periods: [KIMMERIDGIEN, TITHONIEN],
         description:
-            `<b><i>Stegosaurus stenops</i></b> se distinguait par ses plaques osseuses et sa queue à pointes. Herbivore, il pouvait être la proie d'<a href="./?page=dinosaurDetails&id=9"><b><i>Allosaurus fragilis</i></b></a> ou de Ceratosaurus.`,
+            `<b><i>Stegosaurus stenops</i></b> vivait en Laurasie, corespondant aux États-Unis et à l'Afrique du Nord d'aujourd'hui, et se distinguait par ses plaques osseuses verticales sur le dos et sa queue à pointes.<br>
+            Herbivore, il pouvait être la proie d'<a href="./?page=dinosaurDetails&id=9"><b><i>Allosaurus fragilis</i></b></a> ou de <a href="./?page=dinosaurDetails&id=40"><b><i>Ceratosaurus nasicornis</i></b></a>.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Stegosaurus',
         images: [
             'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f3893338-5b4a-4520-8a01-52fca1771b85/d72acy2-19b6ce94-6690-42b8-b009-b5f36c8fbb87.jpg/v1/fill/w_1024,h_749,q_75,strp/stegosaurus_stenops_by_cheungchungtat_d72acy2-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzQ5IiwicGF0aCI6IlwvZlwvZjM4OTMzMzgtNWI0YS00NTIwLThhMDEtNTJmY2ExNzcxYjg1XC9kNzJhY3kyLTE5YjZjZTk0LTY2OTAtNDJiOC1iMDA5LWI1ZjM2YzhmYmI4Ny5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.GellsxYfXWUFD6Luqi0L_8QgWRnZQ8nDEvrdjsZ5xF8',
@@ -598,6 +616,7 @@ export const DINOSAURS = [
             `<b><i>Baryonyx walkeri</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Baryonyx',
         images: [
+            'https://cdna.artstation.com/p/assets/images/images/046/030/152/large/ashley-patch-baryonyx.jpg?1644149329',
             'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d2ab31115637533.605232e8063ce.jpg',
             '',
         ],
@@ -718,6 +737,7 @@ export const DINOSAURS = [
             `<b><i>Parasaurolophus walkeri</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Parasaurolophus',
         images: [
+            'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/87c47315-8df7-4cb1-8502-d931a2f5f535/d8gfwqk-a8f2193f-7c7c-4907-8eec-c3f351024df1.jpg/v1/fill/w_1024,h_577,q_75,strp/parasaurolophus_walkeri_by_highdarktemplar_d8gfwqk-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc3IiwicGF0aCI6IlwvZlwvODdjNDczMTUtOGRmNy00Y2IxLTg1MDItZDkzMWEyZjVmNTM1XC9kOGdmd3FrLWE4ZjIxOTNmLTdjN2MtNDkwNy04ZWVjLWMzZjM1MTAyNGRmMS5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.h6bXAQsreW2h8qR4PtZcU4tZFLtq6rCb7PLTzumPR64',
             'https://cdn.domestika.org/c_limit,dpr_1.0,f_auto,q_80,w_820/v1562600036/content-items/003/106/418/Parasaurolophus-Angel-Trancon-Studio-original.jpg?1562600036',
         ],
     },
@@ -939,7 +959,7 @@ export const DINOSAURS = [
         sub_order: 'Ornithopoda',
         family: 'Heterodontosauridae',
         genus: 'Heterodontosaurus',
-        food: HERBIVOROUS,
+        food: OMNIVOROUS,
         average_mass: 4,
         average_length: 130,
         average_height: 40,
@@ -986,6 +1006,7 @@ export const DINOSAURS = [
             `<b><i>Herrerasaurus ischigualastensis</i></b>, représentant très primitif des Theropodes, précède de 75 MA l'apparition d'<a href="./?page=dinosaurDetails&id=9"><b><i>Allosaurus fragilis</i></b></a> et de 160 MA celle de <a href="./?page=dinosaurDetails&id=0"><b><i>Tyrannosaurus rex</i></b></a>, faisant de lui l'un des plus anciens dinosaure connus.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Herrerasaurus',
         images: [
+            'https://cdna.artstation.com/p/assets/images/images/040/024/888/large/ashley-patch-herrerasaurus-ischigualastensis.jpg?1627628721',
             'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fdb38613517523.56274d0ae488b.jpg',
         ],
     },
@@ -1119,10 +1140,50 @@ export const DINOSAURS = [
         average_height: 170,
         periods: [VALANGINIEN],
         description:
-            `<b><i>Hylaeosaurus armatus</i></b> est le premier ankylosaurien qu'on ait découvert, en 1833.`,
+            `<b><i>Hylaeosaurus armatus</i></b> est le premier ankylosaurien qu'on ait découvert, dès 1833.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Hylaeosaurus',
         images: [
             'https://static.wixstatic.com/media/77e4e0_73778563e959425992831910f74cc44d~mv2.jpg/v1/fit/w_895,h_578,q_90/77e4e0_73778563e959425992831910f74cc44d~mv2.webp',
+        ],
+    },
+    {
+        id: 40,
+        name: 'Ceratosaurus nasicornis',
+        order: 'Saurischia',
+        sub_order: 'Theropoda',
+        family: 'Ceratosauridae',
+        genus: 'Ceratosaurus',
+        food: CARNIVOROUS,
+        average_mass: 550,
+        average_length: 550,
+        average_height: 175,
+        periods: [KIMMERIDGIEN, TITHONIEN],
+        description:
+            `<b><i>Ceratosaurus nasicornis</i></b> vivait en Laurasie, corespondant aux États-Unis et à l'Afrique du Nord d'aujourd'hui, et se distinguait par la corne arrondie sur son museau, appendice peu commun chez les Theropodes.<br>
+            Son alimentation été probablement constituée en partie de jeunes <a href="./?page=dinosaurDetails&id=4"><b><i>Stegosaurus stenops</i></b></a>, ses reste ayant été retrouvé aux mêmes endroits et dans les mêmes strates géologiques.`,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Ceratosaurus',
+        images: [
+            'https://cdnb.artstation.com/p/assets/images/images/034/029/411/large/ashley-patch-ceratosaurus-nasicornis.jpg?1611202289',
+            ''
+        ],
+    },
+    {
+        id: 41,
+        name: 'Corythosaurus casuarius',
+        order: 'Ornithischia',
+        sub_order: 'Ornithopoda',
+        family: 'Hadrosauridae',
+        genus: 'Corythosaurus',
+        food: HERBIVOROUS,
+        average_mass: 3200,
+        average_length: 900,
+        average_height: 320,
+        periods: [CAMPANIEN],
+        description:
+            `<b><i>Corythosaurus casuarius</i></b> ...`,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Corythosaurus',
+        images: [
+            'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/87c47315-8df7-4cb1-8502-d931a2f5f535/d2uvsvz-8ff7be16-ae86-4158-ba62-48e409ae58d3.jpg/v1/fill/w_900,h_450,q_75,strp/paleoscape_9___corythosaurus_c_by_highdarktemplar_d2uvsvz-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzg3YzQ3MzE1LThkZjctNGNiMS04NTAyLWQ5MzFhMmY1ZjUzNVwvZDJ1dnN2ei04ZmY3YmUxNi1hZTg2LTQxNTgtYmE2Mi00OGU0MDlhZTU4ZDMuanBnIiwiaGVpZ2h0IjoiPD00NTAiLCJ3aWR0aCI6Ijw9OTAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzg3YzQ3MzE1LThkZjctNGNiMS04NTAyLWQ5MzFhMmY1ZjUzNVwvaGlnaGRhcmt0ZW1wbGFyLTQucG5nIiwib3BhY2l0eSI6OTUsInByb3BvcnRpb25zIjowLjQ1LCJncmF2aXR5IjoiY2VudGVyIn19.AKsXzjaiyEHKDVKLClNoXsKCrQ-2BwezxhZhM-WfeJg',
         ],
     },
 ]
