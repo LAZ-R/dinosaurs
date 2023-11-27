@@ -67,7 +67,7 @@
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     padding: 8px var(--horizontal-padding);
     padding-top: 0;
@@ -111,160 +111,41 @@
     border-right: 1px solid #00000081;
 }
 
-.indusien {
-  min-width: 0.37654653039269337%;
-  background-color: #B266A6;
-}
-  
-.olenekien {
-    min-width: 2.151694459386767%;
-    background-color: #BB71AC;
-}
-
-.anisien {
-    min-width: 2.797202797202791%;
-    background-color: #C793C3;
-}
-
-.ladinien {
-    min-width: 3.7654653039268426%;
-    background-color: #D0A0C8;
-}
-
-.carnien {
-    min-width: 3.7654653039268426%;
-    background-color: #D1B3D5;
-}
-
-.norien {
-    min-width: 10.48951048951049%;
-    background-color: #DBC1DE;
-}
-
-.rhaetien {
-    min-width: 3.8730500268961743%;
-    background-color: #E5CBE4;
-}
-
-.hettangien {
-    min-width: 1.0758472296933834%;
-    background-color: #22B5E9;
-}
-
-.sinemurien {
-    min-width: 4.57235072619688%;
-    background-color: #5EBEEE;
-}
-
-.pliensbachien {
-    min-width: 4.3571812802582155%;
-    background-color: #86C9F3;
-}
-
-.toarcien {
-    min-width: 4.626143087681546%;
-    background-color: #A2D1F3;
-}
-
-.aalenien {
-    min-width: 2.0441097364174197%;
-    background-color: #A2D8F0;
-}
-
-.bajocien {
-    min-width: 1.0758472296933834%;
-    background-color: #B0DFF1;
-}
-
-.bathonien {
-    min-width: 1.183431952662731%;
-    background-color: #BCE3F2;
-}
-
-.callovien {
-    min-width: 1.3986013986013954%;
-    background-color: #CAE6F2;
-}
-
-.oxfordien {
-    min-width: 3.335126412049483%;
-    background-color: #CCE8FD;
-}
-
-.kimmeridgien {
-    min-width: 2.7972027972028064%;
-    background-color: #D4EEFD;
-}
-
-.tithonien {
-    min-width: 3.819257665411508%;
-    background-color: #E0F2FC;
-}
-
-.berriasien {
-    min-width: 2.797202797202791%;
-    background-color: #9EC978;
-}
-
-.valanginien {
-    min-width: 3.7116729424421764%;
-    background-color: #ABD083;
-}
-
-.hauterivien {
-    min-width: 1.8827326519634213%;
-    background-color: #B7D690;
-}
-
-.barremien {
-    min-width: 2.366863905325447%;
-    background-color: #C2DB9B;
-}
-
-.aptien {
-    min-width: 6.4550833781603005%;
-    background-color: #CFE1A7;
-}
-
-.albien {
-    min-width: 6.7240451855836465%;
-    background-color: #D9E8B1;
-}
-
-.cenomanien {
-    min-width: 3.5502958579881625%;
-    background-color: #C6D86C;
-}
-
-.turonien {
-    min-width: 2.2054868208714407%;
-    background-color: #D2DD76;
-}
-
-.coniacien {
-    min-width: 1.8827326519634213%;
-    background-color: #DCE383;
-}
-
-.santonien {
-    min-width: 1.4523937600860692%;
-    background-color: #E4E88F;
-}
-
-.campanien {
-    min-width: 6.186121570736955%;
-    background-color: #EFEC9B;
-}
-
-.maastrichtien {
-    min-width: 3.2813340505648165%;
-    background-color: #F5F1A6;
-    border-right: none;
-}
+.indusien      { min-width: 0.37654653039269337%; background-color: #B266A6; }
+.olenekien     { min-width: 2.151694459386767%;   background-color: #BB71AC; }
+.anisien       { min-width: 2.797202797202791%;   background-color: #C793C3; }
+.ladinien      { min-width: 3.7654653039268426%;  background-color: #D0A0C8; }
+.carnien       { min-width: 3.7654653039268426%;  background-color: #D1B3D5; }
+.norien        { min-width: 10.48951048951049%;   background-color: #DBC1DE; }
+.rhaetien      { min-width: 3.8730500268961743%;  background-color: #E5CBE4; }
+.hettangien    { min-width: 1.0758472296933834%;  background-color: #22B5E9; }
+.sinemurien    { min-width: 4.57235072619688%;    background-color: #5EBEEE; }
+.pliensbachien { min-width: 4.3571812802582155%;  background-color: #86C9F3; }
+.toarcien      { min-width: 4.626143087681546%;   background-color: #A2D1F3; }
+.aalenien      { min-width: 2.0441097364174197%;  background-color: #A2D8F0; }
+.bajocien      { min-width: 1.0758472296933834%;  background-color: #B0DFF1; }
+.bathonien     { min-width: 1.183431952662731%;   background-color: #BCE3F2; }
+.callovien     { min-width: 1.3986013986013954%;  background-color: #CAE6F2; }
+.oxfordien     { min-width: 3.335126412049483%;   background-color: #CCE8FD; }
+.kimmeridgien  { min-width: 2.7972027972028064%;  background-color: #D4EEFD; }
+.tithonien     { min-width: 3.819257665411508%;   background-color: #E0F2FC; }
+.berriasien    { min-width: 2.797202797202791%;   background-color: #9EC978; }
+.valanginien   { min-width: 3.7116729424421764%;  background-color: #ABD083; }
+.hauterivien   { min-width: 1.8827326519634213%;  background-color: #B7D690; }
+.barremien     { min-width: 2.366863905325447%;   background-color: #C2DB9B; }
+.aptien        { min-width: 6.4550833781603005%;  background-color: #CFE1A7; }
+.albien        { min-width: 6.7240451855836465%;  background-color: #D9E8B1; }
+.cenomanien    { min-width: 3.5502958579881625%;  background-color: #C6D86C; }
+.turonien      { min-width: 2.2054868208714407%;  background-color: #D2DD76; }
+.coniacien     { min-width: 1.8827326519634213%;  background-color: #DCE383; }
+.santonien     { min-width: 1.4523937600860692%;  background-color: #E4E88F; }
+.campanien     { min-width: 6.186121570736955%;   background-color: #EFEC9B; }
+.maastrichtien { min-width: 3.2813340505648165%;  background-color: #F5F1A6; border-right: none; }
 
 .periods-sub-section {
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .dinosaur-timeline {
@@ -325,10 +206,14 @@
 
 .description-section {
     background-color: #252525;
-    min-height: 450px;
-    max-height: 450px;
+    min-height: 500px;
+    max-height: 500px;
 }
 .description-title {
     background-color: var(--primary);
     border-bottom: 4px solid #64743E;
+}
+
+.sub-location {
+   font-size: 12px;
 }

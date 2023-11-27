@@ -147,6 +147,14 @@ export const CLASSIFICATION = [
                         ]
                     },
                     {
+                        name: 'Dicraeosauridae',
+                        genus: [
+                            {
+                                name: 'Amargasaurus'
+                            },
+                        ]
+                    },
+                    {
                         name: 'Diplodocidae',
                         genus: [
                             {
@@ -335,20 +343,22 @@ export const CLASSIFICATION = [
 export const DINOSAURS = [
     {
         id: 0,
-        name: 'Tyrannosaurus rex',    // Nom scientifique de l'espèce
-        order: 'Saurischia',          // Ordre
-        sub_order: 'Theropoda',       // Sous-ordre
-        family: 'Tyrannosauridae',    // Famille
-        genus: 'Tyrannosaurus',       // Genre
-        food: CARNIVOROUS,            // Régime alimentaire
-        average_mass: 8000,           // Masse moyenne en kilogrammes
-        average_length: 1240,         // Longueur moyenne en centimètres
-        average_height: 400,          // Hauteur moyenne en centimètres
-        periods: [MAASTRICHTIEN],     // Tableau des périodes auxquelles cette espèce a vécu (dans l'ordre chronologique)
-        description:                  // Description rapide de l'espèce
+        name: 'Tyrannosaurus rex',                    // Nom scientifique de l'espèce
+        order: 'Saurischia',                          // Ordre
+        sub_order: 'Theropoda',                       // Sous-ordre
+        family: 'Tyrannosauridae',                    // Famille
+        genus: 'Tyrannosaurus',                       // Genre
+        food: CARNIVOROUS,                            // Régime alimentaire
+        average_mass: 8000,                           // Masse moyenne en kilogrammes
+        average_length: 1240,                         // Longueur moyenne en centimètres
+        average_height: 400,                          // Hauteur moyenne en centimètres
+        periods: [MAASTRICHTIEN],                     // Tableau des périodes auxquelles cette espèce a vécu (dans l'ordre chronologique)
+        locations: [                                  // Localisation des restes découverts
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>'
+        ],
+        description:                                  // Description rapide de l'espèce
             `<b><i>Tyrannosaurus rex</i></b> est l'une des plus célèbres espèces de dinosaures.<br>
-            Ce fut l'un des derniers dinosaures non-aviens à avoir vécu jusqu'à l'extinction survenue à la limite Crétacé-Paléogène, il y a 66 millions d'années.<br>
-            Ses restes ont été découverts dans ce qui est aujourd'hui l'Amérique du Nord.`,
+            Ce fut l'un des derniers dinosaures non-aviens à avoir vécu jusqu'à l'extinction survenue à la limite Crétacé-Paléogène, il y a 66 millions d'années.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Tyrannosaurus',
         images: [
             'https://static.nationalgeographic.fr/files/styles/image_3200/public/RJ%20Palmer_0.webp',
@@ -367,10 +377,13 @@ export const DINOSAURS = [
         average_length: 850,
         average_height: 400,
         periods: [MAASTRICHTIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>'
+        ],
         description:
             `<b><i>Triceratops horridus</i></b>, cératopsien reconnaissable à ses trois cornes et sa collerette osseuse protectrice, 
             était une proie majeure de <a href="./?page=dinosaurDetails&id=0"><b><i>Tyrannosaurus rex</i></b></a>, ayant vécu à la même période et au même endroit.`,
-        wiki_link: 'https://fr.wikipedia.org/wiki/Triceratops_horridus',
+        wiki_link: 'https://fr.wikipedia.org/wiki/Triceratops',
         images: [
             'https://i.redd.it/8o23pauomfob1.png',
             'https://i.natgeofe.com/n/b96b572c-98e2-4ec2-a714-08a6b95cf646/triceratopshorridus_hexdcb.jpg',
@@ -389,6 +402,9 @@ export const DINOSAURS = [
         average_length: 175,
         average_height: 50,
         periods: [CAMPANIEN],
+        locations: [
+            'Asie <i class="sub-location">(Mongolie)</i>'
+        ],
         description:
         `<b><i>Velociraptor mongoliensis</i></b> était un dromaeosauridé bipède, doté de griffes acérées.<br>
         Prédateur agile, il chassait potentiellement en meute, s'attaquant à de petites proies et des dinosaures herbivores plus grands.`,
@@ -410,6 +426,9 @@ export const DINOSAURS = [
         average_length: 2500,
         average_height: 400,
         periods: [KIMMERIDGIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>'
+        ],
         description:
             `<b><i>Diplodocus carnegii</i></b> possédait un long cou typique des sauropodes, et une queue en fouet caractéristique.<br>
             Paisible mangeur de végétaux vivant dans l'actuel ouest américain, les jeunes devaient faire face à des prédateurs comme <a href="./?page=dinosaurDetails&id=9"><b><i>Allosaurus fragilis</i></b></a>.`,
@@ -431,13 +450,19 @@ export const DINOSAURS = [
         average_length: 700,
         average_height: 350,
         periods: [KIMMERIDGIEN, TITHONIEN],
+        locations: [
+            'Afrique du Nord <i class="sub-location">(Maroc)</i>', 
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>', 
+            'Europe <i class="sub-location">(Portugal)</i>'
+        ],
         description:
             `<b><i>Stegosaurus stenops</i></b> vivait en Laurasie, corespondant aux États-Unis et à l'Afrique du Nord d'aujourd'hui, et se distinguait par ses plaques osseuses verticales sur le dos et sa queue à pointes.<br>
             Herbivore, il pouvait être la proie d'<a href="./?page=dinosaurDetails&id=9"><b><i>Allosaurus fragilis</i></b></a> ou de <a href="./?page=dinosaurDetails&id=40"><b><i>Ceratosaurus nasicornis</i></b></a>.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Stegosaurus',
         images: [
-            'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f3893338-5b4a-4520-8a01-52fca1771b85/d72acy2-19b6ce94-6690-42b8-b009-b5f36c8fbb87.jpg/v1/fill/w_1024,h_749,q_75,strp/stegosaurus_stenops_by_cheungchungtat_d72acy2-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzQ5IiwicGF0aCI6IlwvZlwvZjM4OTMzMzgtNWI0YS00NTIwLThhMDEtNTJmY2ExNzcxYjg1XC9kNzJhY3kyLTE5YjZjZTk0LTY2OTAtNDJiOC1iMDA5LWI1ZjM2YzhmYmI4Ny5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.GellsxYfXWUFD6Luqi0L_8QgWRnZQ8nDEvrdjsZ5xF8',
-            ''
+            'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/700d547e-32ff-47aa-b129-baab04f40e56/da47mfi-f7330353-f775-4b7b-97ce-66e77c55ac53.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzcwMGQ1NDdlLTMyZmYtNDdhYS1iMTI5LWJhYWIwNGY0MGU1NlwvZGE0N21maS1mNzMzMDM1My1mNzc1LTRiN2ItOTdjZS02NmU3N2M1NWFjNTMuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.e8kUzmCMrZRyeo18mEEZExMc5IgZhvr3XRw2BtmOh3o',
+            'https://www.bizleyart.com/gallery/image?view=image&format=raw&type=img&id=617',
+            'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f3893338-5b4a-4520-8a01-52fca1771b85/d72acy2-19b6ce94-6690-42b8-b009-b5f36c8fbb87.jpg/v1/fill/w_1024,h_749,q_75,strp/stegosaurus_stenops_by_cheungchungtat_d72acy2-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzQ5IiwicGF0aCI6IlwvZlwvZjM4OTMzMzgtNWI0YS00NTIwLThhMDEtNTJmY2ExNzcxYjg1XC9kNzJhY3kyLTE5YjZjZTk0LTY2OTAtNDJiOC1iMDA5LWI1ZjM2YzhmYmI4Ny5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.GellsxYfXWUFD6Luqi0L_8QgWRnZQ8nDEvrdjsZ5xF8'
         ],
     },
     {
@@ -452,6 +477,9 @@ export const DINOSAURS = [
         average_length: 2500,
         average_height: 1200,
         periods: [KIMMERIDGIEN, TITHONIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>'
+        ],
         description:
             `<b><i>Brachiosaurus altithorax</i></b> se caractérisait par son long cou et ses pattes avant plus longues que ses pattes arrières. Herbivore géant, les jeunes pouvaient cepandant être attaqués par <a href="./?page=dinosaurDetails&id=9"><b><i>Allosaurus fragilis</i></b></a>.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Brachiosaurus',
@@ -471,8 +499,11 @@ export const DINOSAURS = [
         average_length: 1400,
         average_height: 450,
         periods: [ALBIEN, CENOMANIEN],
+        locations: [
+            'Afrique du Nord <i class="sub-location">(Égypte)</i>'
+        ],
         description:
-        `<b><i>Spinosaurus aegyptiacus</i></b>, carnivore semi-aquatique se nourrissant au moins partiellement de poissons, possédait une voile dorsale caractéristique.`,
+            `<b><i>Spinosaurus aegyptiacus</i></b>, carnivore semi-aquatique se nourrissant au moins partiellement de poissons, possédait une voile dorsale caractéristique.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Spinosaurus',
         images: [
             'https://images.squarespace-cdn.com/content/v1/5950b5941b10e30c09a82dd9/1591832259138-AWDZS5AVWF3S84HS6U8J/rjpalmer_spinosaurus_SITE_001.jpg?format=2500w',
@@ -492,8 +523,12 @@ export const DINOSAURS = [
         average_length: 1000,
         average_height: 170,
         periods: [MAASTRICHTIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>', 
+            'Europe <i class="sub-location">(Hongrie)</i>'
+        ],
         description:
-        `<b><i>Ankylosaurus magniventris</i></b> se défendait des prédateurs tels que <a href="./?page=dinosaurDetails&id=0"><b><i>Tyrannosaurus rex</i></b></a> grâce à son armure corporelle et sa queue munie d'une massue redoutable.`,
+            `<b><i>Ankylosaurus magniventris</i></b> se défendait des prédateurs tels que <a href="./?page=dinosaurDetails&id=0"><b><i>Tyrannosaurus rex</i></b></a> grâce à son armure corporelle et sa queue munie d'une massue redoutable.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Ankylosaurus',
         images: [
             'https://as2.ftcdn.net/v2/jpg/02/56/88/51/1000_F_256885103_UuFC4aUnjnArbkEHoxu3HKPwQOYcaumu.jpg',
@@ -511,6 +546,12 @@ export const DINOSAURS = [
         average_length: 1000,
         average_height: 350,
         periods: [BARREMIEN, APTIEN],
+        locations: [
+            'Afrique', 
+            'Amérique', 
+            'Asie', 
+            'Europe'
+        ],
         description:
             `<b><i>Iguanodon bernissartensis</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Iguanodon',
@@ -530,6 +571,10 @@ export const DINOSAURS = [
         average_length: 850,
         average_height: 300,
         periods: [KIMMERIDGIEN, TITHONIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>', 
+            'Europe <i class="sub-location">(Portugal)</i>'
+        ],
         description:
             `<b><i>Allosaurus fragilis</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Allosaurus',
@@ -550,9 +595,12 @@ export const DINOSAURS = [
         average_length: 340,
         average_height: 110,
         periods: [BERRIASIEN, VALANGINIEN, HAUTERIVIEN, BARREMIEN, APTIEN, ALBIEN, CENOMANIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>'
+        ],
         description:
             `<b><i>Deinonychus antirrhopus</i></b> ...`,
-        wiki_link: 'https://fr.wikipedia.org/wiki/Deinonychu',
+        wiki_link: 'https://fr.wikipedia.org/wiki/Deinonychus',
         images: [
             'https://cdna.artstation.com/p/assets/images/images/006/891/444/medium/raph-lomotan-antirrhopus.jpg?1502045515',
             'https://cdnb.artstation.com/p/assets/images/images/009/202/085/large/carlo-arellano-asset.jpg?1517669067',
@@ -572,6 +620,9 @@ export const DINOSAURS = [
         average_length: 1250,
         average_height: 400,
         periods: [CENOMANIEN],
+        locations: [
+            'Amérique du Sud <i class="sub-location">(Argentine)</i>'
+        ],
         description:
             `<b><i>Giganotosaurus carolinii</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Giganotosaurus',
@@ -593,6 +644,9 @@ export const DINOSAURS = [
         average_length: 3400,
         average_height: 1150,
         periods: [CENOMANIEN, TURONIEN],
+        locations: [
+            'Amérique du Sud <i class="sub-location">(Argentine)</i>'
+        ],
         description:
             `<b><i>Argentinosaurus huinculensis</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Argentinosaurus',
@@ -612,6 +666,9 @@ export const DINOSAURS = [
         average_length: 900,
         average_height: 270,
         periods: [BARREMIEN],
+        locations: [
+            'Europe <i class="sub-location">(Angleterre, Espagne, Portugal)</i>'
+        ],
         description:
             `<b><i>Baryonyx walkeri</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Baryonyx',
@@ -633,6 +690,9 @@ export const DINOSAURS = [
         average_length: 450,
         average_height: 150,
         periods: [MAASTRICHTIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>'
+        ],
         description:
             `<b><i>Pachycephalosaurus wyomingensis</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Pachycephalosaurus',
@@ -654,6 +714,9 @@ export const DINOSAURS = [
         average_length: 800,
         average_height: 270,
         periods: [MAASTRICHTIEN],
+        locations: [
+            'Amérique du Sud <i class="sub-location">(Argentine)</i>'
+        ],
         description:
             `<b><i>Carnotaurus sastrei</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Carnotaurus',
@@ -674,6 +737,9 @@ export const DINOSAURS = [
         average_length: 550,
         average_height: 230,
         periods: [CAMPANIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(Canada)</i>'
+        ],
         description:
             `<b><i>Styracosaurus albertensis</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Styracosaurus',
@@ -693,9 +759,12 @@ export const DINOSAURS = [
         average_length: 800,
         average_height: 250,
         periods: [MAASTRICHTIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(Canada)</i>'
+        ],
         description:
             `<b><i>Pachyrhinosaurus canadensis</i></b> ...`,
-        wiki_link: 'https://fr.wikipedia.org/wiki/Styracosaurus',
+        wiki_link: 'https://fr.wikipedia.org/wiki/Pachyrhinosaurus',
         images: [
             'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/028c2f108291319.5fbac49597d44.jpg',
         ],
@@ -712,6 +781,9 @@ export const DINOSAURS = [
         average_length: 325,
         average_height: 135,
         periods: [CAMPANIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(Canada)</i>'
+        ],
         description:
             `<b><i>Latenivenatrix mcmasterae</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Latenivenatrix',
@@ -733,6 +805,9 @@ export const DINOSAURS = [
         average_length: 950,
         average_height: 360,
         periods: [CAMPANIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(Canada)</i>'
+        ],
         description:
             `<b><i>Parasaurolophus walkeri</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Parasaurolophus',
@@ -753,6 +828,9 @@ export const DINOSAURS = [
         average_length: 250,
         average_height: 170,
         periods: [CAMPANIEN],
+        locations: [
+            'Asie <i class="sub-location">(Mongolie)</i>'
+        ],
         description:
             `<b><i>Citipati osmolskae</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Citipati',
@@ -772,6 +850,9 @@ export const DINOSAURS = [
         average_length: 600,
         average_height: 190,
         periods: [SINEMURIEN, PLIENSBACHIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>'
+        ],
         description:
             `<b><i>Dilophosaurus wetherilli</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Dilophosaurus',
@@ -791,6 +872,9 @@ export const DINOSAURS = [
         average_length: 175,
         average_height: 50,
         periods: [BARREMIEN, APTIEN, ALBIEN],
+        locations: [
+            'Asie <i class="sub-location">(Mongolie)</i>'
+        ],
         description:
             `<b><i>Psittacosaurus mongoliensis</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Psittacosaurus',
@@ -810,6 +894,9 @@ export const DINOSAURS = [
         average_length: 500,
         average_height: 250,
         periods: [MAASTRICHTIEN],
+        locations: [
+            'Asie <i class="sub-location">(Mongolie)</i>'
+        ],
         description:
             `<b><i>Gallimimus bullatus</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Gallimimus',
@@ -830,6 +917,9 @@ export const DINOSAURS = [
         average_length: 3100,
         average_height: 1800,
         periods: [APTIEN, ALBIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>'
+        ],
         description:
             `<b><i>Sauroposeidon proteles</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Sauroposéidon',
@@ -849,6 +939,9 @@ export const DINOSAURS = [
         average_length: 850,
         average_height: 250,
         periods: [CAMPANIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>'
+        ],
         description:
             `<b><i>Daspletosaurus wilsoni</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Daspletosaurus',
@@ -869,6 +962,9 @@ export const DINOSAURS = [
         average_length: 600,
         average_height: 220,
         periods: [CAMPANIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(Canada)</i>'
+        ],
         description:
             `<b><i>Lambeosaurus lambei</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Lambeosaurus',
@@ -907,6 +1003,9 @@ export const DINOSAURS = [
         average_length: 2600,
         average_height: 1400,
         periods: [OXFORDIEN],
+        locations: [
+            'Asie <i class="sub-location">(Chine)</i>'
+        ],
         description:
             `<b><i>Mamenchisaurus sinocanadorum</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Mamenchisaurus',
@@ -926,6 +1025,9 @@ export const DINOSAURS = [
         average_length: 40,
         average_height: 20,
         periods: [TITHONIEN],
+        locations: [
+            'Europe <i class="sub-location">(Allemagne)</i>'
+        ],
         description:
             `<b><i>Archaeopteryx siemensii</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Archaeopteryx',
@@ -945,9 +1047,12 @@ export const DINOSAURS = [
         average_length: 1000,
         average_height: 450,
         periods: [MAASTRICHTIEN],
+        locations: [
+            'Asie <i class="sub-location">(Mongolie)</i>'
+        ],
         description:
             `<b><i>Deinocheirus mirificus</i></b> ...`,
-        wiki_link: 'https://fr.wikipedia.org/wiki/Deinocheiru',
+        wiki_link: 'https://fr.wikipedia.org/wiki/Deinocheirus',
         images: [
             'https://damirgmartin.com/images/fulls/26.jpg',
         ],
@@ -964,9 +1069,12 @@ export const DINOSAURS = [
         average_length: 130,
         average_height: 40,
         periods: [HETTANGIEN],
+        locations: [
+            'Afrique <i class="sub-location">(Afrique du Sud)</i>'
+        ],
         description:
             `<b><i>Heterodontosaurus tucki</i></b> ...`,
-        wiki_link: 'https://fr.wikipedia.org/wiki/Heterodontosauru',
+        wiki_link: 'https://fr.wikipedia.org/wiki/Heterodontosaurus',
         images: [
             'https://cdnb.artstation.com/p/assets/images/images/021/988/217/large/damir-g-martin-finalisms-insta-artst-2scaled2.jpg?1573683481',
         ],
@@ -983,6 +1091,9 @@ export const DINOSAURS = [
         average_length: 80,
         average_height: 25,
         periods: [TITHONIEN],
+        locations: [
+            'Europe <i class="sub-location">(Allemagne, France)</i>'
+        ],
         description:
             `<b><i>Compsognathus longipes</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Compsognathus',
@@ -1002,6 +1113,9 @@ export const DINOSAURS = [
         average_length: 400,
         average_height: 160,
         periods: [CARNIEN],
+        locations: [
+            'Amérique du Sud <i class="sub-location">(Argentine)</i>'
+        ],
         description:
             `<b><i>Herrerasaurus ischigualastensis</i></b>, représentant très primitif des Theropodes, précède de 75 MA l'apparition d'<a href="./?page=dinosaurDetails&id=9"><b><i>Allosaurus fragilis</i></b></a> et de 160 MA celle de <a href="./?page=dinosaurDetails&id=0"><b><i>Tyrannosaurus rex</i></b></a>, faisant de lui l'un des plus anciens dinosaure connus.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Herrerasaurus',
@@ -1022,6 +1136,9 @@ export const DINOSAURS = [
         average_length: 700,
         average_height: 220,
         periods: [NORIEN],
+        locations: [
+            'Europe <i class="sub-location">(Allemagne, France, Suisse)</i>'
+        ],
         description:
             `<b><i>Plateosaurus trossingensis</i></b> est un représentant très primitif des Sauropodomorphes.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Plateosaurus',
@@ -1041,6 +1158,9 @@ export const DINOSAURS = [
         average_length: 625,
         average_height: 190,
         periods: [VALANGINIEN, HAUTERIVIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>'
+        ],
         description:
             `<b><i>Utahraptor ostrommaysi</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Utahraptor',
@@ -1061,6 +1181,9 @@ export const DINOSAURS = [
         average_length: 1100,
         average_height: 320,
         periods: [APTIEN, ALBIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>'
+        ],
         description:
             `<b><i>Acrocanthosaurus atokensis</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Acrocanthosaurus',
@@ -1080,6 +1203,9 @@ export const DINOSAURS = [
         average_length: 1150,
         average_height: 330,
         periods: [TURONIEN],
+        locations: [
+            'Amérique du Sud <i class="sub-location">(Argentine)</i>'
+        ],
         description:
             `<b><i>Mapusaurus roseae</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Mapusaurus',
@@ -1099,6 +1225,9 @@ export const DINOSAURS = [
         average_length: 1200,
         average_height: 340,
         periods: [ALBIEN, CENOMANIEN],
+        locations: [
+            'Afrique <i class="sub-location">(Algérie, Maroc)</i>'
+        ],
         description:
             `<b><i>Carcharodontosaurus saharicus</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Carcharodontosaurus',
@@ -1118,6 +1247,10 @@ export const DINOSAURS = [
         average_length: 275,
         average_height: 100,
         periods: [CARNIEN, NORIEN, RHAETIEN],
+        locations: [
+            'Afrique <i class="sub-location">(Afrique du Sud, Zimbabwe)</i>', 
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>'
+        ],
         description:
             `<b><i>Coelophysis bauri</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Coelophysis',
@@ -1139,6 +1272,9 @@ export const DINOSAURS = [
         average_length: 550,
         average_height: 170,
         periods: [VALANGINIEN],
+        locations: [
+            'Europe <i class="sub-location">(Angleterre)</i>'
+        ],
         description:
             `<b><i>Hylaeosaurus armatus</i></b> est le premier ankylosaurien qu'on ait découvert, dès 1833.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Hylaeosaurus',
@@ -1158,8 +1294,11 @@ export const DINOSAURS = [
         average_length: 550,
         average_height: 175,
         periods: [KIMMERIDGIEN, TITHONIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(États-Unis)</i>'
+        ],
         description:
-            `<b><i>Ceratosaurus nasicornis</i></b> vivait en Laurasie, corespondant aux États-Unis et à l'Afrique du Nord d'aujourd'hui, et se distinguait par la corne arrondie sur son museau, appendice peu commun chez les Theropodes.<br>
+            `<b><i>Ceratosaurus nasicornis</i></b> vivait en Laurasie, et se distinguait par la corne arrondie sur son museau, appendice peu commun chez les Theropodes.<br>
             Son alimentation été probablement constituée en partie de jeunes <a href="./?page=dinosaurDetails&id=4"><b><i>Stegosaurus stenops</i></b></a>, ses reste ayant été retrouvé aux mêmes endroits et dans les mêmes strates géologiques.`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Ceratosaurus',
         images: [
@@ -1179,11 +1318,36 @@ export const DINOSAURS = [
         average_length: 900,
         average_height: 320,
         periods: [CAMPANIEN],
+        locations: [
+            'Amérique du Nord <i class="sub-location">(Canada)</i>'
+        ],
         description:
             `<b><i>Corythosaurus casuarius</i></b> ...`,
         wiki_link: 'https://fr.wikipedia.org/wiki/Corythosaurus',
         images: [
             'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/87c47315-8df7-4cb1-8502-d931a2f5f535/d2uvsvz-8ff7be16-ae86-4158-ba62-48e409ae58d3.jpg/v1/fill/w_900,h_450,q_75,strp/paleoscape_9___corythosaurus_c_by_highdarktemplar_d2uvsvz-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzg3YzQ3MzE1LThkZjctNGNiMS04NTAyLWQ5MzFhMmY1ZjUzNVwvZDJ1dnN2ei04ZmY3YmUxNi1hZTg2LTQxNTgtYmE2Mi00OGU0MDlhZTU4ZDMuanBnIiwiaGVpZ2h0IjoiPD00NTAiLCJ3aWR0aCI6Ijw9OTAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzg3YzQ3MzE1LThkZjctNGNiMS04NTAyLWQ5MzFhMmY1ZjUzNVwvaGlnaGRhcmt0ZW1wbGFyLTQucG5nIiwib3BhY2l0eSI6OTUsInByb3BvcnRpb25zIjowLjQ1LCJncmF2aXR5IjoiY2VudGVyIn19.AKsXzjaiyEHKDVKLClNoXsKCrQ-2BwezxhZhM-WfeJg',
+        ],
+    },
+    {
+        id: 42,
+        name: 'Amargasaurus cazaui',
+        order: 'Saurischia',
+        sub_order: 'Sauropodomorpha',
+        family: 'Dicraeosauridae',
+        genus: 'Amargasaurus',
+        food: HERBIVOROUS,
+        average_mass: 3000,
+        average_length: 1050,
+        average_height: 400,
+        periods: [BARREMIEN, APTIEN],
+        locations: [
+            'Amérique du Sud <i class="sub-location">(Argentine)</i>'
+        ],
+        description:
+            `<b><i>Amargasaurus cazaui</i></b> ...`,
+        wiki_link: 'https://fr.wikipedia.org/wiki/Amargasaurus',
+        images: [
+            'https://i.redd.it/38bw0gm7stw41.jpg',
         ],
     },
 ]

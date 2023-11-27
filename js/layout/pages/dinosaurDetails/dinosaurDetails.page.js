@@ -54,8 +54,8 @@ export const renderPage = () => {
                     element.style.maxHeight = '160px';
                     break;
                 case 'section3':
-                    element.style.minHeight = '450px';
-                    element.style.maxHeight = '450px';
+                    element.style.minHeight = '500px';
+                    element.style.maxHeight = '500px';
                     break;
                 default:
                     break;
@@ -317,6 +317,11 @@ export const renderPage = () => {
                 </div>
                 <span style="min-height: 10px;"></span>
                 <div class="details-sub-section">
+                    <span class="section-sub-title">Répartition</span>
+                    <span>${getLocationString(dinosaur.locations)}</span>
+                </div>
+                <span style="min-height: 10px;"></span>
+                <div class="details-sub-section">
                     <span>${dinosaur.description}</span>
                 </div>
             </div>
@@ -329,4 +334,11 @@ export const renderPage = () => {
     return page;
 }
 
-
+const getLocationString = (dinosaurLocations) => {
+    let str = '';
+    dinosaurLocations.forEach(location => {
+        str += (dinosaurLocations.length == 1 ? '' : '• ') + location + '<br>'
+    });
+    return str;
+    //return dinosaurLocations.join('<br>');
+}
